@@ -1,20 +1,20 @@
 import React from 'react'
 
 interface TileProps {
-    label: string,
+    item: { name: string},
     isSelected: boolean,
     onClick: () => void
 }
 
-const Tile: React.FC<TileProps> = ({ label, isSelected, onClick}) => {
+const Tile: React.FC<TileProps> = ({ item, isSelected, onClick}) => {
     return (
         <div
-            className={`p-4 border rounded-md text-center cursor-pointer ${
-                isSelected ? "bg-blue-500 text-white" : "bg-gray-200"
+            className={`p-2 border rounded-sm text-center text-black cursor-pointer ${
+                isSelected ? "bg-blue-500 text-white" : " bg-gray-200"
             }`}
             onClick={onClick}
         >
-        {label}
+        {item.name}
       </div>
     )
 }

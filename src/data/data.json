@@ -452,5 +452,233 @@
     "popularity": 58,
     "color": "gray",
     "thirdPerson": "Redefines"
+  },
+  {
+    "name": "Refactor",
+    "popularity": 61,
+    "color": "cyan",
+    "thirdPerson": "Refactors"
+  },
+  {
+    "name": "Reflect",
+    "popularity": 35,
+    "color": "brown",
+    "thirdPerson": "Reflects"
+  },
+  {
+    "name": "Refocus",
+    "popularity": 33,
+    "color": "orange",
+    "thirdPerson": "Refocuses"
+  },
+  {
+    "name": "Reinforce",
+    "popularity": 67,
+    "color": "red",
+    "thirdPerson": "Reinforces"
+  },
+  {
+    "name": "Reiterate",
+    "popularity": 18,
+    "color": "yellow",
+    "thirdPerson": "Reiterates"
+  },
+  {
+    "name": "Relate",
+    "popularity": 19,
+    "color": "green",
+    "thirdPerson": "Relates"
+  },
+  {
+    "name": "Research",
+    "popularity": 10,
+    "color": "blue",
+    "thirdPerson": "Researches"
+  },
+  {
+    "name": "Resolve",
+    "popularity": 68,
+    "color": "cyan",
+    "thirdPerson": "Resolves"
+  },
+  {
+    "name": "Respond",
+    "popularity": 36,
+    "color": "brown",
+    "thirdPerson": "Responds"
+  },
+  {
+    "name": "Retain",
+    "popularity": 29,
+    "color": "orange",
+    "thirdPerson": "Retains"
+  },
+  {
+    "name": "Review",
+    "popularity": 4,
+    "color": "red",
+    "thirdPerson": "Reviews"
+  },
+  {
+    "name": "Revise",
+    "popularity": 23,
+    "color": "yellow",
+    "thirdPerson": "Revises"
+  },
+  {
+    "name": "Simplify",
+    "popularity": 85,
+    "color": "green",
+    "thirdPerson": "Simplifies"
+  },
+  {
+    "name": "Solve",
+    "popularity": 25,
+    "color": "blue",
+    "thirdPerson": "Resolves"
+  },
+  {
+    "name": "Stabilize",
+    "popularity": 31,
+    "color": "cyan",
+    "thirdPerson": "Stabilizes"
+  },
+  {
+    "name": "Standardize",
+    "popularity": 18,
+    "color": "brown",
+    "thirdPerson": "Standardizes"
+  },
+  {
+    "name": "Strategize",
+    "popularity": 76,
+    "color": "orange",
+    "thirdPerson": "Strategizes"
+  },
+  {
+    "name": "Structure",
+    "popularity": 30,
+    "color": "red",
+    "thirdPerson": "Structures"
+  },
+  {
+    "name": "Study",
+    "popularity": 7,
+    "color": "yellow",
+    "thirdPerson": "Studies"
+  },
+  {
+    "name": "Support",
+    "popularity": 49,
+    "color": "green",
+    "thirdPerson": "Supports"
+  },
+  {
+    "name": "Survey",
+    "popularity": 5,
+    "color": "blue",
+    "thirdPerson": "Surveys"
+  },
+  {
+    "name": "Sustain",
+    "popularity": 60,
+    "color": "cyan",
+    "thirdPerson": "Sustains"
+  },
+  {
+    "name": "Synthesize",
+    "popularity": 34,
+    "color": "brown",
+    "thirdPerson": "Synthesizes"
+  },
+  {
+    "name": "Systematize",
+    "popularity": 19,
+    "color": "orange",
+    "thirdPerson": "Systematizes"
+  },
+  {
+    "name": "Teach",
+    "popularity": 2,
+    "color": "red",
+    "thirdPerson": "Teaches"
+  },
+  {
+    "name": "Test",
+    "popularity": 6,
+    "color": "yellow",
+    "thirdPerson": "Tests"
+  },
+  {
+    "name": "Train",
+    "popularity": 13,
+    "color": "green",
+    "thirdPerson": "Trains"
+  },
+  {
+    "name": "Transform",
+    "popularity": 90,
+    "color": "blue",
+    "thirdPerson": "Transform"
+  },
+  {
+    "name": "Translate",
+    "popularity": 50,
+    "color": "cyan",
+    "thirdPerson": "Translates"
+  },
+  {
+    "name": "Troubleshoot",
+    "popularity": 48,
+    "color": "brown",
+    "thirdPerson": "Troubleshoots"
+  },
+  {
+    "name": "Understand",
+    "popularity": 99,
+    "color": "orange",
+    "thirdPerson": "Understands"
+  },
+  {
+    "name": "Unify",
+    "popularity": 21,
+    "color": "red",
+    "thirdPerson": "Unifies"
+  },
+  {
+    "name": "Update",
+    "popularity": 63,
+    "color": "yellow",
+    "thirdPerson": "Updates"
+  },
+  {
+    "name": "Validate",
+    "popularity": 71,
+    "color": "green",
+    "thirdPerson": "Validates"
+  },
+  {
+    "name": "Verify",
+    "popularity": 65,
+    "color": "blue",
+    "thirdPerson": "Verifies"
+  },
+  {
+    "name": "Visualize",
+    "popularity": 74,
+    "color": "cyan",
+    "thirdPerson": "Visualizes"
+  },
+  {
+    "name": "Win",
+    "popularity": 82,
+    "color": "brown",
+    "thirdPerson": "Wins"
+  },
+  {
+    "name": "Write",
+    "popularity": 8,
+    "color": "orange",
+    "thirdPerson": "Writes"
   }
 ]

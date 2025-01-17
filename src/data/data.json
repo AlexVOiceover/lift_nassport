@@ -1,113 +1,456 @@
 [
-  { "name": "Achieve", "popularity": 56, "color": "gray" },
-  { "name": "Adapt", "popularity": 91, "color": "indigo" },
-  { "name": "Align", "popularity": 17, "color": "gray" },
-  { "name": "Analyze", "popularity": 37, "color": "indigo" },
-  { "name": "Articulate", "popularity": 44, "color": "magenta" },
-  { "name": "Authenticate", "popularity": 40, "color": "teal" },
-  { "name": "Balance", "popularity": 28, "color": "purple" },
-  { "name": "Benchmark", "popularity": 14, "color": "brown" },
-  { "name": "Build", "popularity": 47, "color": "gold" },
-  { "name": "Calibrate", "popularity": 15, "color": "purple" },
-  { "name": "Care", "popularity": 38, "color": "blue" },
-  { "name": "Celebrate", "popularity": 98, "color": "lime" },
-  { "name": "Clarify", "popularity": 42, "color": "cyan" },
-  { "name": "Code", "popularity": 46, "color": "gray" },
-  { "name": "Collaborate", "popularity": 62, "color": "cyan" },
-  { "name": "Combine", "popularity": 20, "color": "pink" },
-  { "name": "Communicate", "popularity": 94, "color": "purple" },
-  { "name": "Conceptualize", "popularity": 20, "color": "blue" },
-  { "name": "Connect", "popularity": 11, "color": "brown" },
-  { "name": "Coordinate", "popularity": 42, "color": "green" },
-  { "name": "Create", "popularity": 12, "color": "yellow" },
-  { "name": "Cultivate", "popularity": 57, "color": "brown" },
-  { "name": "Customize", "popularity": 22, "color": "green" },
-  { "name": "Debug", "popularity": 53, "color": "indigo" },
-  { "name": "Decide", "popularity": 77, "color": "blue" },
-  { "name": "Define", "popularity": 12, "color": "orange" },
-  { "name": "Deliver", "popularity": 57, "color": "teal" },
-  { "name": "Deploy", "popularity": 84, "color": "indigo" },
-  { "name": "Design", "popularity": 22, "color": "yellow" },
-  { "name": "Develop", "popularity": 33, "color": "pink" },
-  { "name": "Discover", "popularity": 22, "color": "blue" },
-  { "name": "Distribute", "popularity": 99, "color": "red" },
-  { "name": "Document", "popularity": 1, "color": "blue" },
-  { "name": "Drive", "popularity": 42, "color": "orange" },
-  { "name": "Embrace", "popularity": 32, "color": "red" },
-  { "name": "Engage", "popularity": 39, "color": "teal" },
-  { "name": "Enhance", "popularity": 98, "color": "magenta" },
-  { "name": "Evaluate", "popularity": 51, "color": "pink" },
-  { "name": "Execute", "popularity": 24, "color": "cyan" },
-  { "name": "Experiment", "popularity": 89, "color": "purple" },
-  { "name": "Explore", "popularity": 27, "color": "red" },
-  { "name": "Facilitate", "popularity": 54, "color": "green" },
-  { "name": "Focus", "popularity": 64, "color": "red" },
-  { "name": "Forecast", "popularity": 12, "color": "brown" },
-  { "name": "Grow", "popularity": 87, "color": "lime" },
-  { "name": "Guide", "popularity": 67, "color": "magenta" },
-  { "name": "Help", "popularity": 51, "color": "pink" },
-  { "name": "Illustrate", "popularity": 40, "color": "indigo" },
-  { "name": "Improve", "popularity": 88, "color": "orange" },
-  { "name": "Innovate", "popularity": 87, "color": "blue" },
-  { "name": "Inspect", "popularity": 8, "color": "gray" },
-  { "name": "Inspire", "popularity": 86, "color": "indigo" },
-  { "name": "Integrate", "popularity": 26, "color": "purple" },
-  { "name": "Invent", "popularity": 9, "color": "orange" },
-  { "name": "Iterate", "popularity": 32, "color": "magenta" },
-  { "name": "Jump", "popularity": 41, "color": "indigo" },
-  { "name": "Launch", "popularity": 28, "color": "teal" },
-  { "name": "Lead", "popularity": 97, "color": "yellow" },
-  { "name": "Learn", "popularity": 3, "color": "green" },
-  { "name": "Maintain", "popularity": 45, "color": "blue" },
-  { "name": "Manage", "popularity": 44, "color": "cyan" },
-  { "name": "Measure", "popularity": 69, "color": "pink" },
-  { "name": "Monitor", "popularity": 75, "color": "yellow" },
-  { "name": "Motivate", "popularity": 43, "color": "orange" },
-  { "name": "Navigate", "popularity": 24, "color": "blue" },
-  { "name": "Negotiate", "popularity": 77, "color": "green" },
-  { "name": "Observe", "popularity": 52, "color": "pink" },
-  { "name": "Optimize", "popularity": 81, "color": "teal" },
-  { "name": "Organize", "popularity": 39, "color": "blue" },
-  { "name": "Perform", "popularity": 21, "color": "teal" },
-  { "name": "Plan", "popularity": 12, "color": "purple" },
-  { "name": "Predict", "popularity": 16, "color": "green" },
-  { "name": "Present", "popularity": 98, "color": "yellow" },
-  { "name": "Prioritize", "popularity": 96, "color": "red" },
-  { "name": "Prototype", "popularity": 46, "color": "purple" },
-  { "name": "Question", "popularity": 70, "color": "green" },
-  { "name": "Rebuild", "popularity": 81, "color": "indigo" },
-  { "name": "Recognize", "popularity": 11, "color": "teal" },
-  { "name": "Redefine", "popularity": 58, "color": "gray" },
-  { "name": "Refactor", "popularity": 89, "color": "gray" },
-  { "name": "Refine", "popularity": 52, "color": "red" },
-  { "name": "Reflect", "popularity": 97, "color": "brown" },
-  { "name": "Reimagine", "popularity": 8, "color": "orange" },
-  { "name": "Repurpose", "popularity": 1, "color": "teal" },
-  { "name": "Research", "popularity": 96, "color": "magenta" },
-  { "name": "Revise", "popularity": 8, "color": "teal" },
-  { "name": "Scale", "popularity": 79, "color": "red" },
-  { "name": "Separate", "popularity": 10, "color": "yellow" },
-  { "name": "Share", "popularity": 1, "color": "green" },
-  { "name": "Simplify", "popularity": 51, "color": "brown" },
-  { "name": "Sketch", "popularity": 20, "color": "cyan" },
-  { "name": "Solve", "popularity": 32, "color": "red" },
-  { "name": "Standardize", "popularity": 13, "color": "blue" },
-  { "name": "Strategize", "popularity": 86, "color": "green" },
-  { "name": "Streamline", "popularity": 65, "color": "gold" },
-  { "name": "Strengthen", "popularity": 80, "color": "cyan" },
-  { "name": "Structure", "popularity": 7, "color": "magenta" },
-  { "name": "Support", "popularity": 59, "color": "indigo" },
-  { "name": "Teach", "popularity": 41, "color": "purple" },
-  { "name": "Test", "popularity": 2, "color": "yellow" },
-  { "name": "Train", "popularity": 62, "color": "teal" },
-  { "name": "Transform", "popularity": 59, "color": "magenta" },
-  { "name": "Translate", "popularity": 57, "color": "magenta" },
-  { "name": "Understand", "popularity": 11, "color": "teal" },
-  { "name": "Unite", "popularity": 18, "color": "cyan" },
-  { "name": "Upgrade", "popularity": 76, "color": "gold" },
-  { "name": "Validate", "popularity": 17, "color": "brown" },
-  { "name": "Value", "popularity": 23, "color": "yellow" },
-  { "name": "Visualize", "popularity": 12, "color": "indigo" },
-  { "name": "Work", "popularity": 80, "color": "green" },
-  { "name": "Write", "popularity": 55, "color": "brown" }
+  {
+    "name": "Achieve",
+    "popularity": 56,
+    "color": "gray",
+    "thirdPerson": "Achieves"
+  },
+  {
+    "name": "Adapt",
+    "popularity": 91,
+    "color": "indigo",
+    "thirdPerson": "Adapts"
+  },
+  {
+    "name": "Align",
+    "popularity": 17,
+    "color": "gray",
+    "thirdPerson": "Aligns"
+  },
+  {
+    "name": "Analyze",
+    "popularity": 37,
+    "color": "indigo",
+    "thirdPerson": "Analyzes"
+  },
+  {
+    "name": "Articulate",
+    "popularity": 44,
+    "color": "magenta",
+    "thirdPerson": "Articulates"
+  },
+  {
+    "name": "Authenticate",
+    "popularity": 40,
+    "color": "teal",
+    "thirdPerson": "Authenticates"
+  },
+  {
+    "name": "Balance",
+    "popularity": 28,
+    "color": "purple",
+    "thirdPerson": "Balances"
+  },
+  {
+    "name": "Benchmark",
+    "popularity": 14,
+    "color": "brown",
+    "thirdPerson": "Benchmarks"
+  },
+  {
+    "name": "Build",
+    "popularity": 47,
+    "color": "gold",
+    "thirdPerson": "Builds"
+  },
+  {
+    "name": "Calibrate",
+    "popularity": 15,
+    "color": "purple",
+    "thirdPerson": "Calibrates"
+  },
+  { "name": "Care", "popularity": 38, "color": "blue", "thirdPerson": "Cares" },
+  {
+    "name": "Celebrate",
+    "popularity": 98,
+    "color": "lime",
+    "thirdPerson": "Celebrates"
+  },
+  {
+    "name": "Clarify",
+    "popularity": 42,
+    "color": "cyan",
+    "thirdPerson": "Clarifies"
+  },
+  { "name": "Code", "popularity": 46, "color": "gray", "thirdPerson": "Codes" },
+  {
+    "name": "Collaborate",
+    "popularity": 62,
+    "color": "cyan",
+    "thirdPerson": "Collaborates"
+  },
+  {
+    "name": "Combine",
+    "popularity": 20,
+    "color": "pink",
+    "thirdPerson": "Combines"
+  },
+  {
+    "name": "Communicate",
+    "popularity": 94,
+    "color": "purple",
+    "thirdPerson": "Communicates"
+  },
+  {
+    "name": "Conceptualize",
+    "popularity": 20,
+    "color": "blue",
+    "thirdPerson": "Conceptualizes"
+  },
+  {
+    "name": "Connect",
+    "popularity": 11,
+    "color": "brown",
+    "thirdPerson": "Connects"
+  },
+  {
+    "name": "Coordinate",
+    "popularity": 42,
+    "color": "green",
+    "thirdPerson": "Coordinates"
+  },
+  {
+    "name": "Create",
+    "popularity": 12,
+    "color": "yellow",
+    "thirdPerson": "Creates"
+  },
+  {
+    "name": "Cultivate",
+    "popularity": 57,
+    "color": "brown",
+    "thirdPerson": "Cultivates"
+  },
+  {
+    "name": "Customize",
+    "popularity": 22,
+    "color": "green",
+    "thirdPerson": "Customizes"
+  },
+  {
+    "name": "Debug",
+    "popularity": 53,
+    "color": "indigo",
+    "thirdPerson": "Debugs"
+  },
+  {
+    "name": "Decide",
+    "popularity": 77,
+    "color": "blue",
+    "thirdPerson": "Decides"
+  },
+  {
+    "name": "Define",
+    "popularity": 12,
+    "color": "orange",
+    "thirdPerson": "Defines"
+  },
+  {
+    "name": "Deliver",
+    "popularity": 57,
+    "color": "teal",
+    "thirdPerson": "Delivers"
+  },
+  {
+    "name": "Deploy",
+    "popularity": 84,
+    "color": "indigo",
+    "thirdPerson": "Deploys"
+  },
+  {
+    "name": "Design",
+    "popularity": 22,
+    "color": "yellow",
+    "thirdPerson": "Designs"
+  },
+  {
+    "name": "Develop",
+    "popularity": 33,
+    "color": "pink",
+    "thirdPerson": "Develops"
+  },
+  {
+    "name": "Discover",
+    "popularity": 22,
+    "color": "blue",
+    "thirdPerson": "Discovers"
+  },
+  {
+    "name": "Distribute",
+    "popularity": 80,
+    "color": "red",
+    "thirdPerson": "Distributes"
+  },
+  {
+    "name": "Document",
+    "popularity": 1,
+    "color": "blue",
+    "thirdPerson": "Documents"
+  },
+  {
+    "name": "Drive",
+    "popularity": 42,
+    "color": "orange",
+    "thirdPerson": "Drives"
+  },
+  {
+    "name": "Embrace",
+    "popularity": 32,
+    "color": "red",
+    "thirdPerson": "Embraces"
+  },
+  {
+    "name": "Engage",
+    "popularity": 39,
+    "color": "teal",
+    "thirdPerson": "Engages"
+  },
+  {
+    "name": "Enhance",
+    "popularity": 98,
+    "color": "magenta",
+    "thirdPerson": "Enhances"
+  },
+  {
+    "name": "Evaluate",
+    "popularity": 51,
+    "color": "pink",
+    "thirdPerson": "Evaluates"
+  },
+  {
+    "name": "Execute",
+    "popularity": 24,
+    "color": "cyan",
+    "thirdPerson": "Executes"
+  },
+  {
+    "name": "Experiment",
+    "popularity": 89,
+    "color": "purple",
+    "thirdPerson": "Experiments"
+  },
+  {
+    "name": "Explore",
+    "popularity": 27,
+    "color": "red",
+    "thirdPerson": "Explores"
+  },
+  {
+    "name": "Facilitate",
+    "popularity": 54,
+    "color": "green",
+    "thirdPerson": "Facilitates"
+  },
+  {
+    "name": "Focus",
+    "popularity": 64,
+    "color": "red",
+    "thirdPerson": "Focuses"
+  },
+  {
+    "name": "Forecast",
+    "popularity": 12,
+    "color": "brown",
+    "thirdPerson": "Forecasts"
+  },
+  { "name": "Grow", "popularity": 87, "color": "lime", "thirdPerson": "Grows" },
+  {
+    "name": "Guide",
+    "popularity": 67,
+    "color": "magenta",
+    "thirdPerson": "Guides"
+  },
+  { "name": "Help", "popularity": 51, "color": "pink", "thirdPerson": "Helps" },
+  {
+    "name": "Illustrate",
+    "popularity": 40,
+    "color": "indigo",
+    "thirdPerson": "Illustrates"
+  },
+  {
+    "name": "Improve",
+    "popularity": 88,
+    "color": "orange",
+    "thirdPerson": "Improves"
+  },
+  {
+    "name": "Innovate",
+    "popularity": 87,
+    "color": "blue",
+    "thirdPerson": "Innovates"
+  },
+  {
+    "name": "Inspect",
+    "popularity": 8,
+    "color": "gray",
+    "thirdPerson": "Inspects"
+  },
+  {
+    "name": "Inspire",
+    "popularity": 86,
+    "color": "indigo",
+    "thirdPerson": "Inspires"
+  },
+  {
+    "name": "Integrate",
+    "popularity": 26,
+    "color": "purple",
+    "thirdPerson": "Integrates"
+  },
+  {
+    "name": "Invent",
+    "popularity": 9,
+    "color": "orange",
+    "thirdPerson": "Invents"
+  },
+  {
+    "name": "Iterate",
+    "popularity": 32,
+    "color": "magenta",
+    "thirdPerson": "Iterates"
+  },
+  {
+    "name": "Jump",
+    "popularity": 41,
+    "color": "indigo",
+    "thirdPerson": "Jumps"
+  },
+  {
+    "name": "Launch",
+    "popularity": 28,
+    "color": "teal",
+    "thirdPerson": "Launches"
+  },
+  {
+    "name": "Lead",
+    "popularity": 97,
+    "color": "yellow",
+    "thirdPerson": "Leads"
+  },
+  {
+    "name": "Learn",
+    "popularity": 3,
+    "color": "green",
+    "thirdPerson": "Learns"
+  },
+  {
+    "name": "Maintain",
+    "popularity": 45,
+    "color": "blue",
+    "thirdPerson": "Maintains"
+  },
+  {
+    "name": "Manage",
+    "popularity": 44,
+    "color": "cyan",
+    "thirdPerson": "Manages"
+  },
+  {
+    "name": "Measure",
+    "popularity": 69,
+    "color": "pink",
+    "thirdPerson": "Measures"
+  },
+  {
+    "name": "Monitor",
+    "popularity": 75,
+    "color": "yellow",
+    "thirdPerson": "Monitors"
+  },
+  {
+    "name": "Motivate",
+    "popularity": 43,
+    "color": "orange",
+    "thirdPerson": "Motivates"
+  },
+  {
+    "name": "Navigate",
+    "popularity": 24,
+    "color": "blue",
+    "thirdPerson": "Navigates"
+  },
+  {
+    "name": "Negotiate",
+    "popularity": 77,
+    "color": "green",
+    "thirdPerson": "Negotiates"
+  },
+  {
+    "name": "Observe",
+    "popularity": 52,
+    "color": "pink",
+    "thirdPerson": "Observes"
+  },
+  {
+    "name": "Optimize",
+    "popularity": 81,
+    "color": "teal",
+    "thirdPerson": "Optimizes"
+  },
+  {
+    "name": "Organize",
+    "popularity": 39,
+    "color": "blue",
+    "thirdPerson": "Organizes"
+  },
+  {
+    "name": "Perform",
+    "popularity": 21,
+    "color": "teal",
+    "thirdPerson": "Performs"
+  },
+  {
+    "name": "Plan",
+    "popularity": 12,
+    "color": "purple",
+    "thirdPerson": "Plans"
+  },
+  {
+    "name": "Predict",
+    "popularity": 16,
+    "color": "green",
+    "thirdPerson": "Predicts"
+  },
+  {
+    "name": "Present",
+    "popularity": 98,
+    "color": "yellow",
+    "thirdPerson": "Presents"
+  },
+  {
+    "name": "Prioritize",
+    "popularity": 96,
+    "color": "red",
+    "thirdPerson": "Prioritizes"
+  },
+  {
+    "name": "Prototype",
+    "popularity": 46,
+    "color": "purple",
+    "thirdPerson": "Prototypes"
+  },
+  {
+    "name": "Question",
+    "popularity": 70,
+    "color": "green",
+    "thirdPerson": "Questions"
+  },
+  {
+    "name": "Rebuild",
+    "popularity": 81,
+    "color": "indigo",
+    "thirdPerson": "Rebuilds"
+  },
+  {
+    "name": "Recognize",
+    "popularity": 11,
+    "color": "teal",
+    "thirdPerson": "Recognizes"
+  },
+  {
+    "name": "Redefine",
+    "popularity": 58,
+    "color": "gray",
+    "thirdPerson": "Redefines"
+  }
 ]

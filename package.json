@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "deploy": "npm run build && gh-pages -d dist"
   },
-  "homepage": "https://AlexVOiceover.github.io/lift_nassport/",
+  "homepage": "https://github.com/foundersandcoders/LIFT-frontend",
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

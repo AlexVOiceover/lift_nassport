@@ -9,12 +9,12 @@ export default {
       keyframes: {
         borderPulse: {
           '0%': { borderRadius: '0.3rem' },
-          '50%': { borderRadius: '1.2rem' },
+          '50%': { borderRadius: '1.1rem' },
           '100%': { borderRadius: '0.3rem' },
         },
       },
       animation: {
-        borderPulse: 'borderPulse 2s ease-in-out infinite',
+        borderPulse: 'borderPulse 1.5s ease-in-out infinite',
       },
     },
   },

@@ -1,7 +1,7 @@
 // Utility function to adjust color lightness based on popularity
 export const adjustColor = (baseColor: string, popularity: number): string => {
     
-    const lightness = Math.round( 10 + (popularity / 100) * 20);
+    const lightness = Math.round( 15 + (popularity / 100) * 10);
   
     // Map of human-readable color names to HSL values
     const hslColors: { [key: string]: string } = {

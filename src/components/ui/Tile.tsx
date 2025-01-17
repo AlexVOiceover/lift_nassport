@@ -15,7 +15,7 @@ const Tile: React.FC<TileProps> = ({ item, isSelected, onClick }) => {
   return (
     <div
     className={`p-2 text-center cursor-pointer transition-all  ${
-      isSelected ? "bg-white text-black rounded-full" : "rounded-md hover:animate-borderPulse "
+      isSelected ? "bg-white text-black rounded-full animate-borderPulse" : "rounded-md hover:animate-borderPulse "
     }`}
     style={{
       backgroundColor: isSelected ? "white" : adjustedColor, // White background if selected, otherwise adjustedColor

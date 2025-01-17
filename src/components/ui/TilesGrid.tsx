@@ -17,7 +17,7 @@ const TilesGrid: React.FC<TilesGridProps> = ({ items }) => {
   const tileWidth = 120; // Width of the tile
   const tileHeight = 50; // Height of the tile
   const gap = 20; // Gap between tiles (both horizontally and vertically)
-  const visibleGridWidth = 600; // Visible width of the grid
+  const visibleGridWidth = 700; // Visible width of the grid
   const visibleGridHeight = 900; // Visible height of the grid
 
   const rowCount = Math.ceil(items.length / columnCount); // Total rows
@@ -25,6 +25,7 @@ const TilesGrid: React.FC<TilesGridProps> = ({ items }) => {
   // Functions for column width and row height
   const getColumnWidth = () => tileWidth + gap; // Tile width + horizontal gap
   const getRowHeight = () => tileHeight + gap; // Tile height + vertical gap
+  
 
   // Function to calculate the offset for odd rows
   const getOffsetForRow = (rowIndex: number) => {

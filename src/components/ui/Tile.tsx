@@ -1,27 +1,29 @@
-import React from 'react'
+import React from "react";
+import {adjustColor} from "../../utils/colorUtils";
 
 interface TileProps {
-    item: { name: string, popularity: number, color: string },
-    isSelected: boolean,
-    onClick: () => void
+  item: { name: string; popularity: number; color: string }; // Include popularity and color in item
+  isSelected: boolean;
+  onClick: () => void;
 }
 
-const Tile: React.FC<TileProps> = ({ item, isSelected, onClick}) => {
-  // Calculate the greyscale value based on popularity
-  const greyValue = 255 - Math.round((item.popularity / 100) * 200); // Scale between dark grey and light grey
-  const backgroundColor = `rgb(${greyValue}, ${greyValue}, ${greyValue})`; // Create greyscale background
+const Tile: React.FC<TileProps> = ({ item, isSelected, onClick }) => {
+    // Adjust the color based on popularity
+    const adjustedColor = adjustColor(item.color, item.popularity);
 
-    return (
-        <div
-            className={`p-2 border rounded-xl text-center text-black cursor-pointer ${
-                isSelected ? "bg-blue-500 text-white" : "bg-gray-200 text-black"
-            }`}
-            style={{ backgroundColor: item.color  }} // Apply the calculated background color
-            onClick={onClick}
-        >
-        {item.name}
-      </div>
-    )
-}
+  return (
+    <div
+      className={`p-2 border rounded-xl text-center cursor-pointer ${
+        isSelected ? "ring-2 ring-blue-500" : ""
+      }`}
+      style={{
+        backgroundColor: adjustedColor, // Use adjusted color
+      }}
+      onClick={onClick}
+    >
+      {item.name}
+    </div>
+  );
+};
 
-export default Tile
+export default Tile;

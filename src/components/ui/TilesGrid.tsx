@@ -4,11 +4,11 @@ import { VariableSizeGrid as Grid } from "react-window";
 import Tile from "./Tile";
 
 interface TilesGridProps {
-  items: { name: string; popularity: number }[]; // List of objects
+  items: { name: string; popularity: number; color: string }[]; // List of objects
 }
 
 const TilesGrid: React.FC<TilesGridProps> = ({ items }) => {
-  const [selectedTile, setSelectedTile] = useState<{ name: string; popularity: number } | null>(null);
+  const [selectedTile, setSelectedTile] = useState<{ name: string; popularity: number; color: string } | null>(null);
 
   // const gridRef = useRef<Grid>(null); // Ref to access the grid instance
 
@@ -48,7 +48,7 @@ const TilesGrid: React.FC<TilesGridProps> = ({ items }) => {
 //   }
 // }, [columnCount, rowCount]);
 
-  const handleSelect = (item: { name: string; popularity: number }) => {
+  const handleSelect = (item: { name: string; popularity: number; color: string }) => {
     setSelectedTile(item);
   };
 

@@ -13,7 +13,7 @@ const Tile: React.FC<TileProps> = ({ item, isSelected, onClick }) => {
 
   return (
     <div
-      className={`p-2 border rounded-xl text-center cursor-pointer ${
+      className={`p-2  rounded-xl text-center cursor-pointer ${
         isSelected ? "ring-2 ring-blue-500" : ""
       }`}
       style={{

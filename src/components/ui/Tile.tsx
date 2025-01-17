@@ -9,8 +9,8 @@ interface TileProps {
 const Tile: React.FC<TileProps> = ({ item, isSelected, onClick}) => {
     return (
         <div
-            className={`p-2 border rounded-sm text-center text-black cursor-pointer ${
-                isSelected ? "bg-blue-500 text-white" : " bg-gray-200"
+            className={`p-2 border rounded-xl text-center text-black cursor-pointer ${
+                isSelected ? "bg-blue-500 text-white" : "bg-gray-200 text-black"
             }`}
             onClick={onClick}
         >

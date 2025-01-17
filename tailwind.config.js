@@ -1,13 +1,23 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html", //root HTML file
-    "./src/**/*.{js,ts,jsx,tsx}", // Include all filess in the src sufolders folder
-    "./src/*.{js,ts,jsx,tsx}", // Include all files in the src folder,
-   
+    "./index.html", // Root HTML file
+    "./src/**/*.{js,ts,jsx,tsx}", // Include all files in src and its subfolders
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        borderPulse: {
+          '0%': { borderRadius: '0.3rem' },
+          '50%': { borderRadius: '1.2rem' },
+          '100%': { borderRadius: '0.3rem' },
+        },
+        
+      },
+      animation: {
+        borderPulse: 'borderPulse 1.5s ease-in-out infinite',
+      },
+    },
   },
   plugins: [],
 };

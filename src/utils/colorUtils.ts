@@ -1,7 +1,7 @@
 // Utility function to adjust color lightness based on popularity
 export const adjustColor = (baseColor: string, popularity: number): string => {
     
-    const lightness = 5 + (popularity / 100) * 20;
+    const lightness = Math.round( 10 + (popularity / 100) * 80);
   
     // Map of human-readable color names to HSL values
     const hslColors: { [key: string]: string } = {
@@ -23,6 +23,27 @@ export const adjustColor = (baseColor: string, popularity: number): string => {
     };
   
     // Return the adjusted HSL color or default to gray
-    return hslColors[baseColor] || `hsl(0, 0%, ${lightness}%)`;
+    return hslColors[baseColor.toLowerCase()] || `hsl(0, 0%, ${lightness}%)`;
   };
+  
+export const getOppositeColor = (hslColor: string): string => {
+    // Extract H, S, L values from the HSL string using regex
+    const hslRegex = /hsl\((\d+),\s*(\d+)%,\s*(\d+)%\)/;
+    const match = hslColor.match(hslRegex);
+
+    if (!match) {
+        console.error("Invalid HSL color format:", hslColor);
+        return "black"; // Fallback to black if input is not a valid HSL
+    }
+
+    const h = Number(match[1]); // Extract and convert hue to number
+    const s = Number(match[2]); // Extract and convert saturation to number
+    const l = Number(match[3]); // Extract and convert lightness to number
+
+    const newL = l > 50 ? 10 : 90; // Opposite lightness for good contrast (light ↔ dark)
+
+    // Return the calculated opposite color as an HSL string
+    console.log(`hsl(${h}, ${s}%, ${newL}%)`);
+    return `hsl(${h}, ${s}%, ${newL}%)`;
+};
   

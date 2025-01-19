@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SentenceButton from '../components/ui/SentenceButton';
 import TilesGrid from '../components/ui/TilesGrid';
+import TextInput from '../components/ui/TextInput';
 import Modal from '../components/ui/Modal';
 import data from '../data/data.json';
 
@@ -12,8 +13,10 @@ const SentenceBuilderPage: React.FC = () => {
     adverbial: '',
   });
 
-  // Need this state to manage the modal for verb selection
+  //Control for the modals
   const [isVerbModalOpen, setIsVerbModalOpen] = useState(false);
+  const [isTextInputModalOpen, setIsTextInputModalOpen] = useState(false);
+  const [inputType, setInputType] = useState<'object' | 'adverbial'>('object');
 
   const updatePart = (part: 'verb' | 'object' | 'adverbial', value: string) => {
     setSentenceParts((prev) => ({
@@ -48,16 +51,16 @@ const SentenceBuilderPage: React.FC = () => {
           type='object'
           label={sentenceParts.object || 'Enter Object'}
           onClick={() => {
-            const enteredObject = prompt('Enter an object:'); // Replace with modal or custom UI
-            if (enteredObject) updatePart('object', enteredObject);
+            setInputType('object');
+            setIsTextInputModalOpen(true);
           }}
         />
         <SentenceButton
           type='adverbial'
           label={sentenceParts.adverbial || 'Enter Adverbial'}
           onClick={() => {
-            const enteredAdverbial = prompt('Enter an adverbial phrase:'); // Replace with modal or custom UI
-            if (enteredAdverbial) updatePart('adverbial', enteredAdverbial);
+            setInputType('adverbial');
+            setIsTextInputModalOpen(true);
           }}
         />
       </div>
@@ -73,6 +76,31 @@ const SentenceBuilderPage: React.FC = () => {
             updatePart('verb', selectedVerb.thirdPerson); // Copy thirdPerson to the sentence
             setIsVerbModalOpen(false); // Close the modal
           }}
+        />
+      </Modal>
+      {/* Modal for text input */}
+
+      <Modal
+        isOpen={isTextInputModalOpen}
+        onClose={() => setIsTextInputModalOpen(false)}
+        title={
+          inputType === 'object'
+            ? 'Enter an Object'
+            : 'Enter an Adverbial Phrase'
+        }
+      >
+        <TextInput
+          initialValue={sentenceParts[inputType]}
+          placeholder={
+            inputType === 'object'
+              ? 'Enter an object'
+              : 'Enter an adverbial phrase'
+          }
+          onAccept={(value) => {
+            updatePart(inputType, value);
+            setIsTextInputModalOpen(false);
+          }}
+          onCancel={() => setIsTextInputModalOpen(false)}
         />
       </Modal>
     </div>

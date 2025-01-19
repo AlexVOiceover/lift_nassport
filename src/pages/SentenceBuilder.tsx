@@ -26,20 +26,6 @@ const SentenceBuilderPage: React.FC = () => {
     }));
   };
 
-  const addSentence = () => {
-    const sentenceText =
-      `${sentenceParts.subject} ${sentenceParts.verb} ${sentenceParts.object} ${sentenceParts.adverbial}`.trim();
-    if (sentenceText) {
-      setBuiltSentences((prev) => [sentenceText, ...prev]);
-      setSentenceParts({
-        subject: 'Dave',
-        verb: '',
-        object: '',
-        adverbial: '',
-      }); // Reset sentence parts
-    }
-  };
-
   const sentenceText =
     `${sentenceParts.subject} ${sentenceParts.verb} ${sentenceParts.object} ${sentenceParts.adverbial}`.trim();
 

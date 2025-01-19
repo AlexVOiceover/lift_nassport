@@ -1,62 +1,86 @@
 import React, { useState } from 'react';
+import SentenceButton from '../components/ui/SentenceButton';
+import TilesGrid from '../components/ui/TilesGrid';
+import data from '../data/data.json';
 
 const SentenceBuilderPage: React.FC = () => {
-  const [sentence, setSentence] = useState<string[]>([
-    'Dave',
-    'needs',
-    'time to reflect',
-    'at the end of the day',
-  ]);
+  const [sentenceParts, setSentenceParts] = useState({
+    subject: 'Dave',
+    verb: '',
+    object: '',
+    adverbial: '',
+  });
 
-  const handleWordClick = (word: string) => {
-    setSentence((prev) =>
-      prev.includes(word) ? prev.filter((w) => w !== word) : [...prev, word]
-    );
+  // Need this state to manage the modal for verb selection
+  const [isVerbModalOpen, setIsVerbModalOpen] = useState(false);
+
+  const updatePart = (part: 'verb' | 'object' | 'adverbial', value: string) => {
+    setSentenceParts((prev) => ({
+      ...prev,
+      [part]: value,
+    }));
   };
 
+  const sentenceText =
+    `${sentenceParts.subject} ${sentenceParts.verb} ${sentenceParts.object} ${sentenceParts.adverbial}`.trim();
+
   return (
-    <div className='flex flex-col items-center justify-start h-screen p-4 bg-gray-900 text-white'>
-      {/* Header */}
-      <header className='w-full mb-4'>
-        <h1 className='text-2xl font-bold text-center'>Sentence Builder</h1>
-      </header>
+    <div className='p-4 space-y-4'>
+      {/* Display the sentence */}
+      <div className='bg-gray-200 p-4 text-black rounded-md text-lg font-medium'>
+        {sentenceText}
+      </div>
 
-      {/* Main Sentence Builder Area */}
-      <main className='flex flex-col items-center w-full max-w-lg gap-4'>
-        {/* Sentence Preview */}
-        <div className='w-full p-4 border border-gray-700 rounded-lg bg-gray-800'>
-          <p className='text-base'>{sentence.join(' ')}</p>
+      {/* Buttons for sentence parts */}
+      <div className='flex space-x-2'>
+        <SentenceButton
+          type='subject'
+          label={sentenceParts.subject}
+          onClick={() => {}}
+        />
+        <SentenceButton
+          type='verb'
+          label={sentenceParts.verb || 'Choose Verb'}
+          onClick={() => setIsVerbModalOpen(true)}
+        />
+        <SentenceButton
+          type='object'
+          label={sentenceParts.object || 'Enter Object'}
+          onClick={() => {
+            const enteredObject = prompt('Enter an object:'); // Replace with modal or custom UI
+            if (enteredObject) updatePart('object', enteredObject);
+          }}
+        />
+        <SentenceButton
+          type='adverbial'
+          label={sentenceParts.adverbial || 'Enter Adverbial'}
+          onClick={() => {
+            const enteredAdverbial = prompt('Enter an adverbial phrase:'); // Replace with modal or custom UI
+            if (enteredAdverbial) updatePart('adverbial', enteredAdverbial);
+          }}
+        />
+      </div>
+      {/* Modal for verb selection */}
+      {isVerbModalOpen && (
+        <div className='fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50'>
+          <div className='bg-white rounded-lg shadow-lg p-4 w-3/4 h-3/4'>
+            <h2 className='text-xl font-bold mb-4'>Select a Verb</h2>
+            <TilesGrid
+              items={data} // Pass the full data object
+              onClick={(selectedVerb: string) => {
+                updatePart('verb', selectedVerb); // Update the verb in the sentence
+                setIsVerbModalOpen(false); // Close the modal
+              }}
+            />
+            <button
+              onClick={() => setIsVerbModalOpen(false)}
+              className='mt-4 bg-red-500 text-white px-4 py-2 rounded-lg'
+            >
+              Close
+            </button>
+          </div>
         </div>
-
-        {/* Words Display Area */}
-        <div className='w-full flex flex-wrap gap-2'>
-          {['Dave', 'needs', 'time to reflect', 'at the end of the day'].map(
-            (word) => (
-              <button
-                key={word}
-                onClick={() => handleWordClick(word)}
-                className={`px-3 py-1 rounded-full text-sm ${
-                  sentence.includes(word)
-                    ? 'bg-teal-500 text-white'
-                    : 'bg-gray-700 text-gray-300'
-                } hover:bg-purple-500`}
-              >
-                {word}
-              </button>
-            )
-          )}
-        </div>
-
-        {/* Privacy Options */}
-        <div className='flex justify-between w-full'>
-          <button className='px-4 py-2 text-sm font-medium bg-gray-700 rounded-lg hover:bg-purple-500'>
-            Private
-          </button>
-          <button className='px-4 py-2 text-sm font-medium bg-gray-700 rounded-lg hover:bg-green-500'>
-            Shared
-          </button>
-        </div>
-      </main>
+      )}
     </div>
   );
 };

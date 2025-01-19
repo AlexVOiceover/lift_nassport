@@ -13,6 +13,7 @@ const SentenceBuilderPage: React.FC = () => {
     adverbial: '',
   });
 
+  const [builtSentences, setBuiltSentences] = useState<string[]>([]); // List of built sentences
   //Control for the modals
   const [isVerbModalOpen, setIsVerbModalOpen] = useState(false);
   const [isTextInputModalOpen, setIsTextInputModalOpen] = useState(false);
@@ -25,14 +26,49 @@ const SentenceBuilderPage: React.FC = () => {
     }));
   };
 
+  const addSentence = () => {
+    const sentenceText =
+      `${sentenceParts.subject} ${sentenceParts.verb} ${sentenceParts.object} ${sentenceParts.adverbial}`.trim();
+    if (sentenceText) {
+      setBuiltSentences((prev) => [...prev, sentenceText]);
+      setSentenceParts({
+        subject: 'Dave',
+        verb: '',
+        object: '',
+        adverbial: '',
+      }); // Reset sentence parts
+    }
+  };
+
   const sentenceText =
     `${sentenceParts.subject} ${sentenceParts.verb} ${sentenceParts.object} ${sentenceParts.adverbial}`.trim();
 
   return (
     <div className='p-4 space-y-4'>
-      {/* Display the sentence */}
-      <div className='bg-gray-200 p-4 text-black rounded-md text-lg font-medium'>
-        {sentenceText}
+      {/* Display built sentences */}
+      <div className='space-y-2 bg-gray-300 rounded-md text-lg font-medium'>
+        {builtSentences.length > 0 ? (
+          builtSentences.map((sentence, index) => (
+            <div key={index} className='p-2 text-black rounded-md text-lg'>
+              {sentence}
+            </div>
+          ))
+        ) : (
+          <div className='text-gray-500 italic'>No sentences built yet.</div>
+        )}
+      </div>
+
+      {/* Display the current sentence */}
+      <div className='flex items-center space-x-2'>
+        <div className='flex-grow bg-gray-200 p-1 text-black rounded-md text-lg font-medium'>
+          {sentenceText}
+        </div>
+        <button
+          onClick={addSentence}
+          className='bg-green-500 text-white px-4 py-2 rounded-lg'
+        >
+          +
+        </button>
       </div>
 
       {/* Buttons for sentence parts */}
@@ -71,13 +107,15 @@ const SentenceBuilderPage: React.FC = () => {
         title='Select a Verb'
       >
         <TilesGrid
-          items={data} // Pass the data with thirdPerson property
-          onClick={(selectedVerb: { name: string; thirdPerson: string }) => {
-            updatePart('verb', selectedVerb.thirdPerson); // Copy thirdPerson to the sentence
-            setIsVerbModalOpen(false); // Close the modal
+          items={data}
+          onAccept={(selectedVerb) => {
+            updatePart('verb', selectedVerb.thirdPerson);
+            setIsVerbModalOpen(false);
           }}
+          onCancel={() => setIsVerbModalOpen(false)}
         />
       </Modal>
+
       {/* Modal for text input */}
 
       <Modal

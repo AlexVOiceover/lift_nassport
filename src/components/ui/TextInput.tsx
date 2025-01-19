@@ -28,18 +28,18 @@ const TextInput: React.FC<TextInputProps> = ({
         onChange={(e) => setInputValue(e.target.value)}
         placeholder={placeholder || 'Enter text here...'}
       />
-      <div className='flex justify-end space-x-2'>
-        <button
-          onClick={onCancel}
-          className='bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600'
-        >
-          Cancel
-        </button>
+      <div className='flex justify-start space-x-2'>
         <button
           onClick={handleAccept}
           className='bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600'
         >
           Accept
+        </button>
+        <button
+          onClick={onCancel}
+          className='bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600'
+        >
+          Cancel
         </button>
       </div>
     </div>

@@ -7,7 +7,7 @@ interface ModalProps {
   children: React.ReactNode;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
+const Modal: React.FC<ModalProps> = ({ isOpen, title, children }) => {
   if (!isOpen) return null;
 
   return (
@@ -18,14 +18,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
 
         {/* Modal Content */}
         {children}
-
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className='absolute top-2 right-2 bg-red-500 text-white px-4 py-2 rounded-lg'
-        >
-          Close
-        </button>
       </div>
     </div>
   );

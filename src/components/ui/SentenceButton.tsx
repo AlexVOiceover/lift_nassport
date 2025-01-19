@@ -17,7 +17,7 @@ const SentenceButton: React.FC<SentenceButtonProps> = ({
   const getButtonStyles = () => {
     switch (type) {
       case 'subject':
-        return 'bg-gray-300 text-black cursor-default'; // Static button
+        return 'bg-blue-500 text-white cursor-default'; // Static button
       case 'verb':
         return 'bg-blue-500 text-white hover:bg-blue-600'; // Opens TilesGrid
       case 'object':

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SentenceButton from '../components/ui/SentenceButton';
 import TilesGrid from '../components/ui/TilesGrid';
+import Modal from '../components/ui/Modal';
 import data from '../data/data.json';
 
 const SentenceBuilderPage: React.FC = () => {
@@ -61,29 +62,19 @@ const SentenceBuilderPage: React.FC = () => {
         />
       </div>
       {/* Modal for verb selection */}
-      {isVerbModalOpen && (
-        <div className='fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50'>
-          <div className='bg-white rounded-lg shadow-lg p-4 w-3/4 h-3/4'>
-            <h2 className='text-xl font-bold mb-4'>Select a Verb</h2>
-            <TilesGrid
-              items={data} // Pass the data with thirdPerson property
-              onClick={(selectedVerb: {
-                name: string;
-                thirdPerson: string;
-              }) => {
-                updatePart('verb', selectedVerb.thirdPerson); // Copy thirdPerson to the sentence
-                setIsVerbModalOpen(false); // Close the modal
-              }}
-            />
-            <button
-              onClick={() => setIsVerbModalOpen(false)}
-              className='mt-4 bg-red-500 text-white px-4 py-2 rounded-lg'
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
+      <Modal
+        isOpen={isVerbModalOpen}
+        onClose={() => setIsVerbModalOpen(false)}
+        title='Select a Verb'
+      >
+        <TilesGrid
+          items={data} // Pass the data with thirdPerson property
+          onClick={(selectedVerb: { name: string; thirdPerson: string }) => {
+            updatePart('verb', selectedVerb.thirdPerson); // Copy thirdPerson to the sentence
+            setIsVerbModalOpen(false); // Close the modal
+          }}
+        />
+      </Modal>
     </div>
   );
 };

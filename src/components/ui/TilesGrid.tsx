@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { VariableSizeGrid as Grid } from 'react-window';
 import Tile from './Tile';
 
@@ -13,14 +13,6 @@ interface TilesGridProps {
 }
 
 const TilesGrid: React.FC<TilesGridProps> = ({ items, onClick }) => {
-  // const [selectedTile, setSelectedTile] = useState<{
-  //   name: string;
-  //   popularity: number;
-  //   color: string;
-  // } | null>(null);
-
-  // const gridRef = useRef<Grid>(null); // Ref to access the grid instance
-
   // Configurations
   const columnCount = 4; // Number of columns in the grid
   const tileWidth = 120; // Width of the tile
@@ -39,31 +31,6 @@ const TilesGrid: React.FC<TilesGridProps> = ({ items, onClick }) => {
   const getOffsetForRow = (rowIndex: number) => {
     return rowIndex % 2 === 0 ? 0 : (tileWidth + gap) / 2; // Offset odd rows by half tile width + gap
   };
-
-  // Center the grid content when the component mounts
-  //  useEffect(() => {
-  //   const grid = gridRef.current;
-  //   if (grid) {
-  //     const totalGridWidth = columnCount * getColumnWidth();
-  //     const totalGridHeight = rowCount * getRowHeight();
-
-  //     const scrollLeft = Math.max(0, (totalGridWidth - visibleGridWidth) / 2); // Center horizontally
-  //     const scrollTop = Math.max(0, (totalGridHeight - visibleGridHeight) / 2); // Center vertically
-
-  //     console.log("scrollLeft", scrollLeft);
-  //     console.log("scrollTop", scrollTop);
-
-  //     grid.scrollTo({ scrollLeft, scrollTop });
-  //   }
-  // }, [columnCount, rowCount]);
-
-  // const handleSelect = (item: {
-  //   name: string;
-  //   popularity: number;
-  //   color: string;
-  // }) => {
-  //   setSelectedTile(item);
-  // };
 
   return (
     <Grid

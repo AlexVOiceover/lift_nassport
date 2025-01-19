@@ -170,7 +170,7 @@ const SentenceBuilderPage: React.FC = () => {
                 : 'Enter an adverbial phrase'
             }
             onAccept={(value) => {
-              updatePart(inputType, value);
+              updatePart(inputType, value.toLowerCase());
               setIsTextInputModalOpen(false);
             }}
             onCancel={() => setIsTextInputModalOpen(false)}

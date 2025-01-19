@@ -30,7 +30,7 @@ const SentenceBuilderPage: React.FC = () => {
     const sentenceText =
       `${sentenceParts.subject} ${sentenceParts.verb} ${sentenceParts.object} ${sentenceParts.adverbial}`.trim();
     if (sentenceText) {
-      setBuiltSentences((prev) => [...prev, sentenceText]);
+      setBuiltSentences((prev) => [sentenceText, ...prev]);
       setSentenceParts({
         subject: 'Dave',
         verb: '',
@@ -44,18 +44,35 @@ const SentenceBuilderPage: React.FC = () => {
     `${sentenceParts.subject} ${sentenceParts.verb} ${sentenceParts.object} ${sentenceParts.adverbial}`.trim();
 
   return (
-    <div className='p-4 space-y-4'>
-      {/* Display built sentences */}
-      <div className='space-y-2 bg-gray-300 rounded-md text-lg font-medium'>
-        {builtSentences.length > 0 ? (
-          builtSentences.map((sentence, index) => (
-            <div key={index} className='p-2 text-black rounded-md text-lg'>
-              {sentence}
-            </div>
-          ))
-        ) : (
-          <div className='text-gray-500 italic'>No sentences built yet.</div>
-        )}
+    <div className='p-4 space-y-4 flex flex-col justify-start'>
+      {/* Buttons for sentence parts */}
+      <div className='flex space-x-2'>
+        <SentenceButton
+          defaultValue='Choose Subject' // Default value for the subject
+          label={sentenceParts.subject}
+          onClick={() => {}}
+        />
+        <SentenceButton
+          defaultValue='Choose Verb' // Default value for the verb
+          label={sentenceParts.verb || 'Choose Verb'}
+          onClick={() => setIsVerbModalOpen(true)}
+        />
+        <SentenceButton
+          defaultValue='Enter Object' // Default value for the object
+          label={sentenceParts.object || 'Enter Object'}
+          onClick={() => {
+            setInputType('object');
+            setIsTextInputModalOpen(true);
+          }}
+        />
+        <SentenceButton
+          defaultValue='Enter Adverbial' // Default value for the adverbial
+          label={sentenceParts.adverbial || 'Enter Adverbial'}
+          onClick={() => {
+            setInputType('adverbial');
+            setIsTextInputModalOpen(true);
+          }}
+        />
       </div>
 
       {/* Display the current sentence */}
@@ -71,35 +88,19 @@ const SentenceBuilderPage: React.FC = () => {
         </button>
       </div>
 
-      {/* Buttons for sentence parts */}
-      <div className='flex space-x-2'>
-        <SentenceButton
-          type='subject'
-          label={sentenceParts.subject}
-          onClick={() => {}}
-        />
-        <SentenceButton
-          type='verb'
-          label={sentenceParts.verb || 'Choose Verb'}
-          onClick={() => setIsVerbModalOpen(true)}
-        />
-        <SentenceButton
-          type='object'
-          label={sentenceParts.object || 'Enter Object'}
-          onClick={() => {
-            setInputType('object');
-            setIsTextInputModalOpen(true);
-          }}
-        />
-        <SentenceButton
-          type='adverbial'
-          label={sentenceParts.adverbial || 'Enter Adverbial'}
-          onClick={() => {
-            setInputType('adverbial');
-            setIsTextInputModalOpen(true);
-          }}
-        />
+      {/* Display built sentences */}
+      <div className='space-y-2 bg-gray-300 rounded-md text-lg font-medium'>
+        {builtSentences.length > 0 ? (
+          builtSentences.map((sentence, index) => (
+            <div key={index} className='p-2 text-black rounded-md text-lg'>
+              {sentence}
+            </div>
+          ))
+        ) : (
+          <div className='text-gray-500 italic'>No sentences built yet.</div>
+        )}
       </div>
+
       {/* Modal for verb selection */}
       <Modal
         isOpen={isVerbModalOpen}

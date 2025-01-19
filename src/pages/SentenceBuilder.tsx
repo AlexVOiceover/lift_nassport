@@ -66,9 +66,12 @@ const SentenceBuilderPage: React.FC = () => {
           <div className='bg-white rounded-lg shadow-lg p-4 w-3/4 h-3/4'>
             <h2 className='text-xl font-bold mb-4'>Select a Verb</h2>
             <TilesGrid
-              items={data} // Pass the full data object
-              onClick={(selectedVerb: string) => {
-                updatePart('verb', selectedVerb); // Update the verb in the sentence
+              items={data} // Pass the data with thirdPerson property
+              onClick={(selectedVerb: {
+                name: string;
+                thirdPerson: string;
+              }) => {
+                updatePart('verb', selectedVerb.thirdPerson); // Copy thirdPerson to the sentence
                 setIsVerbModalOpen(false); // Close the modal
               }}
             />

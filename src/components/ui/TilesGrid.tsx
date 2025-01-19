@@ -3,8 +3,13 @@ import { VariableSizeGrid as Grid } from 'react-window';
 import Tile from './Tile';
 
 interface TilesGridProps {
-  items: { name: string; popularity: number; color: string }[]; // List of objects
-  onClick: (selectedItem: string) => void; // Callback function to notify parent of selected item
+  items: {
+    name: string;
+    popularity: number;
+    color: string;
+    thirdPerson: string;
+  }[]; // List of objects
+  onClick: (selectedItem: { name: string; thirdPerson: string }) => void; // Callback function to notify parent of selected item
 }
 
 const TilesGrid: React.FC<TilesGridProps> = ({ items, onClick }) => {
@@ -89,7 +94,9 @@ const TilesGrid: React.FC<TilesGridProps> = ({ items, onClick }) => {
             <Tile
               item={item} // Pass the whole object
               isSelected={false} // Check if the tile is selected
-              onClick={() => onClick(item.name)} // Notify parent of selected item
+              onClick={() =>
+                onClick({ name: item.name, thirdPerson: item.thirdPerson })
+              } // Notify parent of selected item
             />
           </div>
         );

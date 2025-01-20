@@ -23,7 +23,7 @@ const TextInput: React.FC<TextInputProps> = ({
     <div className='flex flex-col space-y-4'>
       <input
         type='text'
-        className='w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
+        className='w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black'
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         placeholder={placeholder || 'Enter text here...'}

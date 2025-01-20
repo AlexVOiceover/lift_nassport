@@ -24,10 +24,18 @@ const TilesGrid: React.FC<TilesGridProps> = ({ items, onAccept, onCancel }) => {
   const tileWidth = 120; // Width of the tile
   const tileHeight = 50; // Height of the tile
   const gap = 20; // Gap between tiles (both horizontally and vertically)
-  const visibleGridWidth = 700; // Visible width of the grid
-  const visibleGridHeight = 900; // Visible height of the grid
+  //   const visibleGridWidth = 700; // Visible width of the grid
+  //   const visibleGridWidth = 600; // Visible width of the grid
+  //   const visibleGridHeight = 900; // Visible height of the grid
 
   const rowCount = Math.ceil(items.length / columnCount); // Total rows
+
+  // Calculate visible grid dimensions
+  const totalColumns = columnCount; // Total number of columns
+  const totalRows = rowCount; // Total number of rows
+
+  const visibleGridWidth = totalColumns * (tileWidth + gap) + 3 * gap; // Total width, removing the last gap
+  const visibleGridHeight = totalRows * (tileHeight + gap) + gap + 150; // Total height, removing the last gap
 
   // Functions for column width and row height
   const getColumnWidth = () => tileWidth + gap; // Tile width + horizontal gap
@@ -39,8 +47,8 @@ const TilesGrid: React.FC<TilesGridProps> = ({ items, onAccept, onCancel }) => {
   };
 
   return (
-    <div className='flex flex-col h-full'>
-      <div className='flex-1 overflow-y-auto'>
+    <div className='flex flex-col items-center'>
+      <div className='flex  h-full w-full items-center justify-center'>
         <Grid
           columnCount={columnCount}
           rowCount={rowCount}

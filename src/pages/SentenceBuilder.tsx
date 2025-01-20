@@ -4,6 +4,7 @@ import TilesGrid from '../components/ui/TilesGrid';
 import TextInput from '../components/ui/TextInput';
 import Modal from '../components/ui/Modal';
 import data from '../data/data.json';
+import { FaLock, FaLockOpen } from 'react-icons/fa';
 
 const SentenceBuilderPage: React.FC = () => {
   const [sentenceParts, setSentenceParts] = useState({
@@ -11,9 +12,13 @@ const SentenceBuilderPage: React.FC = () => {
     verb: '',
     object: '',
     adverbial: '',
+    isPublic: false,
   });
 
-  const [builtSentences, setBuiltSentences] = useState<string[]>([]); // List of built sentences
+  const [builtSentences, setBuiltSentences] = useState<
+    { text: string; isPublic: boolean }[]
+  >([]); // List of built sentences with public status
+
   //Control for the modals
   const [isVerbModalOpen, setIsVerbModalOpen] = useState(false);
   const [isTextInputModalOpen, setIsTextInputModalOpen] = useState(false);
@@ -55,18 +60,58 @@ const SentenceBuilderPage: React.FC = () => {
               setIsTextInputModalOpen(true);
             }}
           />
-          <SentenceButton
+          {/* <SentenceButton
             defaultValue='Enter Adverbial' // Default value for the adverbial
             label={sentenceParts.adverbial || 'Enter Adverbial'}
             onClick={() => {
               setInputType('adverbial');
               setIsTextInputModalOpen(true);
             }}
-          />
+          /> */}
+          <button
+            onClick={() =>
+              setSentenceParts((prev) => ({
+                ...prev,
+                isPublic: !prev.isPublic,
+              }))
+            }
+            className={`px-4 py-2 rounded-md flex items-center justify-center ${
+              sentenceParts.isPublic
+                ? 'bg-green-500 text-white hover:bg-green-600'
+                : 'bg-red-500 text-white hover:bg-red-600'
+            }`}
+          >
+            {sentenceParts.isPublic ? <FaLockOpen /> : <FaLock />}
+          </button>
+          <button
+            className={`bg-green-500 text-white px-4 py-2 rounded-md ${
+              sentenceParts.verb
+                ? 'hover:bg-green-600'
+                : 'opacity-50 cursor-not-allowed'
+            }`}
+            onClick={() => {
+              if (sentenceParts.verb) {
+                setBuiltSentences((prev) => [
+                  { text: sentenceText, isPublic: sentenceParts.isPublic }, // Add public status
+                  ...prev,
+                ]);
+                setSentenceParts({
+                  subject: 'Dave',
+                  verb: '',
+                  object: '',
+                  adverbial: '',
+                  isPublic: false,
+                });
+              }
+            }}
+            disabled={!sentenceParts.verb} // Disable button if verb is not added
+          >
+            +
+          </button>
         </div>
 
         {/* Display the current sentence */}
-        <div className='flex items-center space-x-2'>
+        {/* <div className='flex items-center space-x-2'>
           <div className='flex-grow bg-gray-200 p-1 text-black rounded-md text-lg text-left font-medium'>
             {sentenceText}
           </div>
@@ -78,12 +123,16 @@ const SentenceBuilderPage: React.FC = () => {
             }`}
             onClick={() => {
               if (sentenceParts.verb) {
-                setBuiltSentences((prev) => [sentenceText, ...prev]);
+                setBuiltSentences((prev) => [
+                  { text: sentenceText, isPublic: sentenceParts.isPublic }, // Add public status
+                  ...prev,
+                ]);
                 setSentenceParts({
                   subject: 'Dave',
                   verb: '',
                   object: '',
                   adverbial: '',
+                  isPublic: false,
                 });
               }
             }}
@@ -91,7 +140,7 @@ const SentenceBuilderPage: React.FC = () => {
           >
             +
           </button>
-        </div>
+        </div> */}
 
         {/* Display built sentences */}
         <div className='bg-gray-200 text-black rounded-md text-lg font-medium text-left min-h-[100px]'>
@@ -99,23 +148,26 @@ const SentenceBuilderPage: React.FC = () => {
             ? builtSentences.map((sentence, index) => (
                 <div
                   key={index}
-                  className='cursor-pointer hover:bg-gray-300 px-2 py-1 rounded-md'
+                  className='cursor-pointer hover:bg-gray-300 px-2 py-1 rounded-md flex justify-between items-center'
                   onClick={() => {
-                    // Set the clicked sentence as the current sentence
-                    const parts = sentence.split(' ');
+                    const parts = sentence.text.split(' ');
+
                     setSentenceParts({
                       subject: parts[0] || '',
                       verb: parts[1] || '',
                       object: parts[2] || '',
                       adverbial: parts.slice(3).join(' ') || '',
+                      isPublic: sentence.isPublic,
                     });
-                    // Remove the clicked sentence from the list
+
+                    // Remove the selected sentence from the list
                     setBuiltSentences((prev) =>
                       prev.filter((_, i) => i !== index)
                     );
                   }}
                 >
-                  {sentence}
+                  <span>{sentence.text}</span>
+                  <span>{sentence.isPublic ? '🔓' : '🔒'}</span>
                 </div>
               ))
             : 'No statements yet.'}

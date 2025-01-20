@@ -4,7 +4,10 @@ import TilesGrid from '../components/ui/TilesGrid';
 import TextInput from '../components/ui/TextInput';
 import Modal from '../components/ui/Modal';
 import data from '../data/data.json';
+import dictionary from '../data/dictionary.json';
 import { FaLock, FaLockOpen } from 'react-icons/fa';
+
+const typedDictionary: string[] = dictionary; // Explicitly assert it as a string array
 
 const SentenceBuilderPage: React.FC = () => {
   const [sentenceParts, setSentenceParts] = useState({
@@ -212,6 +215,7 @@ const SentenceBuilderPage: React.FC = () => {
               setIsTextInputModalOpen(false);
             }}
             onCancel={() => setIsTextInputModalOpen(false)}
+            dictionary={typedDictionary}
           />
         </Modal>
       </div>

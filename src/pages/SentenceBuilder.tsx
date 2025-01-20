@@ -37,7 +37,7 @@ const SentenceBuilderPage: React.FC = () => {
   return (
     <div className='min-h-screen flex flex-col items-center pt-6 bg-gray-800 text-white'>
       {/* Page Title */}
-      <h1 className='text-2xl font-bold mb-4'>Statements Builder</h1>
+      <h1 className='text-2xl font-bold mb-4'>Dave's Statements</h1>
 
       <div className='p-4 space-y-4 '>
         {/* Buttons for sentence parts */}
@@ -48,8 +48,8 @@ const SentenceBuilderPage: React.FC = () => {
             onClick={() => {}}
           />
           <SentenceButton
-            defaultValue='Choose Verb' // Default value for the verb
-            label={sentenceParts.verb || 'Choose Verb'}
+            defaultValue='likes/dislikes' // Default value for the verb
+            label={sentenceParts.verb || 'likes/dislikes'}
             onClick={() => setIsVerbModalOpen(true)}
           />
           <SentenceButton
@@ -167,7 +167,7 @@ const SentenceBuilderPage: React.FC = () => {
                   }}
                 >
                   <span>{sentence.text}</span>
-                  <span>{sentence.isPublic ? '🔓' : '🔒'}</span>
+                  <span>{sentence.isPublic ? <FaLockOpen /> : <FaLock />}</span>
                 </div>
               ))
             : 'No statements yet.'}

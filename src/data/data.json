@@ -1,684 +1,242 @@
 [
   {
     "name": "Achieve",
-    "popularity": 56,
-    "color": "gray",
+    "popularity": 95,
+    "color": "purple",
     "thirdPerson": "Achieves"
   },
   {
+    "name": "Acknowledge",
+    "popularity": 85,
+    "color": "purple",
+    "thirdPerson": "Acknowledges"
+  },
+  {
     "name": "Adapt",
-    "popularity": 91,
-    "color": "indigo",
+    "popularity": 90,
+    "color": "purple",
     "thirdPerson": "Adapts"
   },
   {
-    "name": "Align",
-    "popularity": 17,
-    "color": "gray",
-    "thirdPerson": "Aligns"
-  },
-  {
-    "name": "Analyze",
-    "popularity": 37,
-    "color": "indigo",
-    "thirdPerson": "Analyzes"
-  },
-  {
-    "name": "Articulate",
-    "popularity": 44,
+    "name": "Argue",
+    "popularity": 72,
     "color": "magenta",
-    "thirdPerson": "Articulates"
+    "thirdPerson": "Argues"
   },
   {
-    "name": "Authenticate",
-    "popularity": 40,
-    "color": "teal",
-    "thirdPerson": "Authenticates"
-  },
-  {
-    "name": "Balance",
-    "popularity": 28,
+    "name": "Assist",
+    "popularity": 87,
     "color": "purple",
-    "thirdPerson": "Balances"
+    "thirdPerson": "Assists"
   },
   {
-    "name": "Benchmark",
-    "popularity": 14,
-    "color": "brown",
-    "thirdPerson": "Benchmarks"
+    "name": "Avoid",
+    "popularity": 74,
+    "color": "magenta",
+    "thirdPerson": "Avoids"
   },
   {
-    "name": "Build",
-    "popularity": 47,
-    "color": "gold",
-    "thirdPerson": "Builds"
+    "name": "Blame",
+    "popularity": 80,
+    "color": "magenta",
+    "thirdPerson": "Blames"
   },
   {
-    "name": "Calibrate",
-    "popularity": 15,
-    "color": "purple",
-    "thirdPerson": "Calibrates"
+    "name": "Block",
+    "popularity": 79,
+    "color": "magenta",
+    "thirdPerson": "Blocks"
   },
-  { "name": "Care", "popularity": 38, "color": "blue", "thirdPerson": "Cares" },
-  {
-    "name": "Celebrate",
-    "popularity": 98,
-    "color": "lime",
-    "thirdPerson": "Celebrates"
-  },
-  {
-    "name": "Clarify",
-    "popularity": 42,
-    "color": "cyan",
-    "thirdPerson": "Clarifies"
-  },
-  { "name": "Code", "popularity": 46, "color": "gray", "thirdPerson": "Codes" },
   {
     "name": "Collaborate",
-    "popularity": 62,
-    "color": "cyan",
+    "popularity": 88,
+    "color": "purple",
     "thirdPerson": "Collaborates"
   },
   {
-    "name": "Combine",
-    "popularity": 20,
-    "color": "pink",
-    "thirdPerson": "Combines"
+    "name": "Complicate",
+    "popularity": 60,
+    "color": "magenta",
+    "thirdPerson": "Complicates"
   },
   {
-    "name": "Communicate",
-    "popularity": 94,
+    "name": "Contribute",
+    "popularity": 83,
     "color": "purple",
-    "thirdPerson": "Communicates"
-  },
-  {
-    "name": "Conceptualize",
-    "popularity": 20,
-    "color": "blue",
-    "thirdPerson": "Conceptualizes"
-  },
-  {
-    "name": "Connect",
-    "popularity": 11,
-    "color": "brown",
-    "thirdPerson": "Connects"
-  },
-  {
-    "name": "Coordinate",
-    "popularity": 42,
-    "color": "green",
-    "thirdPerson": "Coordinates"
+    "thirdPerson": "Contributes"
   },
   {
     "name": "Create",
-    "popularity": 12,
-    "color": "yellow",
+    "popularity": 91,
+    "color": "purple",
     "thirdPerson": "Creates"
   },
   {
-    "name": "Cultivate",
-    "popularity": 57,
-    "color": "brown",
-    "thirdPerson": "Cultivates"
+    "name": "Criticise",
+    "popularity": 76,
+    "color": "magenta",
+    "thirdPerson": "Criticises"
   },
   {
-    "name": "Customize",
-    "popularity": 22,
-    "color": "green",
-    "thirdPerson": "Customizes"
+    "name": "Disagree",
+    "popularity": 75,
+    "color": "magenta",
+    "thirdPerson": "Disagrees"
   },
   {
-    "name": "Debug",
-    "popularity": 53,
-    "color": "indigo",
-    "thirdPerson": "Debugs"
+    "name": "Dislike",
+    "popularity": 88,
+    "color": "magenta",
+    "thirdPerson": "Dislikes"
   },
   {
-    "name": "Decide",
-    "popularity": 77,
-    "color": "blue",
-    "thirdPerson": "Decides"
+    "name": "Empower",
+    "popularity": 78,
+    "color": "purple",
+    "thirdPerson": "Empowers"
   },
   {
-    "name": "Define",
-    "popularity": 12,
-    "color": "orange",
-    "thirdPerson": "Defines"
-  },
-  {
-    "name": "Deliver",
-    "popularity": 57,
-    "color": "teal",
-    "thirdPerson": "Delivers"
-  },
-  {
-    "name": "Deploy",
+    "name": "Encourage",
     "popularity": 84,
-    "color": "indigo",
-    "thirdPerson": "Deploys"
-  },
-  {
-    "name": "Design",
-    "popularity": 22,
-    "color": "yellow",
-    "thirdPerson": "Designs"
-  },
-  {
-    "name": "Develop",
-    "popularity": 33,
-    "color": "pink",
-    "thirdPerson": "Develops"
-  },
-  {
-    "name": "Discover",
-    "popularity": 22,
-    "color": "blue",
-    "thirdPerson": "Discovers"
-  },
-  {
-    "name": "Distribute",
-    "popularity": 80,
-    "color": "red",
-    "thirdPerson": "Distributes"
-  },
-  {
-    "name": "Document",
-    "popularity": 1,
-    "color": "blue",
-    "thirdPerson": "Documents"
-  },
-  {
-    "name": "Drive",
-    "popularity": 42,
-    "color": "orange",
-    "thirdPerson": "Drives"
-  },
-  {
-    "name": "Embrace",
-    "popularity": 32,
-    "color": "red",
-    "thirdPerson": "Embraces"
+    "color": "purple",
+    "thirdPerson": "Encourages"
   },
   {
     "name": "Engage",
-    "popularity": 39,
-    "color": "teal",
+    "popularity": 89,
+    "color": "purple",
     "thirdPerson": "Engages"
   },
   {
-    "name": "Enhance",
-    "popularity": 98,
-    "color": "magenta",
-    "thirdPerson": "Enhances"
-  },
-  {
-    "name": "Evaluate",
-    "popularity": 51,
-    "color": "pink",
-    "thirdPerson": "Evaluates"
-  },
-  {
-    "name": "Execute",
-    "popularity": 24,
-    "color": "cyan",
-    "thirdPerson": "Executes"
-  },
-  {
-    "name": "Experiment",
-    "popularity": 89,
-    "color": "purple",
-    "thirdPerson": "Experiments"
-  },
-  {
-    "name": "Explore",
-    "popularity": 27,
-    "color": "red",
-    "thirdPerson": "Explores"
-  },
-  {
     "name": "Facilitate",
-    "popularity": 54,
-    "color": "green",
+    "popularity": 77,
+    "color": "purple",
     "thirdPerson": "Facilitates"
   },
   {
-    "name": "Focus",
-    "popularity": 64,
-    "color": "red",
-    "thirdPerson": "Focuses"
+    "name": "Grow",
+    "popularity": 92,
+    "color": "purple",
+    "thirdPerson": "Grows"
   },
   {
-    "name": "Forecast",
-    "popularity": 12,
-    "color": "brown",
-    "thirdPerson": "Forecasts"
+    "name": "Help",
+    "popularity": 98,
+    "color": "purple",
+    "thirdPerson": "Helps"
   },
-  { "name": "Grow", "popularity": 87, "color": "lime", "thirdPerson": "Grows" },
   {
-    "name": "Guide",
-    "popularity": 67,
+    "name": "Ignore",
+    "popularity": 90,
     "color": "magenta",
-    "thirdPerson": "Guides"
-  },
-  { "name": "Help", "popularity": 51, "color": "pink", "thirdPerson": "Helps" },
-  {
-    "name": "Illustrate",
-    "popularity": 40,
-    "color": "indigo",
-    "thirdPerson": "Illustrates"
+    "thirdPerson": "Ignores"
   },
   {
     "name": "Improve",
-    "popularity": 88,
-    "color": "orange",
+    "popularity": 94,
+    "color": "purple",
     "thirdPerson": "Improves"
   },
   {
     "name": "Innovate",
-    "popularity": 87,
-    "color": "blue",
+    "popularity": 82,
+    "color": "purple",
     "thirdPerson": "Innovates"
   },
   {
-    "name": "Inspect",
-    "popularity": 8,
-    "color": "gray",
-    "thirdPerson": "Inspects"
-  },
-  {
-    "name": "Inspire",
-    "popularity": 86,
-    "color": "indigo",
-    "thirdPerson": "Inspires"
-  },
-  {
-    "name": "Integrate",
-    "popularity": 26,
-    "color": "purple",
-    "thirdPerson": "Integrates"
-  },
-  {
-    "name": "Invent",
-    "popularity": 9,
-    "color": "orange",
-    "thirdPerson": "Invents"
-  },
-  {
-    "name": "Iterate",
-    "popularity": 32,
+    "name": "Interrupt",
+    "popularity": 85,
     "color": "magenta",
-    "thirdPerson": "Iterates"
-  },
-  {
-    "name": "Jump",
-    "popularity": 41,
-    "color": "indigo",
-    "thirdPerson": "Jumps"
-  },
-  {
-    "name": "Launch",
-    "popularity": 28,
-    "color": "teal",
-    "thirdPerson": "Launches"
+    "thirdPerson": "Interrupts"
   },
   {
     "name": "Lead",
-    "popularity": 97,
-    "color": "yellow",
+    "popularity": 96,
+    "color": "purple",
     "thirdPerson": "Leads"
   },
   {
-    "name": "Learn",
-    "popularity": 3,
-    "color": "green",
-    "thirdPerson": "Learns"
+    "name": "Listen",
+    "popularity": 93,
+    "color": "purple",
+    "thirdPerson": "Listens"
   },
   {
-    "name": "Maintain",
-    "popularity": 45,
-    "color": "blue",
-    "thirdPerson": "Maintains"
-  },
-  {
-    "name": "Manage",
-    "popularity": 44,
-    "color": "cyan",
-    "thirdPerson": "Manages"
-  },
-  {
-    "name": "Measure",
-    "popularity": 69,
-    "color": "pink",
-    "thirdPerson": "Measures"
-  },
-  {
-    "name": "Monitor",
-    "popularity": 75,
-    "color": "yellow",
-    "thirdPerson": "Monitors"
+    "name": "Mislead",
+    "popularity": 66,
+    "color": "magenta",
+    "thirdPerson": "Misleads"
   },
   {
     "name": "Motivate",
-    "popularity": 43,
-    "color": "orange",
+    "popularity": 86,
+    "color": "purple",
     "thirdPerson": "Motivates"
   },
   {
-    "name": "Navigate",
-    "popularity": 24,
-    "color": "blue",
-    "thirdPerson": "Navigates"
+    "name": "Neglect",
+    "popularity": 78,
+    "color": "magenta",
+    "thirdPerson": "Neglects"
   },
   {
-    "name": "Negotiate",
-    "popularity": 77,
-    "color": "green",
-    "thirdPerson": "Negotiates"
-  },
-  {
-    "name": "Observe",
-    "popularity": 52,
-    "color": "pink",
-    "thirdPerson": "Observes"
-  },
-  {
-    "name": "Optimize",
-    "popularity": 81,
-    "color": "teal",
-    "thirdPerson": "Optimizes"
-  },
-  {
-    "name": "Organize",
-    "popularity": 39,
-    "color": "blue",
-    "thirdPerson": "Organizes"
-  },
-  {
-    "name": "Perform",
-    "popularity": 21,
-    "color": "teal",
-    "thirdPerson": "Performs"
-  },
-  {
-    "name": "Plan",
-    "popularity": 12,
-    "color": "purple",
-    "thirdPerson": "Plans"
-  },
-  {
-    "name": "Predict",
-    "popularity": 16,
-    "color": "green",
-    "thirdPerson": "Predicts"
-  },
-  {
-    "name": "Present",
-    "popularity": 98,
-    "color": "yellow",
-    "thirdPerson": "Presents"
-  },
-  {
-    "name": "Prioritize",
-    "popularity": 96,
-    "color": "red",
-    "thirdPerson": "Prioritizes"
-  },
-  {
-    "name": "Prototype",
-    "popularity": 46,
-    "color": "purple",
-    "thirdPerson": "Prototypes"
-  },
-  {
-    "name": "Question",
+    "name": "Procrastinate",
     "popularity": 70,
-    "color": "green",
-    "thirdPerson": "Questions"
+    "color": "magenta",
+    "thirdPerson": "Procrastinates"
   },
   {
-    "name": "Rebuild",
-    "popularity": 81,
-    "color": "indigo",
-    "thirdPerson": "Rebuilds"
+    "name": "Provide",
+    "popularity": 97,
+    "color": "purple",
+    "thirdPerson": "Provides"
   },
   {
-    "name": "Recognize",
-    "popularity": 11,
-    "color": "teal",
-    "thirdPerson": "Recognizes"
+    "name": "Reject",
+    "popularity": 82,
+    "color": "magenta",
+    "thirdPerson": "Rejects"
   },
   {
-    "name": "Redefine",
-    "popularity": 58,
-    "color": "gray",
-    "thirdPerson": "Redefines"
+    "name": "Resist",
+    "popularity": 75,
+    "color": "magenta",
+    "thirdPerson": "Resists"
   },
   {
-    "name": "Refactor",
-    "popularity": 61,
-    "color": "cyan",
-    "thirdPerson": "Refactors"
-  },
-  {
-    "name": "Reflect",
-    "popularity": 35,
-    "color": "brown",
-    "thirdPerson": "Reflects"
-  },
-  {
-    "name": "Refocus",
-    "popularity": 33,
-    "color": "orange",
-    "thirdPerson": "Refocuses"
-  },
-  {
-    "name": "Reinforce",
-    "popularity": 67,
-    "color": "red",
-    "thirdPerson": "Reinforces"
-  },
-  {
-    "name": "Reiterate",
-    "popularity": 18,
-    "color": "yellow",
-    "thirdPerson": "Reiterates"
-  },
-  {
-    "name": "Relate",
-    "popularity": 19,
-    "color": "green",
-    "thirdPerson": "Relates"
-  },
-  {
-    "name": "Research",
-    "popularity": 10,
-    "color": "blue",
-    "thirdPerson": "Researches"
-  },
-  {
-    "name": "Resolve",
-    "popularity": 68,
-    "color": "cyan",
-    "thirdPerson": "Resolves"
-  },
-  {
-    "name": "Respond",
-    "popularity": 36,
-    "color": "brown",
-    "thirdPerson": "Responds"
-  },
-  {
-    "name": "Retain",
-    "popularity": 29,
-    "color": "orange",
-    "thirdPerson": "Retains"
-  },
-  {
-    "name": "Review",
-    "popularity": 4,
-    "color": "red",
-    "thirdPerson": "Reviews"
-  },
-  {
-    "name": "Revise",
-    "popularity": 23,
-    "color": "yellow",
-    "thirdPerson": "Revises"
-  },
-  {
-    "name": "Simplify",
-    "popularity": 85,
-    "color": "green",
-    "thirdPerson": "Simplifies"
-  },
-  {
-    "name": "Solve",
-    "popularity": 25,
-    "color": "blue",
-    "thirdPerson": "Resolves"
-  },
-  {
-    "name": "Stabilize",
-    "popularity": 31,
-    "color": "cyan",
-    "thirdPerson": "Stabilizes"
-  },
-  {
-    "name": "Standardize",
-    "popularity": 18,
-    "color": "brown",
-    "thirdPerson": "Standardizes"
-  },
-  {
-    "name": "Strategize",
-    "popularity": 76,
-    "color": "orange",
-    "thirdPerson": "Strategizes"
-  },
-  {
-    "name": "Structure",
-    "popularity": 30,
-    "color": "red",
-    "thirdPerson": "Structures"
-  },
-  {
-    "name": "Study",
-    "popularity": 7,
-    "color": "yellow",
-    "thirdPerson": "Studies"
+    "name": "Sabotage",
+    "popularity": 65,
+    "color": "magenta",
+    "thirdPerson": "Sabotages"
   },
   {
     "name": "Support",
-    "popularity": 49,
-    "color": "green",
+    "popularity": 99,
+    "color": "purple",
     "thirdPerson": "Supports"
   },
   {
-    "name": "Survey",
-    "popularity": 5,
-    "color": "blue",
-    "thirdPerson": "Surveys"
-  },
-  {
-    "name": "Sustain",
-    "popularity": 60,
-    "color": "cyan",
-    "thirdPerson": "Sustains"
-  },
-  {
-    "name": "Synthesize",
-    "popularity": 34,
-    "color": "brown",
-    "thirdPerson": "Synthesizes"
-  },
-  {
-    "name": "Systematize",
-    "popularity": 19,
-    "color": "orange",
-    "thirdPerson": "Systematizes"
-  },
-  {
-    "name": "Teach",
-    "popularity": 2,
-    "color": "red",
-    "thirdPerson": "Teaches"
-  },
-  {
-    "name": "Test",
-    "popularity": 6,
-    "color": "yellow",
-    "thirdPerson": "Tests"
-  },
-  {
-    "name": "Train",
-    "popularity": 13,
-    "color": "green",
-    "thirdPerson": "Trains"
-  },
-  {
-    "name": "Transform",
-    "popularity": 90,
-    "color": "blue",
-    "thirdPerson": "Transform"
-  },
-  {
-    "name": "Translate",
-    "popularity": 50,
-    "color": "cyan",
-    "thirdPerson": "Translates"
-  },
-  {
-    "name": "Troubleshoot",
-    "popularity": 48,
-    "color": "brown",
-    "thirdPerson": "Troubleshoots"
-  },
-  {
-    "name": "Understand",
-    "popularity": 99,
-    "color": "orange",
-    "thirdPerson": "Understands"
-  },
-  {
-    "name": "Unify",
-    "popularity": 21,
-    "color": "red",
-    "thirdPerson": "Unifies"
-  },
-  {
-    "name": "Update",
-    "popularity": 63,
-    "color": "yellow",
-    "thirdPerson": "Updates"
-  },
-  {
-    "name": "Validate",
+    "name": "Underperform",
     "popularity": 71,
-    "color": "green",
-    "thirdPerson": "Validates"
+    "color": "magenta",
+    "thirdPerson": "Underperforms"
   },
   {
-    "name": "Verify",
-    "popularity": 65,
-    "color": "blue",
-    "thirdPerson": "Verifies"
+    "name": "Undermine",
+    "popularity": 73,
+    "color": "magenta",
+    "thirdPerson": "Undermines"
   },
   {
-    "name": "Visualize",
-    "popularity": 74,
-    "color": "cyan",
-    "thirdPerson": "Visualizes"
+    "name": "Withdraw",
+    "popularity": 68,
+    "color": "magenta",
+    "thirdPerson": "Withdraws"
   },
   {
-    "name": "Win",
-    "popularity": 82,
-    "color": "brown",
-    "thirdPerson": "Wins"
-  },
-  {
-    "name": "Write",
-    "popularity": 8,
-    "color": "orange",
-    "thirdPerson": "Writes"
+    "name": "Withhold",
+    "popularity": 69,
+    "color": "magenta",
+    "thirdPerson": "Withholds"
   }
 ]

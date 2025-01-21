@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
 import Dropdown from '../../components/ui/Dropdown';
+import Modal from '../../components/ui/Modal';
 import statements from '../../data/statements.json';
 import { FaLock, FaLockOpen } from 'react-icons/fa';
+import StatementsTable from '../../components/ui/StatementsTable';
 import ActionsTable from '../../components/ui/ActionsTable';
+
+// Utility function to generate dropdown options
+const getUniqueOptions = (data: string[], includeAll = true) => {
+  const uniqueOptions = Array.from(new Set(data));
+  return includeAll ? ['All', ...uniqueOptions] : uniqueOptions;
+};
 
 const EmployersDashboard: React.FC = () => {
   const [filters, setFilters] = useState({
@@ -10,11 +18,41 @@ const EmployersDashboard: React.FC = () => {
     verb: 'All',
     object: 'All',
     isPublic: 'All',
+    hasActions: 'All',
   });
 
   const [selectedStatement, setSelectedStatement] = useState<
     (typeof statements)[0] | null
   >(null);
+
+  const [isModalOpen, setIsModalOpen] = useState(false); // Track modal open/close state
+
+  // Dropdown options
+  const subjects = getUniqueOptions(statements.map((s) => s.subject));
+  const verbs = getUniqueOptions(statements.map((s) => s.verb));
+  const objects = getUniqueOptions(statements.map((s) => s.object));
+  const privacies = ['All', 'Public', 'Private'];
+  const hasActions = ['All', 'Yes', 'No'];
+
+  // Filtered statements
+  const filteredStatements = statements.filter((statement) => {
+    const hasActions =
+      filters.hasActions === 'All' ||
+      (filters.hasActions === 'Yes' &&
+        statement.actions &&
+        statement.actions.length > 0) ||
+      (filters.hasActions === 'No' &&
+        (!statement.actions || statement.actions.length === 0));
+
+    return (
+      (filters.subject === 'All' || statement.subject === filters.subject) &&
+      (filters.verb === 'All' || statement.verb === filters.verb) &&
+      (filters.object === 'All' || statement.object === filters.object) &&
+      (filters.isPublic === 'All' ||
+        statement.isPublic === (filters.isPublic === 'Public')) &&
+      hasActions
+    );
+  });
 
   const handleFilterChange = (key: keyof typeof filters, value: string) => {
     setFilters((prev) => ({
@@ -23,24 +61,21 @@ const EmployersDashboard: React.FC = () => {
     }));
   };
 
-  const filteredStatements = statements.filter((statement) => {
-    return (
-      (filters.subject === 'All' || statement.subject === filters.subject) &&
-      (filters.verb === 'All' || statement.verb === filters.verb) &&
-      (filters.object === 'All' || statement.object === filters.object) &&
-      (filters.isPublic === 'All' ||
-        statement.isPublic === (filters.isPublic === 'Public'))
-    );
-  });
-
-  const subjects = ['All', ...new Set(statements.map((s) => s.subject))];
-  const verbs = ['All', ...new Set(statements.map((s) => s.verb))];
-  const objects = ['All', ...new Set(statements.map((s) => s.object))];
-  const privacies = ['All', 'Public', 'Private'];
+  const handleRowClick = (row: (typeof statements)[0]) => {
+    if (row.actions && row.actions.length > 0) {
+      // Open modal only if there are actions
+      setSelectedStatement(row); // Set the selected statement
+      setIsModalOpen(true); // Open the modal
+    } else {
+      console.log('No actions available for this statement.'); // Optional: Add a log for debugging
+    }
+  };
 
   return (
     <div className='min-h-screen bg-gray-800 text-white flex flex-col items-center pt-6'>
       <h1 className='text-2xl font-bold mb-6'>Employers Dashboard</h1>
+
+      {/* Filters */}
       <div className='flex space-x-4 mb-6'>
         <Dropdown
           label='Subject'
@@ -69,49 +104,31 @@ const EmployersDashboard: React.FC = () => {
             </div>
           )}
         />
+        <Dropdown
+          label='Has Actions'
+          options={hasActions}
+          onSelect={(value) => handleFilterChange('hasActions', value)}
+        />
       </div>
-      <table className='bg-white text-black rounded-md shadow-md w-3/4'>
-        <thead>
-          <tr>
-            <th className='border px-4 py-2'>Subject</th>
-            <th className='border px-4 py-2'>Verb</th>
-            <th className='border px-4 py-2'>Object</th>
-            <th className='border px-4 py-2'>Privacy</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredStatements.map((statement, index) => (
-            <tr
-              key={index}
-              className='hover:bg-gray-200'
-              onClick={() => setSelectedStatement(statement)}
-            >
-              <td className='border px-4 py-2'>{statement.subject}</td>
-              <td className='border px-4 py-2'>{statement.verb}</td>
-              <td className='border px-4 py-2'>{statement.object}</td>
-              <td className='border px-4 py-2 text-center'>
-                {statement.isPublic ? (
-                  <FaLockOpen
-                    className='text-green-500 mx-auto'
-                    style={{ background: 'transparent' }}
-                  />
-                ) : (
-                  <FaLock
-                    className='text-red-500 mx-auto'
-                    style={{ background: 'transparent' }}
-                  />
-                )}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      {selectedStatement && (
-        <div className='w-3/4'>
-          <h2 className='text-xl font-bold mb-4'>Follow-up Tasks</h2>
+
+      {/* Statements Table */}
+      <StatementsTable
+        data={filteredStatements}
+        onRowClick={handleRowClick} // Pass the row click handler
+      />
+
+      {/* Modal for Follow-Up Tasks */}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)} // Close the modal
+        title='Follow-Up Tasks'
+      >
+        {selectedStatement ? (
           <ActionsTable actions={selectedStatement.actions || []} />
-        </div>
-      )}
+        ) : (
+          <p>No follow-up tasks available.</p>
+        )}
+      </Modal>
     </div>
   );
 };

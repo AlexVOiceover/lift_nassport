@@ -1,27 +1,22 @@
 import React from 'react';
+import Table from './Table';
 
-interface ActionsTableProps {
+const ActionsTable: React.FC<{
   actions: { date: string; action: string }[];
-}
+}> = ({ actions }) => {
+  const headers = ['Date', 'Action'];
 
-const ActionsTable: React.FC<ActionsTableProps> = ({ actions }) => {
   return (
-    <table className='bg-white text-black rounded-md shadow-md w-full'>
-      <thead>
-        <tr>
-          <th className='border px-4 py-2'>Date</th>
-          <th className='border px-4 py-2'>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        {actions.map((action, index) => (
-          <tr key={index} className='hover:bg-gray-200'>
-            <td className='border px-4 py-2'>{action.date}</td>
-            <td className='border px-4 py-2'>{action.action}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <Table
+      headers={headers}
+      data={actions}
+      renderRow={(row) => (
+        <>
+          <td className='px-4 py-2'>{row.date}</td>
+          <td className='px-4 py-2'>{row.action}</td>
+        </>
+      )}
+    />
   );
 };
 

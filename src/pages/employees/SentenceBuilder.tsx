@@ -3,6 +3,7 @@ import SentenceButton from '../../components/ui/SentenceButton';
 import TilesGrid from '../../components/ui/TilesGrid';
 import TextInput from '../../components/ui/TextInput';
 import Modal from '../../components/ui/Modal';
+import BuiltSentences from '../../components/ui/BuiltSentences';
 import data from '../../data/data.json';
 import dictionary from '../../data/dictionary.json';
 import { FaLock, FaLockOpen } from 'react-icons/fa';
@@ -48,9 +49,7 @@ const SentenceBuilderPage: React.FC = () => {
   return (
     <div className='min-h-screen flex flex-col items-center pt-6 bg-gray-800 text-white'>
       {/* Page Title */}
-      <h1 className='text-2xl font-bold mb-4'>
-        ${sentenceParts.subject || 'Dave'}'s Statements
-      </h1>
+      <h1 className='text-2xl font-bold mb-4'>Dave's Statements</h1>
 
       <div className='p-4 space-y-4 '>
         {/* Buttons for sentence parts */}
@@ -162,37 +161,13 @@ const SentenceBuilderPage: React.FC = () => {
         </div> */}
 
         {/* Display built sentences */}
-        <div className='bg-gray-200 text-black rounded-md text-lg font-medium text-left min-h-[100px]'>
-          {builtSentences.length > 0
-            ? builtSentences.map((sentence, index) => (
-                <div
-                  key={index}
-                  className='cursor-pointer hover:bg-gray-300 px-2 py-1 rounded-md flex justify-between items-center'
-                  onClick={() => {
-                    setSentenceParts({
-                      subject: sentence.subject || '',
-                      verb: sentence.verb || '',
-                      object: sentence.object || '',
-                      adverbial: sentence.adverbial || '',
-                      isPublic: sentence.isPublic,
-                    });
-
-                    // Remove the selected sentence from the list
-                    setBuiltSentences((prev) =>
-                      prev.filter((_, i) => i !== index)
-                    );
-                  }}
-                >
-                  <span>
-                    {' '}
-                    {sentence.subject} {sentence.verb} {sentence.object}{' '}
-                    {sentence.adverbial}
-                  </span>
-                  <span>{sentence.isPublic ? <FaLockOpen /> : <FaLock />}</span>
-                </div>
-              ))
-            : 'No statements yet.'}
-        </div>
+        <BuiltSentences
+          sentences={builtSentences}
+          onSelectSentence={(sentence, index) => {
+            setSentenceParts(sentence);
+            setBuiltSentences((prev) => prev.filter((_, i) => i !== index));
+          }}
+        />
 
         {/* Modal for verb selection */}
         <Modal

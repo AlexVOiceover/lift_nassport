@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "deploy": "npm run build && gh-pages -d dist"
   },
-  "homepage": "https://github.com/foundersandcoders/LIFT-frontend",
+  "homepage": "/LIFT-frontend/",
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

@@ -6,7 +6,7 @@ import {
   Navigate,
 } from 'react-router-dom';
 import SentenceBuilderPage from './pages/employees/SentenceBuilder';
-// import Dashboard from './pages/Dashboard';
+import EmployerDashboardPage from './pages/employers/EmployersDashboard';
 
 function App() {
   return (
@@ -15,7 +15,8 @@ function App() {
         <Routes>
           {/* Define routes for employees and employers */}
           <Route path='/employees' element={<SentenceBuilderPage />} />
-          {/* <Route path='/employers' element={<EmployerDashboardPage />} /> */}
+          <Route path='/employers' element={<EmployerDashboardPage />} />
+
           {/* Redirect to the employee page by default */}
           <Route path='*' element={<Navigate to='/employees' replace />} />
         </Routes>

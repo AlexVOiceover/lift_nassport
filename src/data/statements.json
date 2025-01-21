@@ -3,70 +3,140 @@
     "subject": "Alice",
     "verb": "manages",
     "object": "project deadlines",
-    "adverbial": "efficiently",
+    "adverbial": "",
     "isPublic": true
+  },
+  {
+    "subject": "Alice",
+    "verb": "manages",
+    "object": "team schedules",
+    "adverbial": "",
+    "isPublic": false
   },
   {
     "subject": "Bob",
     "verb": "creates",
     "object": "engaging presentations",
-    "adverbial": "with attention to detail",
+    "adverbial": "",
+    "isPublic": true
+  },
+  {
+    "subject": "Bob",
+    "verb": "creates",
+    "object": "design concepts",
+    "adverbial": "",
     "isPublic": false
   },
   {
     "subject": "Charlie",
     "verb": "leads",
     "object": "team meetings",
-    "adverbial": "on Mondays",
+    "adverbial": "",
+    "isPublic": true
+  },
+  {
+    "subject": "Charlie",
+    "verb": "leads",
+    "object": "strategic sessions",
+    "adverbial": "",
+    "isPublic": false
+  },
+  {
+    "subject": "Diana",
+    "verb": "conducts",
+    "object": "training workshops",
+    "adverbial": "",
     "isPublic": true
   },
   {
     "subject": "Diana",
-    "verb": "prepares",
-    "object": "financial reports",
-    "adverbial": "before the deadline",
+    "verb": "conducts",
+    "object": "research analyses",
+    "adverbial": "",
+    "isPublic": false
+  },
+  {
+    "subject": "Eve",
+    "verb": "develops",
+    "object": "marketing strategies",
+    "adverbial": "",
     "isPublic": true
   },
   {
     "subject": "Eve",
-    "verb": "conducts",
-    "object": "training sessions",
-    "adverbial": "for new employees",
-    "isPublic": false
-  },
-  {
-    "subject": "Frank",
-    "verb": "coordinates",
-    "object": "departmental resources",
-    "adverbial": "effectively",
-    "isPublic": true
-  },
-  {
-    "subject": "Grace",
     "verb": "develops",
-    "object": "marketing strategies",
-    "adverbial": "for product launches",
-    "isPublic": true
-  },
-  {
-    "subject": "Hank",
-    "verb": "analyzes",
-    "object": "customer feedback",
-    "adverbial": "to improve services",
+    "object": "client proposals",
+    "adverbial": "",
     "isPublic": false
   },
   {
-    "subject": "Ivy",
-    "verb": "designs",
-    "object": "user interfaces",
-    "adverbial": "with accessibility in mind",
+    "subject": "Alice",
+    "verb": "creates",
+    "object": "presentation slides",
+    "adverbial": "",
     "isPublic": true
   },
   {
-    "subject": "Jack",
-    "verb": "tests",
-    "object": "software applications",
-    "adverbial": "thoroughly",
+    "subject": "Bob",
+    "verb": "manages",
+    "object": "event schedules",
+    "adverbial": "",
+    "isPublic": false
+  },
+  {
+    "subject": "Charlie",
+    "verb": "develops",
+    "object": "user manuals",
+    "adverbial": "",
+    "isPublic": true
+  },
+  {
+    "subject": "Diana",
+    "verb": "leads",
+    "object": "strategy meetings",
+    "adverbial": "",
+    "isPublic": false
+  },
+  {
+    "subject": "Eve",
+    "verb": "conducts",
+    "object": "team-building exercises",
+    "adverbial": "",
+    "isPublic": true
+  },
+  {
+    "subject": "Alice",
+    "verb": "develops",
+    "object": "product roadmaps",
+    "adverbial": "",
+    "isPublic": false
+  },
+  {
+    "subject": "Bob",
+    "verb": "conducts",
+    "object": "user interviews",
+    "adverbial": "",
+    "isPublic": true
+  },
+  {
+    "subject": "Charlie",
+    "verb": "manages",
+    "object": "performance reviews",
+    "adverbial": "",
+    "isPublic": false
+  },
+  {
+    "subject": "Diana",
+    "verb": "creates",
+    "object": "social media content",
+    "adverbial": "",
+    "isPublic": true
+  },
+  {
+    "subject": "Eve",
+    "verb": "leads",
+    "object": "project kickoffs",
+    "adverbial": "",
     "isPublic": false
   }
 ]

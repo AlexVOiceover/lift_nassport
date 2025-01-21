@@ -1,40 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface DropdownProps {
   label: string;
   options: string[];
-  value: string;
-  onChange: (value: string) => void;
+  onSelect: (value: string) => void;
+  renderOption?: (option: string) => React.ReactNode; // Optional render function for custom option rendering
 }
 
 const Dropdown: React.FC<DropdownProps> = ({
   label,
   options,
-  value,
-  onChange,
+  onSelect,
+  renderOption,
 }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState('All');
+
+  const handleOptionClick = (option: string) => {
+    setSelectedOption(option);
+    onSelect(option);
+    setIsOpen(false);
+  };
+
   return (
-    <div className='relative inline-block text-left'>
-      <button className='bg-gray-200 text-black px-4 py-2 rounded-md w-full'>
-        {label}: {value || 'All'}
+    <div className='relative'>
+      <button
+        className='bg-gray-300 text-black px-4 py-2 rounded-lg hover:bg-gray-400'
+        onClick={() => setIsOpen((prev) => !prev)}
+      >
+        {selectedOption === 'All' ? `${label}` : selectedOption}
       </button>
-      <ul className='absolute left-0 mt-2 bg-white border border-gray-300 rounded-lg shadow-lg max-h-40 overflow-y-auto z-10 text-black'>
-        <li
-          className='px-4 py-2 hover:bg-gray-100 cursor-pointer'
-          onClick={() => onChange('')}
-        >
-          All
-        </li>
-        {options.map((option, index) => (
-          <li
-            key={index}
-            className='px-4 py-2 hover:bg-gray-100 cursor-pointer'
-            onClick={() => onChange(option)}
-          >
-            {option}
-          </li>
-        ))}
-      </ul>
+      {isOpen && (
+        <ul className='absolute left-0 mt-2 bg-white border border-gray-300 rounded-md shadow-md z-10 text-black'>
+          {options.map((option) => (
+            <li
+              key={option}
+              className='px-4 py-2 hover:bg-gray-100 cursor-pointer'
+              onClick={() => handleOptionClick(option)}
+            >
+              {renderOption ? renderOption(option) : option}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

@@ -10,7 +10,14 @@ import { FaLock, FaLockOpen } from 'react-icons/fa';
 const typedDictionary: string[] = dictionary; // Explicitly assert it as a string array
 
 const SentenceBuilderPage: React.FC = () => {
-  const [sentenceParts, setSentenceParts] = useState({
+  // Current Statement Parts
+  const [sentenceParts, setSentenceParts] = useState<{
+    subject: string;
+    verb: string;
+    object: string;
+    adverbial: string;
+    isPublic: boolean;
+  }>({
     subject: 'Dave',
     verb: '',
     object: '',
@@ -18,29 +25,32 @@ const SentenceBuilderPage: React.FC = () => {
     isPublic: false,
   });
 
+  // List of Statements
   const [builtSentences, setBuiltSentences] = useState<
-    { text: string; isPublic: boolean }[]
-  >([]); // List of built sentences with public status
+    {
+      subject: string;
+      verb: string;
+      object: string;
+      adverbial: string;
+      isPublic: boolean;
+    }[]
+  >([]);
 
   //Control for the modals
   const [isVerbModalOpen, setIsVerbModalOpen] = useState(false);
   const [isTextInputModalOpen, setIsTextInputModalOpen] = useState(false);
   const [inputType, setInputType] = useState<'object' | 'adverbial'>('object');
 
-  const updatePart = (part: 'verb' | 'object' | 'adverbial', value: string) => {
-    setSentenceParts((prev) => ({
-      ...prev,
-      [part]: value,
-    }));
-  };
-
-  const sentenceText =
-    `${sentenceParts.subject} ${sentenceParts.verb} ${sentenceParts.object} ${sentenceParts.adverbial}`.trim();
+  // ONLY NEEDED IF KEEP THE CURRENT SENTENCE DISPLAY
+  // const sentenceText =
+  //   `${sentenceParts.subject} ${sentenceParts.verb} ${sentenceParts.object} ${sentenceParts.adverbial}`.trim();
 
   return (
     <div className='min-h-screen flex flex-col items-center pt-6 bg-gray-800 text-white'>
       {/* Page Title */}
-      <h1 className='text-2xl font-bold mb-4'>Dave's Statements</h1>
+      <h1 className='text-2xl font-bold mb-4'>
+        ${sentenceParts.subject || 'Dave'}'s Statements
+      </h1>
 
       <div className='p-4 space-y-4 '>
         {/* Buttons for sentence parts */}
@@ -95,7 +105,13 @@ const SentenceBuilderPage: React.FC = () => {
             onClick={() => {
               if (sentenceParts.verb) {
                 setBuiltSentences((prev) => [
-                  { text: sentenceText, isPublic: sentenceParts.isPublic }, // Add public status
+                  {
+                    subject: sentenceParts.subject,
+                    verb: sentenceParts.verb,
+                    object: sentenceParts.object,
+                    adverbial: sentenceParts.adverbial,
+                    isPublic: sentenceParts.isPublic,
+                  },
                   ...prev,
                 ]);
                 setSentenceParts({
@@ -153,13 +169,11 @@ const SentenceBuilderPage: React.FC = () => {
                   key={index}
                   className='cursor-pointer hover:bg-gray-300 px-2 py-1 rounded-md flex justify-between items-center'
                   onClick={() => {
-                    const parts = sentence.text.split(' ');
-
                     setSentenceParts({
-                      subject: parts[0] || '',
-                      verb: parts[1] || '',
-                      object: parts[2] || '',
-                      adverbial: parts.slice(3).join(' ') || '',
+                      subject: sentence.subject || '',
+                      verb: sentence.verb || '',
+                      object: sentence.object || '',
+                      adverbial: sentence.adverbial || '',
                       isPublic: sentence.isPublic,
                     });
 
@@ -169,7 +183,11 @@ const SentenceBuilderPage: React.FC = () => {
                     );
                   }}
                 >
-                  <span>{sentence.text}</span>
+                  <span>
+                    {' '}
+                    {sentence.subject} {sentence.verb} {sentence.object}{' '}
+                    {sentence.adverbial}
+                  </span>
                   <span>{sentence.isPublic ? <FaLockOpen /> : <FaLock />}</span>
                 </div>
               ))
@@ -185,7 +203,10 @@ const SentenceBuilderPage: React.FC = () => {
           <TilesGrid
             items={data}
             onAccept={(selectedVerb) => {
-              updatePart('verb', selectedVerb.thirdPerson.toLowerCase());
+              setSentenceParts((prev) => ({
+                ...prev,
+                verb: selectedVerb.thirdPerson.toLowerCase(),
+              }));
               setIsVerbModalOpen(false);
             }}
             onCancel={() => setIsVerbModalOpen(false)}
@@ -211,7 +232,10 @@ const SentenceBuilderPage: React.FC = () => {
                 : 'Enter an adverbial phrase'
             }
             onAccept={(value) => {
-              updatePart(inputType, value.toLowerCase());
+              setSentenceParts((prev) => ({
+                ...prev,
+                [inputType]: value.toLowerCase(),
+              }));
               setIsTextInputModalOpen(false);
             }}
             onCancel={() => setIsTextInputModalOpen(false)}

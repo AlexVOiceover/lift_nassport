@@ -1,0 +1,72 @@
+[
+  {
+    "subject": "Alice",
+    "verb": "manages",
+    "object": "project deadlines",
+    "adverbial": "efficiently",
+    "isPublic": true
+  },
+  {
+    "subject": "Bob",
+    "verb": "creates",
+    "object": "engaging presentations",
+    "adverbial": "with attention to detail",
+    "isPublic": false
+  },
+  {
+    "subject": "Charlie",
+    "verb": "leads",
+    "object": "team meetings",
+    "adverbial": "on Mondays",
+    "isPublic": true
+  },
+  {
+    "subject": "Diana",
+    "verb": "prepares",
+    "object": "financial reports",
+    "adverbial": "before the deadline",
+    "isPublic": true
+  },
+  {
+    "subject": "Eve",
+    "verb": "conducts",
+    "object": "training sessions",
+    "adverbial": "for new employees",
+    "isPublic": false
+  },
+  {
+    "subject": "Frank",
+    "verb": "coordinates",
+    "object": "departmental resources",
+    "adverbial": "effectively",
+    "isPublic": true
+  },
+  {
+    "subject": "Grace",
+    "verb": "develops",
+    "object": "marketing strategies",
+    "adverbial": "for product launches",
+    "isPublic": true
+  },
+  {
+    "subject": "Hank",
+    "verb": "analyzes",
+    "object": "customer feedback",
+    "adverbial": "to improve services",
+    "isPublic": false
+  },
+  {
+    "subject": "Ivy",
+    "verb": "designs",
+    "object": "user interfaces",
+    "adverbial": "with accessibility in mind",
+    "isPublic": true
+  },
+  {
+    "subject": "Jack",
+    "verb": "tests",
+    "object": "software applications",
+    "adverbial": "thoroughly",
+    "isPublic": false
+  }
+]

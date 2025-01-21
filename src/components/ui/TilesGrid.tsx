@@ -14,10 +14,19 @@ interface TilesGridProps {
 }
 
 const TilesGrid: React.FC<TilesGridProps> = ({ items, onAccept, onCancel }) => {
-  const [selectedItem, setSelectedItem] = useState<{
-    name: string;
-    thirdPerson: string;
-  } | null>(null);
+  // Keep track of the selected tile to allow second click to accept
+  const [selectedTile, setSelectedTile] = useState<number | null>(null);
+
+  const handleTileClick = (index: number) => {
+    if (selectedTile === index) {
+      // If the selected tile is clicked again, trigger onAccept
+      onAccept(items[index]);
+      setSelectedTile(null); // Reset selection
+    } else {
+      // Otherwise, select the tile
+      setSelectedTile(index);
+    }
+  };
 
   // Configurations
   const columnCount = 4; // Number of columns in the grid
@@ -76,13 +85,8 @@ const TilesGrid: React.FC<TilesGridProps> = ({ items, onAccept, onCancel }) => {
               >
                 <Tile
                   item={item} // Pass the whole object
-                  isSelected={selectedItem?.name === item.name} // Highlight selected tile
-                  onClick={() =>
-                    setSelectedItem({
-                      name: item.name,
-                      thirdPerson: item.thirdPerson,
-                    })
-                  } // Set the selected item
+                  isSelected={selectedTile === index} // Highlight selected tile
+                  onClick={() => handleTileClick(index)} // Set the selected item
                 />
               </div>
             );
@@ -93,13 +97,13 @@ const TilesGrid: React.FC<TilesGridProps> = ({ items, onAccept, onCancel }) => {
       {/* Buttons for Accept and Cancel */}
       <div className='flex justify-start space-x-4 p-4'>
         <button
-          onClick={() => selectedItem && onAccept(selectedItem)}
+          onClick={() => selectedTile !== null && onAccept(items[selectedTile])}
           className={`px-4 py-2 rounded-lg ${
-            selectedItem
+            selectedTile !== null
               ? 'bg-blue-500 text-white hover:bg-blue-600'
               : 'bg-gray-300 text-gray-500 cursor-not-allowed'
           }`}
-          disabled={!selectedItem}
+          disabled={selectedTile === null}
         >
           Accept
         </button>

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import SentenceButton from '../components/ui/SentenceButton';
-import TilesGrid from '../components/ui/TilesGrid';
-import TextInput from '../components/ui/TextInput';
-import Modal from '../components/ui/Modal';
-import data from '../data/data.json';
-import dictionary from '../data/dictionary.json';
+import SentenceButton from '../../components/ui/SentenceButton';
+import TilesGrid from '../../components/ui/TilesGrid';
+import TextInput from '../../components/ui/TextInput';
+import Modal from '../../components/ui/Modal';
+import data from '../../data/data.json';
+import dictionary from '../../data/dictionary.json';
 import { FaLock, FaLockOpen } from 'react-icons/fa';
 
 const typedDictionary: string[] = dictionary; // Explicitly assert it as a string array

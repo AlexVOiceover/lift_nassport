@@ -1,13 +1,26 @@
 import './App.css';
-import SentenceBuilderPage from '../src/pages/SentenceBuilder';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom';
+import SentenceBuilderPage from './pages/employees/SentenceBuilder';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
-    <>
-      <div>
-        <SentenceBuilderPage />
+    <Router>
+      <div className='App'>
+        <Routes>
+          {/* Define routes for employees and employers */}
+          <Route path='/employees' element={<SentenceBuilderPage />} />
+          <Route path='/employers' element={<EmployerDashboardPage />} />
+          {/* Redirect to the employee page by default */}
+          <Route path='*' element={<Navigate to='/employees' replace />} />
+        </Routes>
       </div>
-    </>
+    </Router>
   );
 }
 

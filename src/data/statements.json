@@ -4,7 +4,11 @@
     "verb": "manages",
     "object": "project deadlines",
     "adverbial": "",
-    "isPublic": true
+    "isPublic": true,
+    "actions": [
+      { "date": "2025-01-20", "action": "Reviewed statement" },
+      { "date": "2025-01-21", "action": "Shared with team" }
+    ]
   },
   {
     "subject": "Alice",
@@ -18,7 +22,11 @@
     "verb": "creates",
     "object": "engaging presentations",
     "adverbial": "",
-    "isPublic": true
+    "isPublic": true,
+    "actions": [
+      { "date": "2025-01-22", "action": "Requested approval" },
+      { "date": "2025-01-23", "action": "Finalised documentation" }
+    ]
   },
   {
     "subject": "Bob",

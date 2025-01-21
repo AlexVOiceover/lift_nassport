@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Dropdown from '../../components/ui/Dropdown';
 import statements from '../../data/statements.json';
 import { FaLock, FaLockOpen } from 'react-icons/fa';
+import ActionsTable from '../../components/ui/ActionsTable';
 
 const EmployersDashboard: React.FC = () => {
   const [filters, setFilters] = useState({
@@ -10,6 +11,10 @@ const EmployersDashboard: React.FC = () => {
     object: 'All',
     isPublic: 'All',
   });
+
+  const [selectedStatement, setSelectedStatement] = useState<
+    (typeof statements)[0] | null
+  >(null);
 
   const handleFilterChange = (key: keyof typeof filters, value: string) => {
     setFilters((prev) => ({
@@ -76,7 +81,11 @@ const EmployersDashboard: React.FC = () => {
         </thead>
         <tbody>
           {filteredStatements.map((statement, index) => (
-            <tr key={index} className='hover:bg-gray-200'>
+            <tr
+              key={index}
+              className='hover:bg-gray-200'
+              onClick={() => setSelectedStatement(statement)}
+            >
               <td className='border px-4 py-2'>{statement.subject}</td>
               <td className='border px-4 py-2'>{statement.verb}</td>
               <td className='border px-4 py-2'>{statement.object}</td>
@@ -97,6 +106,12 @@ const EmployersDashboard: React.FC = () => {
           ))}
         </tbody>
       </table>
+      {selectedStatement && (
+        <div className='w-3/4'>
+          <h2 className='text-xl font-bold mb-4'>Follow-up Tasks</h2>
+          <ActionsTable actions={selectedStatement.actions || []} />
+        </div>
+      )}
     </div>
   );
 };

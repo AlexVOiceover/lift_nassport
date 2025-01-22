@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Dropdown from '../../components/ui/Dropdown';
 import Modal from '../../components/ui/Modal';
 import statements from '../../data/statements.json';
-import { FaLock, FaLockOpen } from 'react-icons/fa';
+// import { FaLock, FaLockOpen } from 'react-icons/fa';
 import StatementsTable from '../../components/ui/StatementsTable';
 import ActionsTable from '../../components/ui/ActionsTable';
 
@@ -17,7 +17,7 @@ const EmployersDashboard: React.FC = () => {
     subject: 'All',
     verb: 'All',
     object: 'All',
-    isPublic: 'All',
+    isPublic: 'Public',
     hasActions: 'All',
   });
 
@@ -31,7 +31,7 @@ const EmployersDashboard: React.FC = () => {
   const subjects = getUniqueOptions(statements.map((s) => s.subject));
   const verbs = getUniqueOptions(statements.map((s) => s.verb));
   const objects = getUniqueOptions(statements.map((s) => s.object));
-  const privacies = ['All', 'Public', 'Private'];
+  // const privacies = ['Public'];
   const hasActions = ['All', 'Yes', 'No'];
 
   // Filtered statements
@@ -92,7 +92,7 @@ const EmployersDashboard: React.FC = () => {
           options={objects}
           onSelect={(value) => handleFilterChange('object', value)}
         />
-        <Dropdown
+        {/* <Dropdown
           label='Privacy'
           options={privacies}
           onSelect={(value) => handleFilterChange('isPublic', value)}
@@ -103,7 +103,7 @@ const EmployersDashboard: React.FC = () => {
               {option === 'All' && <span>All</span>}
             </div>
           )}
-        />
+        /> */}
         <Dropdown
           label='Has Actions'
           options={hasActions}

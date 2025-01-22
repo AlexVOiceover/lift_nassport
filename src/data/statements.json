@@ -6,8 +6,16 @@
     "adverbial": "",
     "isPublic": true,
     "actions": [
-      { "date": "2025-01-20", "action": "Reviewed statement" },
-      { "date": "2025-01-21", "action": "Shared with team" }
+      {
+        "creationDate": "2025-01-20",
+        "byDate": "2025-01-20",
+        "action": "Reviewed statement"
+      },
+      {
+        "creationDate": "2025-01-21",
+        "byDate": "2025-01-21",
+        "action": "Shared with team"
+      }
     ]
   },
   {
@@ -24,8 +32,16 @@
     "adverbial": "",
     "isPublic": true,
     "actions": [
-      { "date": "2025-01-22", "action": "Requested approval" },
-      { "date": "2025-01-23", "action": "Finalised documentation" }
+      {
+        "creationDate": "2025-01-20",
+        "actionDate": "2025-01-20",
+        "action": "Requested approval"
+      },
+      {
+        "creationDate": "2025-01-21",
+        "actionDate": "2025-01-21",
+        "action": "Finalised documentation"
+      }
     ]
   },
   {

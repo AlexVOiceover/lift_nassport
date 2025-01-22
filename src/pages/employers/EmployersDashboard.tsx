@@ -6,7 +6,7 @@ import statements from '../../data/statements.json';
 import StatementsTable from '../../components/ui/StatementsTable';
 import ActionsTable from '../../components/ui/ActionsTable';
 
-// Utility function to generate dropdown options
+// Utility function to generate dropdown options. Include 'All' by default.
 const getUniqueOptions = (data: string[], includeAll = true) => {
   const uniqueOptions = Array.from(new Set(data));
   return includeAll ? ['All', ...uniqueOptions] : uniqueOptions;

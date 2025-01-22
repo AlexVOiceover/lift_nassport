@@ -2,9 +2,9 @@ import React from 'react';
 import Table from './Table';
 
 const ActionsTable: React.FC<{
-  actions: { date: string; action: string }[];
+  actions: { creationDate: string; byDate: string; action: string }[];
 }> = ({ actions }) => {
-  const headers = ['Date', 'Action'];
+  const headers = ['Creation Date', 'By', 'Action'];
 
   return (
     <Table
@@ -12,7 +12,8 @@ const ActionsTable: React.FC<{
       data={actions}
       renderRow={(row) => (
         <>
-          <td className='px-4 py-2'>{row.date}</td>
+          <td className='px-4 py-2'>{row.creationDate}</td>
+          <td className='px-4 py-2'>{row.byDate}</td>
           <td className='px-4 py-2'>{row.action}</td>
         </>
       )}

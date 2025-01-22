@@ -9,7 +9,7 @@ const StatementsTable: React.FC<{
     object: string;
     // adverbial: string;
     isPublic: boolean;
-    actions?: { date: string; action: string }[]; // Optional actions array
+    actions?: { creationDate: string; byDate: string; action: string }[]; // Optional actions array
   }[];
   onRowClick: (row: any) => void; // Click handler for rows
 }> = ({ data, onRowClick }) => {

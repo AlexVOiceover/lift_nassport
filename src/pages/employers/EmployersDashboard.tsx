@@ -92,7 +92,7 @@ const EmployersDashboard: React.FC = () => {
           options={objects}
           onSelect={(value) => handleFilterChange('object', value)}
         />
-        {/* <Dropdown
+        {/* <Dropdown 
           label='Privacy'
           options={privacies}
           onSelect={(value) => handleFilterChange('isPublic', value)}

@@ -1,6 +1,11 @@
 import React from 'react';
 import Table from './Table';
 
+// interface ActionsTableProps {
+//   actions: { creationDate: string; byDate: string; action: string }[];
+//   onAddAction?: () => void;
+// }
+
 const ActionsTable: React.FC<{
   actions: { creationDate: string; byDate: string; action: string }[];
 }> = ({ actions }) => {

@@ -4,7 +4,7 @@ import Table from './Table';
 const ActionsTable: React.FC<{
   actions: { creationDate: string; byDate: string; action: string }[];
 }> = ({ actions }) => {
-  const headers = ['Creation Date', 'By', 'Action'];
+  const headers = ['Creation Date', 'By Date', 'Action'];
 
   return (
     <Table

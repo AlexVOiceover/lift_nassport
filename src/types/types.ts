@@ -18,3 +18,6 @@ export interface ActionsManagerProps {
   // notify the parent about changes to actions, add an optional callback:
   //onActionsUpdate?: (updatedActions: Action[]) => void;
 }
+export interface AddActionRowProps {
+  onAddAction: (newAction: Omit<Action, 'creationDate'>) => void; // Exclude creationDate as it will be auto-generated
+}

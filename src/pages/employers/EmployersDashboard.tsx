@@ -4,7 +4,8 @@ import Modal from '../../components/ui/Modal';
 import statements from '../../data/statements.json';
 // import { FaLock, FaLockOpen } from 'react-icons/fa';
 import StatementsTable from '../../components/ui/StatementsTable';
-import ActionsTable from '../../components/ui/ActionsTable';
+//import ActionsTable from '../../components/ui/ActionsTable';
+import ActionsManager from '../../components/ui/ActionsManager';
 
 // Utility function to generate dropdown options. Include 'All' by default.
 const getUniqueOptions = (data: string[], includeAll = true) => {
@@ -124,7 +125,8 @@ const EmployersDashboard: React.FC = () => {
         title='Follow-Up Tasks'
       >
         {selectedStatement ? (
-          <ActionsTable actions={selectedStatement.actions || []} />
+          // <ActionsTable actions={selectedStatement.actions || []} />
+          <ActionsManager statement={selectedStatement} />
         ) : (
           <p>No follow-up tasks available.</p>
         )}

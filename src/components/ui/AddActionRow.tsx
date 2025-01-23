@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-
-interface AddActionRowProps {
-  onAddAction: (newAction: { byDate: string; action: string }) => void;
-}
+import { AddActionRowProps } from '../../types/types';
 
 const AddActionRow: React.FC<AddActionRowProps> = ({ onAddAction }) => {
   const [byDate, setByDate] = useState('');
@@ -20,31 +17,36 @@ const AddActionRow: React.FC<AddActionRowProps> = ({ onAddAction }) => {
   };
 
   return (
-    <div className='flex items-center space-x-4'>
+    <tr className='bg-gray-100 hover:bg-gray-200'>
       {/* By Date Input */}
-      <input
-        type='date'
-        value={byDate}
-        onChange={(e) => setByDate(e.target.value)}
-        className='border px-2 py-1 rounded'
-        placeholder='By Date'
-      />
+      <td className='px-4 py-2 border'>
+        <input
+          type='date'
+          value={byDate}
+          onChange={(e) => setByDate(e.target.value)}
+          className='w-full bg-transparent outline-none text-black text-center'
+        />
+      </td>
       {/* Action Input */}
-      <input
-        type='text'
-        value={action}
-        onChange={(e) => setAction(e.target.value)}
-        className='border px-2 py-1 rounded flex-grow'
-        placeholder='Action Description'
-      />
+      <td colSpan={2} className='px-4 py-2 border'>
+        <input
+          type='text'
+          value={action}
+          onChange={(e) => setAction(e.target.value)}
+          placeholder='Action Description'
+          className='w-full bg-transparent outline-none text-black'
+        />
+      </td>
       {/* Add Button */}
-      <button
-        onClick={handleAddClick}
-        className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded'
-      >
-        Add
-      </button>
-    </div>
+      <td className='px-4 py-2 border text-center'>
+        <button
+          onClick={handleAddClick}
+          className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded'
+        >
+          Add
+        </button>
+      </td>
+    </tr>
   );
 };
 

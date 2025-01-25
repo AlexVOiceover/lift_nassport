@@ -180,7 +180,8 @@ const SentenceBuilderPage: React.FC = () => {
             onAccept={(selectedVerb) => {
               setSentenceParts((prev) => ({
                 ...prev,
-                verb: selectedVerb.thirdPerson.toLowerCase(),
+
+                //verb: selectedVerb.thirdPerson.toLowerCase(),
               }));
               setIsVerbModalOpen(false);
             }}

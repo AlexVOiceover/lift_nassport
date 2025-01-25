@@ -1,0 +1,14 @@
+[
+  {
+    "company": "Acme Inc.",
+    "lineManagers": ["John Doe", "Jane Smith"]
+  },
+  {
+    "company": "Tech Corp",
+    "lineManagers": ["Alice Johnson", "Bob Carter"]
+  },
+  {
+    "company": "Global Solutions",
+    "lineManagers": ["Sarah Green", "Michael Brown"]
+  }
+]

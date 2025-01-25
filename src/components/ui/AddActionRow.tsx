@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AddActionRowProps } from '../../types/types';
 
 const AddActionRow: React.FC<AddActionRowProps> = ({ onAddAction }) => {
+  const [creationDate, setCreationDate] = useState('');
   const [byDate, setByDate] = useState('');
   const [action, setAction] = useState('');
+
+  // Initialize creationDate to today's date
+  useEffect(() => {
+    setCreationDate(new Date().toISOString().split('T')[0]); // Format: YYYY-MM-DD
+  }, []);
 
   const handleAddClick = () => {
     if (!byDate || !action) {
@@ -11,15 +17,24 @@ const AddActionRow: React.FC<AddActionRowProps> = ({ onAddAction }) => {
       return;
     }
 
-    onAddAction({ byDate, action }); // Pass new action to parent component
+    onAddAction({ creationDate, byDate, action }); // Pass new action to parent component
     setByDate(''); // Clear the fields
     setAction('');
   };
 
   return (
     <tr className='bg-gray-100 hover:bg-gray-200'>
-      {/* By Date Input */}
-      <td className='px-4 py-2 border'>
+      {/* Creation Date */}
+      <td className='px-4 py-2 border text-center'>
+        <input
+          type='text'
+          value={creationDate}
+          readOnly
+          className='w-full bg-transparent outline-none text-black text-center cursor-not-allowed'
+        />
+      </td>
+      {/* By Date */}
+      <td className='px-4 py-2 border text-center'>
         <input
           type='date'
           value={byDate}
@@ -27,8 +42,8 @@ const AddActionRow: React.FC<AddActionRowProps> = ({ onAddAction }) => {
           className='w-full bg-transparent outline-none text-black text-center'
         />
       </td>
-      {/* Action Input */}
-      <td colSpan={2} className='px-4 py-2 border'>
+      {/* Action */}
+      <td className='px-4 py-2 border'>
         <input
           type='text'
           value={action}

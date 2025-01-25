@@ -19,5 +19,13 @@ export interface ActionsManagerProps {
   //onActionsUpdate?: (updatedActions: Action[]) => void;
 }
 export interface AddActionRowProps {
-  onAddAction: (newAction: Omit<Action, 'creationDate'>) => void; // Exclude creationDate as it will be auto-generated
+  onAddAction: (newAction: Action) => void; // Exclude creationDate as it will be auto-generated
+}
+
+export interface ActionsTableProps {
+  actions: Action[];
+  editingRowIndex: number | null;
+  onEditRow: (rowIndex: number) => void;
+  onCancelEdit: () => void;
+  setActions: React.Dispatch<React.SetStateAction<Action[]>>;
 }

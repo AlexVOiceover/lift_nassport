@@ -7,6 +7,7 @@ import BuiltSentences from '../../components/ui/BuiltSentences';
 import data from '../../data/data.json';
 import dictionary from '../../data/dictionary.json';
 import { FaLock, FaLockOpen } from 'react-icons/fa';
+import nlp from 'compromise';
 
 const typedDictionary: string[] = dictionary; // Explicitly assert it as a string array
 
@@ -178,10 +179,16 @@ const SentenceBuilderPage: React.FC = () => {
           <TilesGrid
             items={data}
             onAccept={(selectedVerb) => {
+              // Convert the selected verb to third person using compromise
+              const thirdPersonVerb = nlp(selectedVerb.name)
+                .verbs()
+                .toPresentTense()
+                .out('text');
+
               setSentenceParts((prev) => ({
                 ...prev,
 
-                //verb: selectedVerb.thirdPerson.toLowerCase(),
+                verb: thirdPersonVerb.toLowerCase(),
               }));
               setIsVerbModalOpen(false);
             }}

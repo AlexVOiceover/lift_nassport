@@ -1,22 +1,27 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { AppContext } from '../../context/AppContext';
 import { useNavigate } from 'react-router-dom';
 import employers from '../../data/employers.json';
 
 const EmployeesDetails: React.FC = () => {
   const navigate = useNavigate();
 
+  // Use our AppContext to get `userName` and `setUserName`
+  const { userName, setUserName } = useContext(AppContext);
+
   // Local state for the user’s name and the selected employer
-  const [employeeName, setEmployeeName] = useState('');
+  // const [employeeName, setEmployeeName] = useState('');
   const [selectedEmployer, setSelectedEmployer] = useState('');
 
   // Simple handler for the form submission
   const handleNext = (event: React.FormEvent) => {
-    event.preventDefault(); // Prevent page reload if you want
+    event.preventDefault();
 
     // Navigate to the Sentence Builder route (e.g., /employees/statements)
     // Pass the data in location.state for retrieval in SentenceBuilder.
     navigate('/employees/statements', {
-      state: { employeeName, employer: selectedEmployer },
+      // state: { employeeName, employer: selectedEmployer },
+      state: { employer: selectedEmployer },
     });
   };
 
@@ -33,10 +38,11 @@ const EmployeesDetails: React.FC = () => {
           <label className='block mb-1'>Your Name:</label>
           <input
             type='text'
-            value={employeeName}
-            onChange={(e) => setEmployeeName(e.target.value)}
+            // value={employeeName}
+            value={userName}
+            // onChange={(e) => setEmployeeName(e.target.value)}
+            onChange={(e) => setUserName(e.target.value)}
             className='w-full border border-gray-400 rounded px-2 py-1 text-black'
-            // placeholder='e.g., Dave'
           />
         </div>
 
@@ -61,7 +67,8 @@ const EmployeesDetails: React.FC = () => {
         <button
           type='submit'
           className='bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600'
-          disabled={!employeeName || !selectedEmployer}
+          // disabled={!employeeName || !selectedEmployer}
+          disabled={!userName || !selectedEmployer}
         >
           Next
         </button>

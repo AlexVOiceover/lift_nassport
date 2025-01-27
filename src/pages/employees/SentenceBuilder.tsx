@@ -10,7 +10,7 @@ import dictionary from '../../data/dictionary.json';
 import { FaLock, FaLockOpen } from 'react-icons/fa';
 import nlp from 'compromise';
 
-const typedDictionary: string[] = dictionary; // Explicitly assert it as a string array
+const typedDictionary: string[] = dictionary;
 
 const SentenceBuilderPage: React.FC = () => {
   // Access context
@@ -30,17 +30,6 @@ const SentenceBuilderPage: React.FC = () => {
     adverbial: '',
     isPublic: false,
   });
-
-  // List of Statements
-  // const [builtSentences, setBuiltSentences] = useState<
-  //   {
-  //     subject: string;
-  //     verb: string;
-  //     object: string;
-  //     adverbial: string;
-  //     isPublic: boolean;
-  //   }[]
-  // >([]);
 
   //Control for the modals
   const [isVerbModalOpen, setIsVerbModalOpen] = useState(false);
@@ -62,17 +51,17 @@ const SentenceBuilderPage: React.FC = () => {
         {/* Buttons for sentence parts */}
         <div className='flex space-x-2'>
           <SentenceButton
-            defaultValue='Choose Subject' // Default value for the subject
+            defaultValue='Choose Subject'
             label={sentenceParts.subject}
             onClick={() => {}}
           />
           <SentenceButton
-            defaultValue='Action' // Default value for the verb
+            defaultValue='Action'
             label={sentenceParts.verb || 'Action'}
             onClick={() => setIsVerbModalOpen(true)}
           />
           <SentenceButton
-            defaultValue='Enter Object' // Default value for the object
+            defaultValue='Enter Object'
             label={sentenceParts.object || 'Enter Object'}
             onClick={() => {
               setInputType('object');
@@ -103,6 +92,7 @@ const SentenceBuilderPage: React.FC = () => {
           >
             {sentenceParts.isPublic ? <FaLockOpen /> : <FaLock />}
           </button>
+          {/* Button to add the sentence */}
           <button
             className={`bg-green-500 text-white px-4 py-2 rounded-md ${
               sentenceParts.verb
@@ -171,7 +161,6 @@ const SentenceBuilderPage: React.FC = () => {
             const newStatements = [...statements];
             newStatements.splice(index, 1);
             setStatements(newStatements);
-
             // Re-fill the form
             setSentenceParts(sentence);
           }}
@@ -204,7 +193,6 @@ const SentenceBuilderPage: React.FC = () => {
         </Modal>
 
         {/* Modal for text input */}
-
         <Modal
           isOpen={isTextInputModalOpen}
           onClose={() => setIsTextInputModalOpen(false)}

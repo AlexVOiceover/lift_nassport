@@ -2,241 +2,221 @@
   {
     "name": "Achieve",
     "popularity": 95,
-    "color": "purple",
-    "thirdPerson": "Achieves"
+    "color": "purple"
   },
   {
     "name": "Acknowledge",
     "popularity": 85,
-    "color": "purple",
-    "thirdPerson": "Acknowledges"
+    "color": "purple"
   },
   {
     "name": "Adapt",
     "popularity": 90,
-    "color": "purple",
-    "thirdPerson": "Adapts"
+    "color": "purple"
   },
   {
     "name": "Argue",
     "popularity": 72,
-    "color": "magenta",
-    "thirdPerson": "Argues"
+    "color": "magenta"
   },
   {
     "name": "Assist",
     "popularity": 87,
-    "color": "purple",
-    "thirdPerson": "Assists"
+    "color": "purple"
   },
   {
     "name": "Avoid",
     "popularity": 74,
-    "color": "magenta",
-    "thirdPerson": "Avoids"
+    "color": "magenta"
   },
   {
     "name": "Blame",
     "popularity": 80,
-    "color": "magenta",
-    "thirdPerson": "Blames"
+    "color": "magenta"
   },
   {
     "name": "Block",
     "popularity": 79,
-    "color": "magenta",
-    "thirdPerson": "Blocks"
+    "color": "magenta"
   },
   {
     "name": "Collaborate",
     "popularity": 88,
-    "color": "purple",
-    "thirdPerson": "Collaborates"
+    "color": "purple"
   },
   {
     "name": "Complicate",
     "popularity": 60,
-    "color": "magenta",
-    "thirdPerson": "Complicates"
+    "color": "magenta"
   },
   {
     "name": "Contribute",
     "popularity": 83,
-    "color": "purple",
-    "thirdPerson": "Contributes"
+    "color": "purple"
   },
   {
     "name": "Create",
     "popularity": 91,
-    "color": "purple",
-    "thirdPerson": "Creates"
+    "color": "purple"
   },
   {
     "name": "Criticise",
     "popularity": 76,
-    "color": "magenta",
-    "thirdPerson": "Criticises"
+    "color": "magenta"
   },
   {
     "name": "Disagree",
     "popularity": 75,
-    "color": "magenta",
-    "thirdPerson": "Disagrees"
+    "color": "magenta"
   },
   {
     "name": "Dislike",
     "popularity": 88,
-    "color": "magenta",
-    "thirdPerson": "Dislikes"
+    "color": "magenta"
   },
   {
     "name": "Empower",
     "popularity": 78,
-    "color": "purple",
-    "thirdPerson": "Empowers"
+    "color": "purple"
   },
   {
     "name": "Encourage",
     "popularity": 84,
-    "color": "purple",
-    "thirdPerson": "Encourages"
+    "color": "purple"
   },
   {
     "name": "Engage",
     "popularity": 89,
-    "color": "purple",
-    "thirdPerson": "Engages"
+    "color": "purple"
+  },
+  {
+    "name": "Enjoy",
+    "popularity": 89,
+    "color": "purple"
   },
   {
     "name": "Facilitate",
     "popularity": 77,
-    "color": "purple",
-    "thirdPerson": "Facilitates"
+    "color": "purple"
   },
   {
     "name": "Grow",
     "popularity": 92,
-    "color": "purple",
-    "thirdPerson": "Grows"
+    "color": "purple"
+  },
+  {
+    "name": "Hate",
+    "popularity": 98,
+    "color": "purple"
   },
   {
     "name": "Help",
     "popularity": 98,
-    "color": "purple",
-    "thirdPerson": "Helps"
+    "color": "purple"
   },
   {
     "name": "Ignore",
     "popularity": 90,
-    "color": "magenta",
-    "thirdPerson": "Ignores"
+    "color": "magenta"
   },
   {
     "name": "Improve",
     "popularity": 94,
-    "color": "purple",
-    "thirdPerson": "Improves"
+    "color": "purple"
   },
   {
     "name": "Innovate",
     "popularity": 82,
-    "color": "purple",
-    "thirdPerson": "Innovates"
+    "color": "purple"
   },
   {
     "name": "Interrupt",
     "popularity": 85,
-    "color": "magenta",
-    "thirdPerson": "Interrupts"
+    "color": "magenta"
   },
   {
     "name": "Lead",
     "popularity": 96,
-    "color": "purple",
-    "thirdPerson": "Leads"
+    "color": "purple"
+  },
+  {
+    "name": "Like",
+    "popularity": 96,
+    "color": "purple"
   },
   {
     "name": "Listen",
     "popularity": 93,
-    "color": "purple",
-    "thirdPerson": "Listens"
+    "color": "purple"
+  },
+  {
+    "name": "Love",
+    "popularity": 93,
+    "color": "purple"
   },
   {
     "name": "Mislead",
     "popularity": 66,
-    "color": "magenta",
-    "thirdPerson": "Misleads"
+    "color": "magenta"
   },
   {
     "name": "Motivate",
     "popularity": 86,
-    "color": "purple",
-    "thirdPerson": "Motivates"
+    "color": "purple"
   },
   {
     "name": "Neglect",
     "popularity": 78,
-    "color": "magenta",
-    "thirdPerson": "Neglects"
+    "color": "magenta"
   },
   {
     "name": "Procrastinate",
     "popularity": 70,
-    "color": "magenta",
-    "thirdPerson": "Procrastinates"
+    "color": "magenta"
   },
   {
     "name": "Provide",
     "popularity": 97,
-    "color": "purple",
-    "thirdPerson": "Provides"
+    "color": "purple"
   },
   {
     "name": "Reject",
     "popularity": 82,
-    "color": "magenta",
-    "thirdPerson": "Rejects"
+    "color": "magenta"
   },
   {
     "name": "Resist",
     "popularity": 75,
-    "color": "magenta",
-    "thirdPerson": "Resists"
+    "color": "magenta"
   },
   {
     "name": "Sabotage",
     "popularity": 65,
-    "color": "magenta",
-    "thirdPerson": "Sabotages"
+    "color": "magenta"
   },
   {
     "name": "Support",
     "popularity": 99,
-    "color": "purple",
-    "thirdPerson": "Supports"
+    "color": "purple"
   },
   {
     "name": "Underperform",
     "popularity": 71,
-    "color": "magenta",
-    "thirdPerson": "Underperforms"
+    "color": "magenta"
   },
   {
     "name": "Undermine",
     "popularity": 73,
-    "color": "magenta",
-    "thirdPerson": "Undermines"
+    "color": "magenta"
   },
   {
     "name": "Withdraw",
     "popularity": 68,
-    "color": "magenta",
-    "thirdPerson": "Withdraws"
+    "color": "magenta"
   },
   {
     "name": "Withhold",
     "popularity": 69,
-    "color": "magenta",
-    "thirdPerson": "Withholds"
+    "color": "magenta"
   }
 ]

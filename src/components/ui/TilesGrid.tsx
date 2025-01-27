@@ -7,9 +7,8 @@ interface TilesGridProps {
     name: string;
     popularity: number;
     color: string;
-    thirdPerson: string;
   }[]; // List of objects
-  onAccept: (selectedItem: { name: string; thirdPerson: string }) => void; // Callback function to notify parent when the user accepts
+  onAccept: (selectedItem: { name: string }) => void; // Callback function to notify parent when the user accepts
   onCancel: () => void; // Callback function for cancel action
 }
 

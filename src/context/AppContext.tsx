@@ -7,6 +7,8 @@ interface AppContextInterface {
   setUserName: React.Dispatch<React.SetStateAction<string>>;
   statements: PreStatement[];
   setStatements: React.Dispatch<React.SetStateAction<PreStatement[]>>;
+  employer: string;
+  setEmployer: React.Dispatch<React.SetStateAction<string>>;
 }
 
 // Create the actual context with a default value.
@@ -14,6 +16,8 @@ interface AppContextInterface {
 export const AppContext = createContext<AppContextInterface>({
   userName: 'Anonymous',
   setUserName: () => {},
+  employer: '',
+  setEmployer: () => {},
   statements: [],
   setStatements: () => {},
 });
@@ -25,12 +29,15 @@ interface AppProviderProps {
 
 export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   const [userName, setUserName] = useState('');
+  const [employer, setEmployer] = useState('');
   const [statements, setStatements] = useState<PreStatement[]>([]);
 
   // Prepare the value to share across the app
   const value: AppContextInterface = {
     userName,
     setUserName,
+    employer,
+    setEmployer,
     statements,
     setStatements,
   };

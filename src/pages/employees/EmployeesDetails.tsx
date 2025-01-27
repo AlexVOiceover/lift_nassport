@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
 import { useNavigate } from 'react-router-dom';
 import employers from '../../data/employers.json';
@@ -7,21 +7,22 @@ const EmployeesDetails: React.FC = () => {
   const navigate = useNavigate();
 
   // Use AppContext to get `userName` and `setUserName`
-  const { userName, setUserName } = useContext(AppContext);
+  const { userName, setUserName, employer, setEmployer } =
+    useContext(AppContext);
 
   // Local state for the user’s name and the selected employer
   // const [employeeName, setEmployeeName] = useState('');
-  const [selectedEmployer, setSelectedEmployer] = useState('');
+  // const [selectedEmployer, setSelectedEmployer] = useState('');
 
   // Simple handler for the form submission
   const handleNext = (event: React.FormEvent) => {
     event.preventDefault();
 
     // Navigate to the Sentence Builder route (e.g., /employees/statements)
-    // Pass the data in location.state for retrieval in SentenceBuilder.
+
     navigate('/employees/statements', {
       // state: { employeeName, employer: selectedEmployer },
-      state: { employer: selectedEmployer },
+      // state: { employer: selectedEmployer },
     });
   };
 
@@ -50,8 +51,8 @@ const EmployeesDetails: React.FC = () => {
         <div>
           <label className='block mb-1'>Select Employer:</label>
           <select
-            value={selectedEmployer}
-            onChange={(e) => setSelectedEmployer(e.target.value)}
+            value={employer}
+            onChange={(e) => setEmployer(e.target.value)}
             className='w-full border border-gray-400 rounded px-2 py-1  bg-gray-900 text-white'
           >
             <option value=''>-- Choose an employer --</option>
@@ -67,11 +68,11 @@ const EmployeesDetails: React.FC = () => {
         <button
           type='submit'
           className={`px-4 py-2 rounded ${
-            !userName || !selectedEmployer
+            !userName || !employer
               ? 'bg-gray-400 text-gray-700 cursor-not-allowed'
               : 'bg-blue-500 text-white hover:bg-blue-600'
           }`}
-          disabled={!userName || !selectedEmployer}
+          disabled={!userName || !employer}
         >
           Next
         </button>

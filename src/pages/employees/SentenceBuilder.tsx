@@ -14,7 +14,8 @@ const typedDictionary: string[] = dictionary; // Explicitly assert it as a strin
 
 const SentenceBuilderPage: React.FC = () => {
   // Access context
-  const { userName, statements, setStatements } = useContext(AppContext);
+  const { userName, statements, setStatements, employer } =
+    useContext(AppContext);
   // Current Statement Parts
   const [sentenceParts, setSentenceParts] = useState<{
     subject: string;
@@ -53,7 +54,9 @@ const SentenceBuilderPage: React.FC = () => {
   return (
     <div className='min-h-screen flex flex-col items-center pt-6 bg-gray-800 text-white'>
       {/* Page Title */}
-      <h1 className='text-2xl font-bold mb-4'>{userName}'s Statements</h1>
+      <h1 className='text-2xl font-bold mb-4'>
+        {userName}'s sharing with {employer}
+      </h1>
 
       <div className='p-4 space-y-4 '>
         {/* Buttons for sentence parts */}

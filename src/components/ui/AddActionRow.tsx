@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { AddActionRowProps } from '../../types/types';
+import { Action } from '../../types/types';
+
+export interface AddActionRowProps {
+  onAddAction: (newAction: Action) => void; // Exclude creationDate as it will be auto-generated
+}
 
 const AddActionRow: React.FC<AddActionRowProps> = ({ onAddAction }) => {
   const [creationDate, setCreationDate] = useState('');

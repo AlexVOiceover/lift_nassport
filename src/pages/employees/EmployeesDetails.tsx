@@ -2,12 +2,13 @@ import React, { useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
 import { useNavigate } from 'react-router-dom';
 import employers from '../../data/employers.json';
+import defaultStatements from '../../data/defaultStatements.json';
 
 const EmployeesDetails: React.FC = () => {
   const navigate = useNavigate();
 
   // Use AppContext to get `userName` and `setUserName`
-  const { userName, setUserName, employer, setEmployer } =
+  const { userName, setUserName, employer, setEmployer, setStatements } =
     useContext(AppContext);
 
   // Local state for the user’s name and the selected employer
@@ -18,8 +19,18 @@ const EmployeesDetails: React.FC = () => {
   const handleNext = (event: React.FormEvent) => {
     event.preventDefault();
 
-    // Navigate to the Sentence Builder route (e.g., /employees/statements)
+    // Replace "Subject" with the actual userName in each statement
+    const populatedStatements = defaultStatements.map((statement) => ({
+      ...statement,
+      subject: userName || 'Anonymous', // Fallback to 'Anonymous' if userName is empty
+    }));
 
+    console.log('Populated Statements:', populatedStatements);
+
+    setStatements(populatedStatements);
+    // setEmployer(employer); // Already handled via onChange
+
+    // Navigate to the Sentence Builder route (e.g., /employees/statements)
     navigate('/employees/statements', {
       // state: { employeeName, employer: selectedEmployer },
       // state: { employer: selectedEmployer },

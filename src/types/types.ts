@@ -8,7 +8,7 @@ export interface PreStatement {
   subject: string;
   verb: string;
   object: string;
-  adverbial?: string;
+  adverbial: string;
   isPublic: boolean;
 }
 export interface Statement extends PreStatement {

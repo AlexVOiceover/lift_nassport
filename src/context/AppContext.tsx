@@ -12,7 +12,7 @@ interface AppContextInterface {
 // Create the actual context with a default value.
 //    For now, just give empty defaults that match the interface.
 export const AppContext = createContext<AppContextInterface>({
-  userName: '',
+  userName: 'Anonymous',
   setUserName: () => {},
   statements: [],
   setStatements: () => {},

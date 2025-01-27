@@ -1,17 +1,10 @@
 import React from 'react';
 import { FaLock, FaLockOpen } from 'react-icons/fa';
-
-interface Sentence {
-  subject: string;
-  verb: string;
-  object: string;
-  adverbial: string;
-  isPublic: boolean;
-}
+import { PreStatement } from '../../types/types';
 
 interface BuiltSentencesProps {
-  sentences: Sentence[];
-  onSelectSentence: (sentence: Sentence, index: number) => void;
+  sentences: PreStatement[];
+  onSelectSentence: (sentence: PreStatement, index: number) => void;
 }
 
 const BuiltSentences: React.FC<BuiltSentencesProps> = ({

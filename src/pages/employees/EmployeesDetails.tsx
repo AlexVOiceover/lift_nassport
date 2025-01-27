@@ -27,12 +27,12 @@ const EmployeesDetails: React.FC = () => {
 
   return (
     <div className='min-h-screen bg-gray-900 text-white flex flex-col items-center pt-6'>
-      <h1 className='text-2xl font-bold mb-4'>Employees Details Page</h1>
-      <p className='mb-6'>
-        Enter your personal details and choose your employer.
-      </p>
+      <h1 className='text-2xl font-bold mb-4'>Wellcome</h1>
 
-      <form className='space-y-4 bg-gray-800 p-4 rounded' onSubmit={handleNext}>
+      <form
+        className='space-y-4 bg-gray-800 p-6 rounded shadow-lg min-w-[100%] max-w-xl w-full'
+        onSubmit={handleNext}
+      >
         {/* Name input */}
         <div>
           <label className='block mb-1'>Your Name:</label>
@@ -42,7 +42,7 @@ const EmployeesDetails: React.FC = () => {
             value={userName}
             // onChange={(e) => setEmployeeName(e.target.value)}
             onChange={(e) => setUserName(e.target.value)}
-            className='w-full border border-gray-400 rounded px-2 py-1 text-black'
+            className='w-full border border-gray-400 rounded px-2 py-1  bg-gray-900 text-white'
           />
         </div>
 
@@ -52,9 +52,9 @@ const EmployeesDetails: React.FC = () => {
           <select
             value={selectedEmployer}
             onChange={(e) => setSelectedEmployer(e.target.value)}
-            className='w-full border border-gray-400 rounded px-2 py-1 text-black'
+            className='w-full border border-gray-400 rounded px-2 py-1  bg-gray-900 text-white'
           >
-            {/* <option value=''>-- Choose an employer --</option> */}
+            <option value=''>-- Choose an employer --</option>
             {employers.map((employer) => (
               <option key={employer.company} value={employer.company}>
                 {employer.company}
@@ -66,8 +66,11 @@ const EmployeesDetails: React.FC = () => {
         {/* Next Button */}
         <button
           type='submit'
-          className='bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600'
-          // disabled={!employeeName || !selectedEmployer}
+          className={`px-4 py-2 rounded ${
+            !userName || !selectedEmployer
+              ? 'bg-gray-400 text-gray-700 cursor-not-allowed'
+              : 'bg-blue-500 text-white hover:bg-blue-600'
+          }`}
           disabled={!userName || !selectedEmployer}
         >
           Next

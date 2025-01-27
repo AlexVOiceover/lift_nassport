@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import SentenceButton from '../../components/ui/SentenceButton';
 import TilesGrid from '../../components/ui/TilesGrid';
 import TextInput from '../../components/ui/TextInput';
 import Modal from '../../components/ui/Modal';
 import BuiltSentences from '../../components/ui/BuiltSentences';
+import { AppContext } from '../../context/AppContext';
 import data from '../../data/data.json';
 import dictionary from '../../data/dictionary.json';
 import { FaLock, FaLockOpen } from 'react-icons/fa';
@@ -12,6 +13,8 @@ import nlp from 'compromise';
 const typedDictionary: string[] = dictionary; // Explicitly assert it as a string array
 
 const SentenceBuilderPage: React.FC = () => {
+  // Access context
+  const { userName, statements, setStatements } = useContext(AppContext);
   // Current Statement Parts
   const [sentenceParts, setSentenceParts] = useState<{
     subject: string;
@@ -20,7 +23,7 @@ const SentenceBuilderPage: React.FC = () => {
     adverbial: string;
     isPublic: boolean;
   }>({
-    subject: 'Dave',
+    subject: userName ? userName : 'Anonymous',
     verb: '',
     object: '',
     adverbial: '',
@@ -28,15 +31,15 @@ const SentenceBuilderPage: React.FC = () => {
   });
 
   // List of Statements
-  const [builtSentences, setBuiltSentences] = useState<
-    {
-      subject: string;
-      verb: string;
-      object: string;
-      adverbial: string;
-      isPublic: boolean;
-    }[]
-  >([]);
+  // const [builtSentences, setBuiltSentences] = useState<
+  //   {
+  //     subject: string;
+  //     verb: string;
+  //     object: string;
+  //     adverbial: string;
+  //     isPublic: boolean;
+  //   }[]
+  // >([]);
 
   //Control for the modals
   const [isVerbModalOpen, setIsVerbModalOpen] = useState(false);
@@ -50,7 +53,7 @@ const SentenceBuilderPage: React.FC = () => {
   return (
     <div className='min-h-screen flex flex-col items-center pt-6 bg-gray-800 text-white'>
       {/* Page Title */}
-      <h1 className='text-2xl font-bold mb-4'>Dave's Statements</h1>
+      <h1 className='text-2xl font-bold mb-4'>{userName}'s Statements</h1>
 
       <div className='p-4 space-y-4 '>
         {/* Buttons for sentence parts */}
@@ -61,8 +64,8 @@ const SentenceBuilderPage: React.FC = () => {
             onClick={() => {}}
           />
           <SentenceButton
-            defaultValue='likes/dislikes' // Default value for the verb
-            label={sentenceParts.verb || 'likes/dislikes'}
+            defaultValue='Action' // Default value for the verb
+            label={sentenceParts.verb || 'Action'}
             onClick={() => setIsVerbModalOpen(true)}
           />
           <SentenceButton
@@ -81,6 +84,7 @@ const SentenceBuilderPage: React.FC = () => {
               setIsTextInputModalOpen(true);
             }}
           /> */}
+          {/* Button for the public status */}
           <button
             onClick={() =>
               setSentenceParts((prev) => ({
@@ -104,18 +108,14 @@ const SentenceBuilderPage: React.FC = () => {
             }`}
             onClick={() => {
               if (sentenceParts.verb) {
-                setBuiltSentences((prev) => [
+                setStatements((prev) => [
                   {
-                    subject: sentenceParts.subject,
-                    verb: sentenceParts.verb,
-                    object: sentenceParts.object,
-                    adverbial: sentenceParts.adverbial,
-                    isPublic: sentenceParts.isPublic,
+                    ...sentenceParts,
                   },
                   ...prev,
                 ]);
                 setSentenceParts({
-                  subject: 'Dave',
+                  subject: userName || 'Anonymous',
                   verb: '',
                   object: '',
                   adverbial: '',
@@ -163,10 +163,14 @@ const SentenceBuilderPage: React.FC = () => {
 
         {/* Display built sentences */}
         <BuiltSentences
-          sentences={builtSentences}
+          sentences={statements}
           onSelectSentence={(sentence, index) => {
+            const newStatements = [...statements];
+            newStatements.splice(index, 1);
+            setStatements(newStatements);
+
+            // Re-fill the form
             setSentenceParts(sentence);
-            setBuiltSentences((prev) => prev.filter((_, i) => i !== index));
           }}
         />
 

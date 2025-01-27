@@ -1,0 +1,72 @@
+[
+  {
+    "subject": "Subject",
+    "verb": "???",
+    "object": "noise",
+    "adverbial": "",
+    "isPublic": true
+  },
+  {
+    "subject": "Subject",
+    "verb": "is",
+    "object": "???",
+    "adverbial": "in the office",
+    "isPublic": false
+  },
+  {
+    "subject": "Subject",
+    "verb": "has issues with",
+    "object": "???",
+    "adverbial": "",
+    "isPublic": true
+  },
+  {
+    "subject": "Subject",
+    "verb": "???",
+    "object": "the workspace",
+    "adverbial": "",
+    "isPublic": false
+  },
+  {
+    "subject": "Subject",
+    "verb": "would like more",
+    "object": "???",
+    "adverbial": "",
+    "isPublic": true
+  },
+  {
+    "subject": "Subject",
+    "verb": "needs support with",
+    "object": "???",
+    "adverbial": "",
+    "isPublic": false
+  },
+  {
+    "subject": "Subject",
+    "verb": "???",
+    "object": "remote work options",
+    "adverbial": "",
+    "isPublic": true
+  },
+  {
+    "subject": "Subject",
+    "verb": "is concerned about",
+    "object": "???",
+    "adverbial": "",
+    "isPublic": false
+  },
+  {
+    "subject": "Subject",
+    "verb": "would appreciate",
+    "object": "???",
+    "adverbial": "time",
+    "isPublic": true
+  },
+  {
+    "subject": "Subject",
+    "verb": "???",
+    "object": "the current project deadlines",
+    "adverbial": "",
+    "isPublic": false
+  }
+]

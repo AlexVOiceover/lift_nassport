@@ -2,6 +2,14 @@ import React from 'react';
 import Table from './Table';
 import { Action } from '../../types/types';
 
+// export interface ActionsTableProps {
+//   actions: Action[];
+//   editingRowIndex: number | null;
+//   onEditRow: (rowIndex: number) => void;
+//   onCancelEdit: () => void;
+//   setActions: React.Dispatch<React.SetStateAction<Action[]>>;
+// }
+
 const ActionsTable: React.FC<{
   actions: Action[];
 }> = ({ actions }) => {

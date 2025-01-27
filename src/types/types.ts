@@ -4,11 +4,13 @@ export interface Action {
   action: string;
 }
 
-export interface Statement {
+export interface PreStatement {
   subject: string;
   verb: string;
   object: string;
-  // adverbial?: string;
+  adverbial?: string;
   isPublic: boolean;
+}
+export interface Statement extends PreStatement {
   actions?: Action[];
 }

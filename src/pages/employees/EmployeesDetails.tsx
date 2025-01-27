@@ -6,7 +6,7 @@ import employers from '../../data/employers.json';
 const EmployeesDetails: React.FC = () => {
   const navigate = useNavigate();
 
-  // Use our AppContext to get `userName` and `setUserName`
+  // Use AppContext to get `userName` and `setUserName`
   const { userName, setUserName } = useContext(AppContext);
 
   // Local state for the user’s name and the selected employer

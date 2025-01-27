@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { AppContext } from '../../context/AppContext';
+import dictionary from '../../data/dictionary.json';
+import statementsJson from '../../data/statements.json';
 
 interface TextInputProps {
   initialValue?: string;
   onAccept: (value: string) => void;
   onCancel: () => void;
   placeholder?: string;
-  dictionary: string[];
 }
 
 const TextInput: React.FC<TextInputProps> = ({
@@ -13,11 +15,30 @@ const TextInput: React.FC<TextInputProps> = ({
   onAccept,
   onCancel,
   placeholder,
-  dictionary,
 }) => {
   const [inputValue, setInputValue] = useState(initialValue);
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
+  //Subjects and Objects from statements.json
+  const subjects = statementsJson.map((stmt) => stmt.subject);
+  const objects = statementsJson.map((stmt) => stmt.object);
+
+  // Subjects and Objects from context
+  const { statements, userName } = useContext(AppContext);
+  const contextSubjects = statements.map((stmt) => stmt.subject);
+  const contextObjects = statements.map((stmt) => stmt.object);
+
+  const typedDictionary: string[] = Array.from(
+    new Set([
+      ...dictionary,
+      ...subjects,
+      ...objects,
+      ...contextSubjects,
+      ...contextObjects,
+      userName,
+    ])
+  ).sort((a, b) => a.localeCompare(b));
 
   const handleInputChange = (value: string) => {
     setInputValue(value);
@@ -28,7 +49,7 @@ const TextInput: React.FC<TextInputProps> = ({
       setSuggestions([]);
     } else {
       const lowerCaseValue = value.toLowerCase();
-      const filteredSuggestions = dictionary.filter((word) =>
+      const filteredSuggestions = typedDictionary.filter((word) =>
         word.toLowerCase().startsWith(lowerCaseValue)
       );
       setSuggestions(filteredSuggestions);

@@ -6,11 +6,9 @@ import Modal from '../../components/ui/Modal';
 import BuiltSentences from '../../components/ui/BuiltSentences';
 import { AppContext } from '../../context/AppContext';
 import data from '../../data/data.json';
-import dictionary from '../../data/dictionary.json';
+
 import { FaLock, FaLockOpen } from 'react-icons/fa';
 import nlp from 'compromise';
-
-const typedDictionary: string[] = dictionary;
 
 const SentenceBuilderPage: React.FC = () => {
   // Access context
@@ -217,7 +215,6 @@ const SentenceBuilderPage: React.FC = () => {
               setIsTextInputModalOpen(false);
             }}
             onCancel={() => setIsTextInputModalOpen(false)}
-            dictionary={typedDictionary}
           />
         </Modal>
       </div>

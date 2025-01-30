@@ -6,6 +6,7 @@ import Modal from '../../components/ui/Modal';
 import BuiltSentences from '../../components/ui/BuiltSentences';
 import { AppContext } from '../../context/AppContext';
 import data from '../../data/data.json';
+import TextInputGen from '../../components/ui/TextInputGen';
 
 import { FaLock, FaLockOpen } from 'react-icons/fa';
 import nlp from 'compromise';
@@ -34,6 +35,8 @@ const SentenceBuilderPage: React.FC = () => {
   const [isTextInputModalOpen, setIsTextInputModalOpen] = useState(false);
   const [inputType, setInputType] = useState<'object' | 'adverbial'>('object');
 
+  //Retrieve subject's descriptiors
+
   // ONLY NEEDED IF KEEP THE CURRENT SENTENCE DISPLAY
   // const sentenceText =
   //   `${sentenceParts.subject} ${sentenceParts.verb} ${sentenceParts.object} ${sentenceParts.adverbial}`.trim();
@@ -48,6 +51,18 @@ const SentenceBuilderPage: React.FC = () => {
       <div className='p-4 space-y-4 '>
         {/* Buttons for sentence parts */}
         <div className='flex space-x-2'>
+          <TextInputGen
+            initialValue={userName}
+            onAccept={(value) => {
+              setSentenceParts((prev) => ({
+                ...prev,
+                [inputType]: value.toLowerCase(),
+              }));
+              setIsTextInputModalOpen(false);
+            }}
+            onCancel={() => setIsTextInputModalOpen(false)}
+            autocomplete={['a', 'alex', 'adriana']}
+          />
           <SentenceButton
             defaultValue='Choose Subject'
             label={sentenceParts.subject}

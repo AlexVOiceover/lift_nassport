@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const HomePage: React.FC = () => {
   return (
     <div className='min-h-screen bg-gray-800 text-white flex flex-col items-center justify-center'>
-      <h1 className='text-3xl font-bold mb-8'>Welcome to the LIFT App</h1>
+      <h1 className='text-3xl font-bold mb-8'>Welcome to the Nassport App</h1>
       <div className='flex space-x-4'>
         <Link
           to='/employees'

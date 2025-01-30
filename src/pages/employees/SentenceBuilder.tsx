@@ -42,7 +42,7 @@ const SentenceBuilderPage: React.FC = () => {
     <div className='min-h-screen flex flex-col items-center pt-6 bg-gray-800 text-white'>
       {/* Page Title */}
       <h1 className='text-2xl font-bold mb-4'>
-        {userName}'s sharing with {employer}
+        {userName} sharing with {employer}
       </h1>
 
       <div className='p-4 space-y-4 '>

@@ -9,6 +9,8 @@ interface AppContextInterface {
   setStatements: React.Dispatch<React.SetStateAction<PreStatement[]>>;
   employer: string;
   setEmployer: React.Dispatch<React.SetStateAction<string>>;
+  descriptors: string[];
+  setDescriptors: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
 // Create the actual context with a default value.
@@ -20,6 +22,8 @@ export const AppContext = createContext<AppContextInterface>({
   setEmployer: () => {},
   statements: [],
   setStatements: () => {},
+  descriptors: [],
+  setDescriptors: () => {},
 });
 
 // 3) Create a Provider component that will wrap your app.
@@ -31,6 +35,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   const [userName, setUserName] = useState('');
   const [employer, setEmployer] = useState('');
   const [statements, setStatements] = useState<PreStatement[]>([]);
+  const [descriptors, setDescriptors] = useState<string[]>([]);
 
   // Prepare the value to share across the app
   const value: AppContextInterface = {
@@ -40,6 +45,8 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
     setEmployer,
     statements,
     setStatements,
+    descriptors,
+    setDescriptors,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

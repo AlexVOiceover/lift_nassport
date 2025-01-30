@@ -13,7 +13,7 @@ import nlp from 'compromise';
 
 const SentenceBuilderPage: React.FC = () => {
   // Access context
-  const { userName, statements, setStatements, employer } =
+  const { userName, statements, setStatements, employer, descriptors } =
     useContext(AppContext);
   // Current Statement Parts
   const [sentenceParts, setSentenceParts] = useState<{
@@ -56,12 +56,12 @@ const SentenceBuilderPage: React.FC = () => {
             onAccept={(value) => {
               setSentenceParts((prev) => ({
                 ...prev,
-                [inputType]: value.toLowerCase(),
+                subject: ` ${userName}'s  ${value.toLowerCase()}`,
               }));
               setIsTextInputModalOpen(false);
             }}
             onCancel={() => setIsTextInputModalOpen(false)}
-            autocomplete={['a', 'alex', 'adriana']}
+            autocomplete={descriptors}
           />
           <SentenceButton
             defaultValue='Choose Subject'

@@ -3,13 +3,20 @@ import { AppContext } from '../../context/AppContext';
 import { useNavigate } from 'react-router-dom';
 import employers from '../../data/employers.json';
 import defaultStatements from '../../data/defaultStatements.json';
+import descriptorsData from '../../data/subjects.json';
 
 const EmployeesDetails: React.FC = () => {
   const navigate = useNavigate();
 
   // Use AppContext to get `userName` and `setUserName`
-  const { userName, setUserName, employer, setEmployer, setStatements } =
-    useContext(AppContext);
+  const {
+    userName,
+    setUserName,
+    employer,
+    setEmployer,
+    setStatements,
+    setDescriptors,
+  } = useContext(AppContext);
 
   // Local state for the user’s name and the selected employer
   // const [employeeName, setEmployeeName] = useState('');
@@ -28,7 +35,20 @@ const EmployeesDetails: React.FC = () => {
     console.log('Populated Statements:', populatedStatements);
 
     setStatements(populatedStatements);
-    // setEmployer(employer); // Already handled via onChange
+
+    // A helper function to get descriptors by subject
+    function getSubjectDescriptors(subject: string): string[] {
+      const found = descriptorsData.find((d) => d.subject === subject);
+      return found ? found.descriptors : [];
+    }
+
+    // 1) Find the descriptors for the userName
+    const subjectDescriptors = getSubjectDescriptors(userName);
+
+    // 2) Set them in context
+    setDescriptors(subjectDescriptors);
+
+    console.log('Populated Descriptors:', subjectDescriptors);
 
     // Navigate to the Sentence Builder route (e.g., /employees/statements)
     navigate('/employees/statements', {

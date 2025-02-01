@@ -14,7 +14,8 @@ import { AppProvider } from './context/AppContext';
 function App() {
   return (
     <AppProvider>
-      <Router basename='/LIFT-frontend'>
+      <Router>
+        {/* <Router basename='/LIFT-frontend'> */}
         <div className='App'>
           <Routes>
             {/* Entry point */}

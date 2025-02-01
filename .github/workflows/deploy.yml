@@ -38,7 +38,7 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "nassport"
-          entrypoint: "https://deno.land/std@0.217.0/http/index.html"
+          entrypoint: "https://deno.land/std@0.217.0/http/file_server.ts"
           root: "dist"
           
           

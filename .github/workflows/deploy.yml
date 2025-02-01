@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy-to-deno:
-    name: Deploy
+    name: Deploy to Deno
     runs-on: ubuntu-latest
 
     permissions:
@@ -66,3 +66,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          publish_branch: gh-pages # Ensure it's pushing to the correct branch
+          force_orphan: true # Ensure it overwrites the previous deployment

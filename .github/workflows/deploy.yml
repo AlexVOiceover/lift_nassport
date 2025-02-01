@@ -42,7 +42,7 @@ jobs:
           root: 'dist'
 
   deploy-to-github-pages:
-    name: Deploy to GitHub Pages
+    name: Deploy to GitHub Pages.
     runs-on: ubuntu-latest
     needs: deploy-to-deno # Ensures Deno Deploy finishes first
 
@@ -67,4 +67,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: gh-pages # Ensure it's pushing to the correct branch
-          force_orphan: true # Ensure it overwrites the previous deployment
+          force_orphan: true # Ensure it overwrites the previous deployment.

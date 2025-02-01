@@ -17,7 +17,7 @@ const SentenceButton: React.FC<SentenceButtonProps> = ({
   const getButtonStyles = () => {
     return isFilled
       ? 'bg-blue-500 text-white hover:bg-blue-600' // Blue when filled
-      : 'bg-gray-300 text-black hover:bg-gray-400'; // Grey when default
+      : 'bg-gray-300 text-black hover:bg-gray-400'; // Grey when default redeploy
   };
 
   return (

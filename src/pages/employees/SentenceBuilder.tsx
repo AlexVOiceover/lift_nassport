@@ -6,7 +6,8 @@ import Modal from '../../components/ui/Modal';
 import BuiltSentences from '../../components/ui/BuiltSentences';
 import { AppContext } from '../../context/AppContext';
 import data from '../../data/data.json';
-import TextInputGen from '../../components/ui/TextInputGen';
+// import TextInputGen from '../../components/ui/TextInputGen';
+import SubjectDropdown from '../../components/ui/SubjectDropdown';
 
 import { FaLock, FaLockOpen } from 'react-icons/fa';
 import nlp from 'compromise';
@@ -51,7 +52,7 @@ const SentenceBuilderPage: React.FC = () => {
       <div className='p-4 space-y-4 '>
         {/* Buttons for sentence parts */}
         <div className='flex space-x-2'>
-          <TextInputGen
+          {/* <TextInputGen
             subjectName={userName}
             onAccept={(value) => {
               setSentenceParts((prev) => ({
@@ -62,6 +63,16 @@ const SentenceBuilderPage: React.FC = () => {
             }}
             // onCancel={() => setIsTextInputModalOpen(false)}
             autocomplete={descriptors}
+          /> */}
+          <SubjectDropdown
+            subject={userName}
+            descriptors={descriptors}
+            onSelect={(value) => {
+              setSentenceParts((prev) => ({
+                ...prev,
+                subject: value,
+              }));
+            }}
           />
           {/* <SentenceButton
             defaultValue='Choose Subject'

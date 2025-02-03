@@ -85,19 +85,8 @@ const EmployeesDetails: React.FC = () => {
           <Dropdown
             options={employers.map((employer) => employer.company)}
             onSelect={(value) => setEmployer(value)}
+            placeholder='Select Employer'
           />
-          {/* <select
-            value={employer}
-            onChange={(e) => setEmployer(e.target.value)}
-            className='w-full border border-gray-400 rounded px-2 py-1  bg-gray-900 text-white'
-          >
-            <option value=''>-- Choose an employer --</option>
-            {employers.map((employer) => (
-              <option key={employer.company} value={employer.company}>
-                {employer.company}
-              </option>
-            ))}
-          </select> */}
         </div>
 
         {/* Next Button */}

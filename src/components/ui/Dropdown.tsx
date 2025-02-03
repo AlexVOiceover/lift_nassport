@@ -4,6 +4,7 @@ interface DropdownProps {
   options: string[];
   onSelect: (value: string) => void;
   includeAll?: boolean;
+  placeholder?: string;
 }
 
 const Dropdown: React.FC<DropdownProps> = ({
@@ -11,6 +12,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   options,
   onSelect,
   includeAll = false,
+  placeholder,
 }) => {
   const displayedOptions = includeAll ? ['All', ...options] : options;
 
@@ -24,7 +26,13 @@ const Dropdown: React.FC<DropdownProps> = ({
       <select
         className='w-full p-2 border bg-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black'
         onChange={(e) => onSelect(e.target.value)}
+        defaultValue=''
       >
+        {placeholder && (
+          <option value='' disabled>
+            {placeholder}
+          </option>
+        )}
         {displayedOptions.map((option) => (
           <option key={option} value={option}>
             {option}

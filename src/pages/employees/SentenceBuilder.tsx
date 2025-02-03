@@ -73,6 +73,7 @@ const SentenceBuilderPage: React.FC = () => {
                 subject: value,
               }));
             }}
+            placeholder='Choose Subject'
           />
           {/* <SentenceButton
             defaultValue='Choose Subject'

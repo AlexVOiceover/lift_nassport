@@ -52,22 +52,22 @@ const SentenceBuilderPage: React.FC = () => {
         {/* Buttons for sentence parts */}
         <div className='flex space-x-2'>
           <TextInputGen
-            initialValue={userName}
+            subjectName={userName}
             onAccept={(value) => {
               setSentenceParts((prev) => ({
                 ...prev,
-                subject: ` ${userName}'s  ${value.toLowerCase()}`,
+                subject: value,
               }));
               setIsTextInputModalOpen(false);
             }}
-            onCancel={() => setIsTextInputModalOpen(false)}
+            // onCancel={() => setIsTextInputModalOpen(false)}
             autocomplete={descriptors}
           />
-          <SentenceButton
+          {/* <SentenceButton
             defaultValue='Choose Subject'
             label={sentenceParts.subject}
             onClick={() => {}}
-          />
+          /> */}
           <SentenceButton
             defaultValue='Action'
             label={sentenceParts.verb || 'Action'}

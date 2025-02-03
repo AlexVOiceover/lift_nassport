@@ -8,10 +8,7 @@ import StatementsTable from '../../components/ui/StatementsTable';
 import ActionsManager from '../../components/ui/ActionsManager';
 
 // Utility function to generate dropdown options. Include 'All' by default.
-const getUniqueOptions = (data: string[], includeAll = true) => {
-  const uniqueOptions = Array.from(new Set(data));
-  return includeAll ? ['All', ...uniqueOptions] : uniqueOptions;
-};
+const getUniqueOptions = (data: string[]) => Array.from(new Set(data));
 
 const EmployersDashboard: React.FC = () => {
   const [filters, setFilters] = useState({
@@ -33,7 +30,7 @@ const EmployersDashboard: React.FC = () => {
   const verbs = getUniqueOptions(statements.map((s) => s.verb));
   const objects = getUniqueOptions(statements.map((s) => s.object));
   // const privacies = ['Public'];
-  const hasActions = ['All', 'Yes', 'No'];
+  const hasActions = ['Yes', 'No'];
 
   // Filtered statements
   const filteredStatements = statements.filter((statement) => {
@@ -82,33 +79,26 @@ const EmployersDashboard: React.FC = () => {
           label='Subject'
           options={subjects}
           onSelect={(value) => handleFilterChange('subject', value)}
+          includeAll
         />
         <Dropdown
           label='Verb'
           options={verbs}
           onSelect={(value) => handleFilterChange('verb', value)}
+          includeAll
         />
         <Dropdown
           label='Object'
           options={objects}
           onSelect={(value) => handleFilterChange('object', value)}
+          includeAll
         />
-        {/* <Dropdown 
-          label='Privacy'
-          options={privacies}
-          onSelect={(value) => handleFilterChange('isPublic', value)}
-          renderOption={(option) => (
-            <div className='flex items-center space-x-2'>
-              {option === 'Public' && <FaLockOpen className='text-green-500' />}
-              {option === 'Private' && <FaLock className='text-red-500' />}
-              {option === 'All' && <span>All</span>}
-            </div>
-          )}
-        /> */}
+
         <Dropdown
           label='Has Actions'
           options={hasActions}
           onSelect={(value) => handleFilterChange('hasActions', value)}
+          includeAll
         />
       </div>
 

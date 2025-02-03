@@ -6,13 +6,15 @@ import Modal from '../../components/ui/Modal';
 import BuiltSentences from '../../components/ui/BuiltSentences';
 import { AppContext } from '../../context/AppContext';
 import data from '../../data/data.json';
+// import TextInputGen from '../../components/ui/TextInputGen';
+import SubjectDropdown from '../../components/ui/SubjectDropdown';
 
 import { FaLock, FaLockOpen } from 'react-icons/fa';
 import nlp from 'compromise';
 
 const SentenceBuilderPage: React.FC = () => {
   // Access context
-  const { userName, statements, setStatements, employer } =
+  const { userName, statements, setStatements, employer, descriptors } =
     useContext(AppContext);
   // Current Statement Parts
   const [sentenceParts, setSentenceParts] = useState<{
@@ -34,6 +36,8 @@ const SentenceBuilderPage: React.FC = () => {
   const [isTextInputModalOpen, setIsTextInputModalOpen] = useState(false);
   const [inputType, setInputType] = useState<'object' | 'adverbial'>('object');
 
+  //Retrieve subject's descriptiors
+
   // ONLY NEEDED IF KEEP THE CURRENT SENTENCE DISPLAY
   // const sentenceText =
   //   `${sentenceParts.subject} ${sentenceParts.verb} ${sentenceParts.object} ${sentenceParts.adverbial}`.trim();
@@ -48,19 +52,42 @@ const SentenceBuilderPage: React.FC = () => {
       <div className='p-4 space-y-4 '>
         {/* Buttons for sentence parts */}
         <div className='flex space-x-2'>
-          <SentenceButton
+          {/* <TextInputGen
+            subjectName={userName}
+            onAccept={(value) => {
+              setSentenceParts((prev) => ({
+                ...prev,
+                subject: value,
+              }));
+              setIsTextInputModalOpen(false);
+            }}
+            // onCancel={() => setIsTextInputModalOpen(false)}
+            autocomplete={descriptors}
+          /> */}
+          <SubjectDropdown
+            subject={userName}
+            descriptors={descriptors}
+            onSelect={(value) => {
+              setSentenceParts((prev) => ({
+                ...prev,
+                subject: value,
+              }));
+            }}
+            placeholder='Choose Subject'
+          />
+          {/* <SentenceButton
             defaultValue='Choose Subject'
             label={sentenceParts.subject}
             onClick={() => {}}
-          />
+          /> */}
           <SentenceButton
             defaultValue='Action'
             label={sentenceParts.verb || 'Action'}
             onClick={() => setIsVerbModalOpen(true)}
           />
           <SentenceButton
-            defaultValue='Enter Object'
-            label={sentenceParts.object || 'Enter Object'}
+            defaultValue='Object'
+            label={sentenceParts.object || 'Object'}
             onClick={() => {
               setInputType('object');
               setIsTextInputModalOpen(true);

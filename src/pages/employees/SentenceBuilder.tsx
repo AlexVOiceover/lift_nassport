@@ -86,8 +86,8 @@ const SentenceBuilderPage: React.FC = () => {
             onClick={() => setIsVerbModalOpen(true)}
           />
           <SentenceButton
-            defaultValue='Enter Object'
-            label={sentenceParts.object || 'Enter Object'}
+            defaultValue='Object'
+            label={sentenceParts.object || 'Object'}
             onClick={() => {
               setInputType('object');
               setIsTextInputModalOpen(true);

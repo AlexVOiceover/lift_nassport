@@ -5,6 +5,7 @@ interface DropdownProps {
   onSelect: (value: string) => void;
   includeAll?: boolean;
   placeholder?: string;
+  className?: string;
 }
 
 const Dropdown: React.FC<DropdownProps> = ({
@@ -13,6 +14,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   onSelect,
   includeAll = false,
   placeholder,
+  className,
 }) => {
   const displayedOptions = includeAll ? ['All', ...options] : options;
 
@@ -24,7 +26,7 @@ const Dropdown: React.FC<DropdownProps> = ({
         </label>
       )}
       <select
-        className='w-full p-2 border bg-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black'
+        className={`w-full p-2 border bg-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black ${className}`}
         onChange={(e) => onSelect(e.target.value)}
         defaultValue=''
       >

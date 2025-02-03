@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import employers from '../../data/employers.json';
 import defaultStatements from '../../data/defaultStatements.json';
 import descriptorsData from '../../data/subjects.json';
+import Dropdown from '../../components/ui/Dropdown';
 
 const EmployeesDetails: React.FC = () => {
   const navigate = useNavigate();
@@ -81,7 +82,11 @@ const EmployeesDetails: React.FC = () => {
         {/* Employer dropdown */}
         <div>
           <label className='block mb-1'>Select Employer:</label>
-          <select
+          <Dropdown
+            options={employers.map((employer) => employer.company)}
+            onSelect={(value) => setEmployer(value)}
+          />
+          {/* <select
             value={employer}
             onChange={(e) => setEmployer(e.target.value)}
             className='w-full border border-gray-400 rounded px-2 py-1  bg-gray-900 text-white'
@@ -92,7 +97,7 @@ const EmployeesDetails: React.FC = () => {
                 {employer.company}
               </option>
             ))}
-          </select>
+          </select> */}
         </div>
 
         {/* Next Button */}

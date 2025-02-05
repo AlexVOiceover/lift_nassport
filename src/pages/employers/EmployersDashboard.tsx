@@ -4,7 +4,6 @@ import Modal from '../../components/ui/Modal';
 import statements from '../../data/statements.json';
 // import { FaLock, FaLockOpen } from 'react-icons/fa';
 import StatementsTable from '../../components/ui/StatementsTable';
-//import ActionsTable from '../../components/ui/ActionsTable';
 import ActionsManager from '../../components/ui/ActionsManager';
 
 // Utility function to generate dropdown options. Include 'All' by default.

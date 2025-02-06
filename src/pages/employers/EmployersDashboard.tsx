@@ -4,11 +4,18 @@ import Modal from '../../components/ui/Modal';
 import statements from '../../data/statements.json';
 // import { FaLock, FaLockOpen } from 'react-icons/fa';
 import StatementsTable from '../../components/ui/StatementsTable';
-//import ActionsTable from '../../components/ui/ActionsTable';
 import ActionsManager from '../../components/ui/ActionsManager';
 
 // Utility function to generate dropdown options. Include 'All' by default.
 const getUniqueOptions = (data: string[]) => Array.from(new Set(data));
+
+//Testing Fetch
+const API_URL = import.meta.env.VITE_API_URL;
+console.log('Backend API:', API_URL);
+
+fetch(`${API_URL}/n/s/Alex`)
+  .then((response) => response.json())
+  .then((data) => console.log(data));
 
 const EmployersDashboard: React.FC = () => {
   const [filters, setFilters] = useState({

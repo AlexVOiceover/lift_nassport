@@ -9,6 +9,14 @@ import ActionsManager from '../../components/ui/ActionsManager';
 // Utility function to generate dropdown options. Include 'All' by default.
 const getUniqueOptions = (data: string[]) => Array.from(new Set(data));
 
+//Testing Fetch
+const API_URL = import.meta.env.VITE_API_URL;
+console.log('Backend API:', API_URL);
+
+fetch(`${API_URL}/v`)
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+
 const EmployersDashboard: React.FC = () => {
   const [filters, setFilters] = useState({
     subject: 'All',

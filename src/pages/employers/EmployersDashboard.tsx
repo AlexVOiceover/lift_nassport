@@ -13,7 +13,7 @@ const getUniqueOptions = (data: string[]) => Array.from(new Set(data));
 const API_URL = import.meta.env.VITE_API_URL;
 console.log('Backend API:', API_URL);
 
-fetch(`${API_URL}/v`)
+fetch(`${API_URL}/n/s/Alex`)
   .then((response) => response.json())
   .then((data) => console.log(data));
 

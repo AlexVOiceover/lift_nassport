@@ -36,8 +36,6 @@ const SentenceBuilderPage: React.FC = () => {
   const [isTextInputModalOpen, setIsTextInputModalOpen] = useState(false);
   const [inputType, setInputType] = useState<'object' | 'adverbial'>('object');
 
-  //Retrieve subject's descriptiors
-
   // ONLY NEEDED IF KEEP THE CURRENT SENTENCE DISPLAY
   // const sentenceText =
   //   `${sentenceParts.subject} ${sentenceParts.verb} ${sentenceParts.object} ${sentenceParts.adverbial}`.trim();

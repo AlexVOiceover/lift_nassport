@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Dropdown from '../../components/ui/Dropdown';
 import Modal from '../../components/ui/Modal';
 import statements from '../../data/statements.json';
-// import { FaLock, FaLockOpen } from 'react-icons/fa';
 import StatementsTable from '../../components/ui/StatementsTable';
 import ActionsManager from '../../components/ui/ActionsManager';
 

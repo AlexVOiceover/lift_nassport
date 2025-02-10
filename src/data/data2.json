@@ -1,0 +1,436 @@
+{
+  "verbs": [
+    {
+      "name": "Support",
+      "popularity": 99,
+      "categories": ["Support & Help", "Guide & Encourage"],
+      "color": "#3498db"
+    },
+    {
+      "name": "Help",
+      "popularity": 98,
+      "categories": ["Support & Help"],
+      "color": "#2980b9"
+    },
+    {
+      "name": "Assist",
+      "popularity": 87,
+      "categories": ["Support & Help"],
+      "color": "#2c3e50"
+    },
+    {
+      "name": "Guide",
+      "popularity": 85,
+      "categories": ["Guide & Encourage"],
+      "color": "#34495e"
+    },
+    {
+      "name": "Encourage",
+      "popularity": 84,
+      "categories": ["Guide & Encourage"],
+      "color": "#16a085"
+    },
+    {
+      "name": "Facilitate",
+      "popularity": 77,
+      "categories": ["Guide & Encourage"],
+      "color": "#1abc9c"
+    },
+    {
+      "name": "Mentor",
+      "popularity": 82,
+      "categories": ["Guide & Encourage", "Leadership"],
+      "color": "#27ae60"
+    },
+    {
+      "name": "Advise",
+      "popularity": 80,
+      "categories": ["Guide & Encourage"],
+      "color": "#2ecc71"
+    },
+    {
+      "name": "Grow",
+      "popularity": 92,
+      "categories": ["Personal Growth"],
+      "color": "#8e44ad"
+    },
+    {
+      "name": "Improve",
+      "popularity": 94,
+      "categories": ["Personal Growth", "Achievement"],
+      "color": "#9b59b6"
+    },
+    {
+      "name": "Develop",
+      "popularity": 91,
+      "categories": ["Personal Growth", "Implementation"],
+      "color": "#7d3c98"
+    },
+    {
+      "name": "Progress",
+      "popularity": 88,
+      "categories": ["Personal Growth", "Adaptation & Learning"],
+      "color": "#2980b9"
+    },
+    {
+      "name": "Adapt",
+      "popularity": 90,
+      "categories": ["Adaptation & Learning"],
+      "color": "#3498db"
+    },
+    {
+      "name": "Learn",
+      "popularity": 89,
+      "categories": ["Adaptation & Learning"],
+      "color": "#2c3e50"
+    },
+    {
+      "name": "Evolve",
+      "popularity": 86,
+      "categories": ["Adaptation & Learning", "Personal Growth"],
+      "color": "#34495e"
+    },
+    {
+      "name": "Advance",
+      "popularity": 87,
+      "categories": ["Personal Growth", "Achievement"],
+      "color": "#16a085"
+    },
+    {
+      "name": "Create",
+      "popularity": 91,
+      "categories": ["Creative Process"],
+      "color": "#1abc9c"
+    },
+    {
+      "name": "Innovate",
+      "popularity": 82,
+      "categories": ["Creative Process"],
+      "color": "#27ae60"
+    },
+    {
+      "name": "Design",
+      "popularity": 88,
+      "categories": ["Creative Process", "Implementation"],
+      "color": "#2ecc71"
+    },
+    {
+      "name": "Build",
+      "popularity": 86,
+      "categories": ["Implementation"],
+      "color": "#8e44ad"
+    },
+    {
+      "name": "Transform",
+      "popularity": 85,
+      "categories": ["Implementation", "Creative Process"],
+      "color": "#9b59b6"
+    },
+    {
+      "name": "Pioneer",
+      "popularity": 83,
+      "categories": ["Creative Process"],
+      "color": "#7d3c98"
+    },
+    {
+      "name": "Invent",
+      "popularity": 81,
+      "categories": ["Creative Process"],
+      "color": "#2980b9"
+    },
+    {
+      "name": "Craft",
+      "popularity": 79,
+      "categories": ["Implementation"],
+      "color": "#3498db"
+    },
+    {
+      "name": "Collaborate",
+      "popularity": 88,
+      "categories": ["Teamwork"],
+      "color": "#2c3e50"
+    },
+    {
+      "name": "Connect",
+      "popularity": 86,
+      "categories": ["Engagement"],
+      "color": "#34495e"
+    },
+    {
+      "name": "Engage",
+      "popularity": 89,
+      "categories": ["Engagement"],
+      "color": "#16a085"
+    },
+    {
+      "name": "Partner",
+      "popularity": 85,
+      "categories": ["Teamwork"],
+      "color": "#1abc9c"
+    },
+    {
+      "name": "Unite",
+      "popularity": 84,
+      "categories": ["Teamwork"],
+      "color": "#27ae60"
+    },
+    {
+      "name": "Share",
+      "popularity": 83,
+      "categories": ["Engagement", "Teamwork"],
+      "color": "#2ecc71"
+    },
+    {
+      "name": "Network",
+      "popularity": 82,
+      "categories": ["Engagement"],
+      "color": "#8e44ad"
+    },
+    {
+      "name": "Cooperate",
+      "popularity": 81,
+      "categories": ["Teamwork"],
+      "color": "#9b59b6"
+    },
+    {
+      "name": "Lead",
+      "popularity": 96,
+      "categories": ["Leadership"],
+      "color": "#7d3c98"
+    },
+    {
+      "name": "Achieve",
+      "popularity": 95,
+      "categories": ["Achievement"],
+      "color": "#2980b9"
+    },
+    {
+      "name": "Excel",
+      "popularity": 93,
+      "categories": ["Achievement"],
+      "color": "#3498db"
+    },
+    {
+      "name": "Succeed",
+      "popularity": 92,
+      "categories": ["Achievement"],
+      "color": "#2c3e50"
+    },
+    {
+      "name": "Motivate",
+      "popularity": 86,
+      "categories": ["Leadership"],
+      "color": "#34495e"
+    },
+    {
+      "name": "Empower",
+      "popularity": 78,
+      "categories": ["Leadership"],
+      "color": "#16a085"
+    },
+    {
+      "name": "Inspire",
+      "popularity": 89,
+      "categories": ["Leadership"],
+      "color": "#1abc9c"
+    },
+    {
+      "name": "Influence",
+      "popularity": 87,
+      "categories": ["Leadership"],
+      "color": "#27ae60"
+    },
+    {
+      "name": "Argue",
+      "popularity": 72,
+      "categories": ["Direct Conflict"],
+      "color": "#c0392b"
+    },
+    {
+      "name": "Fight",
+      "popularity": 75,
+      "categories": ["Direct Conflict"],
+      "color": "#e74c3c"
+    },
+    {
+      "name": "Oppose",
+      "popularity": 73,
+      "categories": ["Direct Conflict", "Resistance"],
+      "color": "#d35400"
+    },
+    {
+      "name": "Resist",
+      "popularity": 75,
+      "categories": ["Resistance"],
+      "color": "#e67e22"
+    },
+    {
+      "name": "Disagree",
+      "popularity": 75,
+      "categories": ["Resistance"],
+      "color": "#f39c12"
+    },
+    {
+      "name": "Challenge",
+      "popularity": 74,
+      "categories": ["Resistance", "Direct Conflict"],
+      "color": "#f1c40f"
+    },
+    {
+      "name": "Confront",
+      "popularity": 71,
+      "categories": ["Direct Conflict"],
+      "color": "#c0392b"
+    },
+    {
+      "name": "Debate",
+      "popularity": 76,
+      "categories": ["Resistance"],
+      "color": "#e74c3c"
+    },
+    {
+      "name": "Block",
+      "popularity": 79,
+      "categories": ["Active Obstruction"],
+      "color": "#d35400"
+    },
+    {
+      "name": "Prevent",
+      "popularity": 77,
+      "categories": ["Active Obstruction"],
+      "color": "#e67e22"
+    },
+    {
+      "name": "Interrupt",
+      "popularity": 85,
+      "categories": ["Active Obstruction"],
+      "color": "#f39c12"
+    },
+    {
+      "name": "Obstruct",
+      "popularity": 76,
+      "categories": ["Active Obstruction", "Passive Hindrance"],
+      "color": "#f1c40f"
+    },
+    {
+      "name": "Hinder",
+      "popularity": 75,
+      "categories": ["Passive Hindrance"],
+      "color": "#c0392b"
+    },
+    {
+      "name": "Restrict",
+      "popularity": 74,
+      "categories": ["Passive Hindrance"],
+      "color": "#e74c3c"
+    },
+    {
+      "name": "Impede",
+      "popularity": 73,
+      "categories": ["Passive Hindrance"],
+      "color": "#d35400"
+    },
+    {
+      "name": "Delay",
+      "popularity": 78,
+      "categories": ["Passive Hindrance"],
+      "color": "#e67e22"
+    },
+    {
+      "name": "Avoid",
+      "popularity": 74,
+      "categories": ["Active Evasion"],
+      "color": "#f39c12"
+    },
+    {
+      "name": "Ignore",
+      "popularity": 90,
+      "categories": ["Passive Avoidance"],
+      "color": "#f1c40f"
+    },
+    {
+      "name": "Withdraw",
+      "popularity": 68,
+      "categories": ["Active Evasion"],
+      "color": "#c0392b"
+    },
+    {
+      "name": "Evade",
+      "popularity": 70,
+      "categories": ["Active Evasion"],
+      "color": "#e74c3c"
+    },
+    {
+      "name": "Deflect",
+      "popularity": 69,
+      "categories": ["Active Evasion", "Passive Avoidance"],
+      "color": "#d35400"
+    },
+    {
+      "name": "Withhold",
+      "popularity": 69,
+      "categories": ["Passive Avoidance"],
+      "color": "#e67e22"
+    },
+    {
+      "name": "Dodge",
+      "popularity": 71,
+      "categories": ["Active Evasion"],
+      "color": "#f39c12"
+    },
+    {
+      "name": "Escape",
+      "popularity": 72,
+      "categories": ["Active Evasion"],
+      "color": "#f1c40f"
+    },
+    {
+      "name": "Criticize",
+      "popularity": 76,
+      "categories": ["Criticism"],
+      "color": "#7f8c8d"
+    },
+    {
+      "name": "Reject",
+      "popularity": 82,
+      "categories": ["Rejection"],
+      "color": "#95a5a6"
+    },
+    {
+      "name": "Dismiss",
+      "popularity": 78,
+      "categories": ["Rejection", "Criticism"],
+      "color": "#bdc3c7"
+    },
+    {
+      "name": "Disapprove",
+      "popularity": 77,
+      "categories": ["Criticism"],
+      "color": "#7f8c8d"
+    },
+    {
+      "name": "Dislike",
+      "popularity": 88,
+      "categories": ["Rejection"],
+      "color": "#95a5a6"
+    },
+    {
+      "name": "Condemn",
+      "popularity": 75,
+      "categories": ["Criticism"],
+      "color": "#bdc3c7"
+    },
+    {
+      "name": "Judge",
+      "popularity": 79,
+      "categories": ["Criticism"],
+      "color": "#7f8c8d"
+    },
+    {
+      "name": "Denounce",
+      "popularity": 74,
+      "categories": ["Criticism", "Rejection"],
+      "color": "#95a5a6"
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "root": {
+    "id": "root",
+    "name": "Verb Categories",
+    "displayName": "Verb Categories",
+    "color": "#000000",
+    "icon": "📂",
+    "children": [
+      {
+        "id": "positive",
+        "name": "Positive",
+        "displayName": "Positive",
+        "color": "#2c3e50",
+        "icon": "🌟",
+        "children": [
+          {
+            "id": "support_assistance",
+            "name": "Support & Assistance",
+            "displayName": "Support & Assistance",
+            "color": "#34495e",
+            "icon": "🤝",
+            "children": [
+              {
+                "id": "support_help",
+                "name": "Support & Help",
+                "displayName": "Support & Help",
+                "color": "#3498db",
+                "icon": "💪"
+              },
+              {
+                "id": "guide_encourage",
+                "name": "Guide & Encourage",
+                "displayName": "Guide & Encourage",
+                "color": "#2980b9",
+                "icon": "🧭"
+              }
+            ]
+          },
+          {
+            "id": "growth_development",
+            "name": "Growth & Development",
+            "displayName": "Growth & Development",
+            "color": "#16a085",
+            "icon": "🌱",
+            "children": [
+              {
+                "id": "personal_growth",
+                "name": "Personal Growth",
+                "displayName": "Personal Growth",
+                "color": "#1abc9c",
+                "icon": "📈"
+              },
+              {
+                "id": "adaptation_learning",
+                "name": "Adaptation & Learning",
+                "displayName": "Adaptation & Learning",
+                "color": "#27ae60",
+                "icon": "🧠"
+              }
+            ]
+          },
+          {
+            "id": "innovation_creation",
+            "name": "Innovation & Creation",
+            "displayName": "Innovation & Creation",
+            "color": "#8e44ad",
+            "icon": "💡",
+            "children": [
+              {
+                "id": "creative_process",
+                "name": "Creative Process",
+                "displayName": "Creative Process",
+                "color": "#9b59b6",
+                "icon": "🎨"
+              },
+              {
+                "id": "implementation",
+                "name": "Implementation",
+                "displayName": "Implementation",
+                "color": "#7d3c98",
+                "icon": "🛠️"
+              }
+            ]
+          },
+          {
+            "id": "collaboration_connection",
+            "name": "Collaboration & Connection",
+            "displayName": "Collaboration & Connection",
+            "color": "#2980b9",
+            "icon": "🤝",
+            "children": [
+              {
+                "id": "teamwork",
+                "name": "Teamwork",
+                "displayName": "Teamwork",
+                "color": "#3498db",
+                "icon": "👥"
+              },
+              {
+                "id": "engagement",
+                "name": "Engagement",
+                "displayName": "Engagement",
+                "color": "#2c3e50",
+                "icon": "🔗"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "negative",
+        "name": "Negative",
+        "displayName": "Negative",
+        "color": "#c0392b",
+        "icon": "⚠️",
+        "children": [
+          {
+            "id": "conflict_opposition",
+            "name": "Conflict & Opposition",
+            "displayName": "Conflict & Opposition",
+            "color": "#e74c3c",
+            "icon": "⚔️",
+            "children": [
+              {
+                "id": "direct_conflict",
+                "name": "Direct Conflict",
+                "displayName": "Direct Conflict",
+                "color": "#c0392b",
+                "icon": "🥊"
+              },
+              {
+                "id": "resistance",
+                "name": "Resistance",
+                "displayName": "Resistance",
+                "color": "#d35400",
+                "icon": "🛡️"
+              }
+            ]
+          },
+          {
+            "id": "obstruction_hindrance",
+            "name": "Obstruction & Hindrance",
+            "displayName": "Obstruction & Hindrance",
+            "color": "#e67e22",
+            "icon": "🚧",
+            "children": [
+              {
+                "id": "active_obstruction",
+                "name": "Active Obstruction",
+                "displayName": "Active Obstruction",
+                "color": "#d35400",
+                "icon": "🛑"
+              },
+              {
+                "id": "passive_hindrance",
+                "name": "Passive Hindrance",
+                "displayName": "Passive Hindrance",
+                "color": "#f39c12",
+                "icon": "🐌"
+              }
+            ]
+          },
+          {
+            "id": "evasion_avoidance",
+            "name": "Evasion & Avoidance",
+            "displayName": "Evasion & Avoidance",
+            "color": "#f39c12",
+            "icon": "🏃",
+            "children": [
+              {
+                "id": "active_evasion",
+                "name": "Active Evasion",
+                "displayName": "Active Evasion",
+                "color": "#e67e22",
+                "icon": "💨"
+              },
+              {
+                "id": "passive_avoidance",
+                "name": "Passive Avoidance",
+                "displayName": "Passive Avoidance",
+                "color": "#d35400",
+                "icon": "🙈"
+              }
+            ]
+          },
+          {
+            "id": "criticism_rejection",
+            "name": "Criticism & Rejection",
+            "displayName": "Criticism & Rejection",
+            "color": "#7f8c8d",
+            "icon": "👎",
+            "children": [
+              {
+                "id": "criticism",
+                "name": "Criticism",
+                "displayName": "Criticism",
+                "color": "#95a5a6",
+                "icon": "🔍"
+              },
+              {
+                "id": "rejection",
+                "name": "Rejection",
+                "displayName": "Rejection",
+                "color": "#bdc3c7",
+                "icon": "❌"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

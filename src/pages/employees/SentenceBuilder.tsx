@@ -8,9 +8,10 @@ import { AppContext } from '../../context/AppContext';
 import data from '../../data/data.json';
 // import TextInputGen from '../../components/ui/TextInputGen';
 import SubjectDropdown from '../../components/ui/SubjectDropdown';
-
 import { FaLock, FaLockOpen } from 'react-icons/fa';
 import nlp from 'compromise';
+import VerbSelector from '../../components/ui/VerbSelector';
+import { Verb } from '../../types/types';
 
 const SentenceBuilderPage: React.FC = () => {
   // Access context
@@ -212,6 +213,28 @@ const SentenceBuilderPage: React.FC = () => {
               setIsVerbModalOpen(false);
             }}
             onCancel={() => setIsVerbModalOpen(false)}
+          />
+        </Modal>
+        {/* Modal for verb selection using the VerbSelector */}
+        <Modal
+          isOpen={isVerbModalOpen}
+          onClose={() => setIsVerbModalOpen(false)}
+          title='Select a Verb'
+        >
+          <VerbSelector
+            onVerbSelect={(verb: Verb) => {
+              // Convert the selected verb to third person
+              const thirdPersonVerb = nlp(verb.name)
+                .verbs()
+                .toPresentTense()
+                .out('text');
+
+              setSentenceParts((prev) => ({
+                ...prev,
+                verb: thirdPersonVerb.toLowerCase(),
+              }));
+              setIsVerbModalOpen(false);
+            }}
           />
         </Modal>
 

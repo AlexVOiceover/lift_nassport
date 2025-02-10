@@ -12,9 +12,46 @@ const getUniqueOptions = (data: string[]) => Array.from(new Set(data));
 const API_URL = import.meta.env.VITE_API_URL;
 console.log('Backend API:', API_URL);
 
-fetch(`${API_URL}n/s/Alex`)
-  .then((response) => response.json())
-  .then((data) => console.log(data));
+// fetch(`${API_URL}/v`)
+//   .then((response) => response.json())
+//   .then((data) => console.log(data));
+
+// POST request to create a new entry
+async function postThenFetch() {
+  try {
+    // POST operation
+    const postResponse = await fetch(`${API_URL}/newEntry`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        subject: 'Pacorro',
+        verb: 'loves',
+        object: 'apples',
+        isPublic: true,
+        statement: 'Paco loves apples',
+      }),
+    });
+    if (!postResponse.ok) {
+      throw new Error(`HTTP error on POST! status: ${postResponse.status}`);
+    }
+    const postData = await postResponse.json();
+    console.log('Successfully posted:', postData);
+
+    // GET operation after POST completes
+    const getResponse = await fetch(`${API_URL}/n/s/Pacorro`);
+    if (!getResponse.ok) {
+      throw new Error(`HTTP error on GET! status: ${getResponse.status}`);
+    }
+    const getData = await getResponse.json();
+    console.log(`Fetching from DV: ${JSON.stringify(getData, null, 2)}`);
+  } catch (error) {
+    console.error('Error with requests:', error);
+  }
+}
+
+postThenFetch();
 
 const EmployersDashboard: React.FC = () => {
   const [filters, setFilters] = useState({
